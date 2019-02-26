@@ -1,18 +1,14 @@
-class Multiplexer<Event> {
-    var subscribers: [Silo<Event>] = []
+class Multiplexer<Event>: SiloType, ConveyorType {
+    private(set) var subscribers: [Silo<Event>] = []
     
     init() {
         
     }
-}
-
-extension Multiplexer: SiloType {
+    
     func fire(event: Event) {
         subscribers.forEach { $0.fire(event: event) }
     }
-}
-
-extension Multiplexer: ConveyorType {
+    
     func run(silo: Silo<Event>) -> Trash {
         var subscribers = self.subscribers
         subscribers.append(silo)
