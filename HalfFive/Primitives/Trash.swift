@@ -1,0 +1,3 @@
+protocol Trash {
+    func dispose()
+}
