@@ -6,8 +6,8 @@ extension Conveyor {
             composite.primary = run(Silo { event in
                 composite.secondary?.dispose()
                 let newConveyor = predicate(event)
-                composite.secondary = newConveyor.run(Silo { event in
-                    silo.fire(event)
+                composite.secondary = newConveyor.run(silo: Silo { event in
+                    silo.fire(event: event)
                 })
             })
             return composite

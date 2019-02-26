@@ -3,7 +3,7 @@ extension Conveyor {
         let run = self.run
         return Conveyor<NewEvent> { silo in
             run(Silo { event in
-                silo.fire(predicate(event))
+                silo.fire(event: predicate(event))
             })
         }
     }

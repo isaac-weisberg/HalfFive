@@ -13,6 +13,10 @@
 		5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B12D2225861D00311D29 /* Conveyor+map.swift */; };
 		5C83B1382225907F00311D29 /* Conveyor+flatMapLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1372225907F00311D29 /* Conveyor+flatMapLatest.swift */; };
 		5C83B13D2225921B00311D29 /* TrashCompositeTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B13C2225921B00311D29 /* TrashCompositeTwo.swift */; };
+		5C83B1402225983F00311D29 /* Multiplexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B13F2225983F00311D29 /* Multiplexer.swift */; };
+		5C83B142222598A400311D29 /* SiloType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B141222598A400311D29 /* SiloType.swift */; };
+		5C83B1442225999800311D29 /* ConveyorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1432225999800311D29 /* ConveyorType.swift */; };
+		5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14522259A8200311D29 /* TrashAbstract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		5C83B12D2225861D00311D29 /* Conveyor+map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Conveyor+map.swift"; path = "HalfFive/Primitives/Conveyor+map.swift"; sourceTree = SOURCE_ROOT; };
 		5C83B1372225907F00311D29 /* Conveyor+flatMapLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+flatMapLatest.swift"; sourceTree = "<group>"; };
 		5C83B13C2225921B00311D29 /* TrashCompositeTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashCompositeTwo.swift; sourceTree = "<group>"; };
+		5C83B13F2225983F00311D29 /* Multiplexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplexer.swift; sourceTree = "<group>"; };
+		5C83B141222598A400311D29 /* SiloType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiloType.swift; sourceTree = "<group>"; };
+		5C83B1432225999800311D29 /* ConveyorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConveyorType.swift; sourceTree = "<group>"; };
+		5C83B14522259A8200311D29 /* TrashAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashAbstract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		5C83B11C222583CB00311D29 /* HalfFive */ = {
 			isa = PBXGroup;
 			children = (
+				5C83B13E2225982F00311D29 /* Multiplexing */,
 				5C83B1392225919C00311D29 /* Implementations */,
 				5C83B12C222585F000311D29 /* Operators */,
 				5C83B12B222585E200311D29 /* Primitives */,
@@ -70,6 +79,8 @@
 				5C83B1252225846A00311D29 /* Conveyor.swift */,
 				5C83B1272225849D00311D29 /* Trash.swift */,
 				5C83B129222584B400311D29 /* Silo.swift */,
+				5C83B141222598A400311D29 /* SiloType.swift */,
+				5C83B1432225999800311D29 /* ConveyorType.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -87,8 +98,17 @@
 			isa = PBXGroup;
 			children = (
 				5C83B13C2225921B00311D29 /* TrashCompositeTwo.swift */,
+				5C83B14522259A8200311D29 /* TrashAbstract.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		5C83B13E2225982F00311D29 /* Multiplexing */ = {
+			isa = PBXGroup;
+			children = (
+				5C83B13F2225983F00311D29 /* Multiplexer.swift */,
+			);
+			path = Multiplexing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,12 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,
+				5C83B142222598A400311D29 /* SiloType.swift in Sources */,
+				5C83B1442225999800311D29 /* ConveyorType.swift in Sources */,
 				5C83B13D2225921B00311D29 /* TrashCompositeTwo.swift in Sources */,
 				5C83B1382225907F00311D29 /* Conveyor+flatMapLatest.swift in Sources */,
 				5C83B12A222584B400311D29 /* Silo.swift in Sources */,
 				5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */,
+				5C83B1402225983F00311D29 /* Multiplexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
