@@ -8,7 +8,7 @@ class Container<Event>: Multiplexer<Event> {
     
     override func fire(event: Event) {
         super.fire(event: event)
-        subscribers.forEach { $0.fire(event: event) }
+        value = event
     }
     
     override func run(silo: Silo<Event>) -> Trash {
