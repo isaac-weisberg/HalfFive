@@ -20,6 +20,7 @@
 		5C83B14822259D1900311D29 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14722259D1900311D29 /* Container.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
+		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5C83B14722259D1900311D29 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
+		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				5C83B12D2225861D00311D29 /* Conveyor+map.swift */,
 				5C83B1372225907F00311D29 /* Conveyor+flatMapLatest.swift */,
 				5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */,
+				5CE318692226E693005531E0 /* Conveyor+fireOn.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
+				5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */,
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,
 				5C83B142222598A400311D29 /* SiloType.swift in Sources */,
 				5C83B1442225999800311D29 /* ConveyorType.swift in Sources */,
