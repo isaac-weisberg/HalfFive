@@ -1,4 +1,4 @@
-class Multiplexer<Event>: SiloType, ConveyorType {
+class Multiplexer<Event, Scheduler: Scheduling>: SiloType, ConveyorType {
     private(set) var subscribers: [Silo<Event>] = []
     
     init() {

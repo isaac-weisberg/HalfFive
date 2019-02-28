@@ -2,8 +2,8 @@ import Foundation
 import Dispatch
 
 extension Conveyor {
-    func runOn(queue: DispatchQueue) -> Conveyor<Event> {
-        let run = self.run
+    func run(on queue: DispatchQueue) -> Conveyor {
+        let run = self.run(silo:)
         return Conveyor { silo in
             let trash = TrashDeferred()
             queue.async {

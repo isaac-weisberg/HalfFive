@@ -1,7 +1,7 @@
 extension Conveyor {
-    func flatMapLatest<NewEvent>(predicate: @escaping (Event) -> Conveyor<NewEvent>) -> Conveyor<NewEvent> {
-        let run = self.run
-        return Conveyor<NewEvent> { silo in
+    func flatMapLatest<NewEvent, Scheduler: Scheduling>(predicate: @escaping (Event) -> Conveyor<NewEvent, Scheduler>) -> Conveyor<NewEvent, Scheduler> {
+        let run = self.run(silo:)
+        return Conveyor<NewEvent, Scheduler> { silo in
             let composite = TrashCompositeTwo(primary: nil, secondary: nil)
             composite.primary = run(Silo { event in
                 composite.secondary?.dispose()

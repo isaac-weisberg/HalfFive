@@ -1,11 +1,11 @@
 import Dispatch
 
 extension Conveyor {
-    func fireOn(queue: DispatchQueue) -> Conveyor {
-        let run = self.run
-        return Conveyor { silo in
+    func fire<Scheduler: DeterminedScheduling>(on scheduler: Scheduler) -> Conveyor<Event, Scheduler> {
+        let run = self.run(silo:)
+        return Conveyor<Event, Scheduler> { silo in
             run(Silo { event in
-                queue.async {
+                scheduler.queue.async {
                     silo.fire(event: event)
                 }
             })

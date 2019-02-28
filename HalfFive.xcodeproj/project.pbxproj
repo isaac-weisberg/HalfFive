@@ -18,6 +18,7 @@
 		5C83B1442225999800311D29 /* ConveyorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1432225999800311D29 /* ConveyorType.swift */; };
 		5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14522259A8200311D29 /* TrashAbstract.swift */; };
 		5C83B14822259D1900311D29 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14722259D1900311D29 /* Container.swift */; };
+		5CBED6D722284678003C6974 /* Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBED6D622284678003C6974 /* Scheduling.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
@@ -37,6 +38,7 @@
 		5C83B1432225999800311D29 /* ConveyorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConveyorType.swift; sourceTree = "<group>"; };
 		5C83B14522259A8200311D29 /* TrashAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashAbstract.swift; sourceTree = "<group>"; };
 		5C83B14722259D1900311D29 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		5CBED6D622284678003C6974 /* Scheduling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduling.swift; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		5C83B11C222583CB00311D29 /* HalfFive */ = {
 			isa = PBXGroup;
 			children = (
+				5CBED6D522284664003C6974 /* Scheduling */,
 				5C83B13E2225982F00311D29 /* Multiplexing */,
 				5C83B1392225919C00311D29 /* Implementations */,
 				5C83B12C222585F000311D29 /* Operators */,
@@ -121,6 +124,14 @@
 				5C83B14722259D1900311D29 /* Container.swift */,
 			);
 			path = Multiplexing;
+			sourceTree = "<group>";
+		};
+		5CBED6D522284664003C6974 /* Scheduling */ = {
+			isa = PBXGroup;
+			children = (
+				5CBED6D622284678003C6974 /* Scheduling.swift */,
+			);
+			path = Scheduling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,
 				5C83B142222598A400311D29 /* SiloType.swift in Sources */,
 				5C83B1442225999800311D29 /* ConveyorType.swift in Sources */,
+				5CBED6D722284678003C6974 /* Scheduling.swift in Sources */,
 				5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */,
 				5C83B13D2225921B00311D29 /* TrashCompositeTwo.swift in Sources */,
 				5C83B1382225907F00311D29 /* Conveyor+flatMapLatest.swift in Sources */,
