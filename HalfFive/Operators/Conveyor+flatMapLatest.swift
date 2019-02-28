@@ -1,5 +1,5 @@
 extension Conveyor {
-    func flatMapLatest<NewEvent, Scheduler: Scheduling>(predicate: @escaping (Event) -> Conveyor<NewEvent, Scheduler>) -> Conveyor<NewEvent, Scheduler> {
+    func flatMapLatest<NewEvent>(predicate: @escaping (Event) -> Conveyor<NewEvent, Scheduler>) -> Conveyor<NewEvent, Scheduler> {
         let run = self.run(silo:)
         return Conveyor<NewEvent, Scheduler> { silo in
             let composite = TrashCompositeTwo(primary: nil, secondary: nil)
