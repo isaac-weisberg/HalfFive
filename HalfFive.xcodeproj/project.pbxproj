@@ -15,6 +15,11 @@
 		5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8C9222A736C00ACC9A7 /* Coordinator.swift */; };
 		5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8CD222A740400ACC9A7 /* MainCoordinator.swift */; };
 		5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8CF222A742500ACC9A7 /* Context.swift */; };
+		5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8D2222A79F900ACC9A7 /* TestCoordinator.swift */; };
+		5C78D8D5222A7A9300ACC9A7 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8D4222A7A9300ACC9A7 /* Test.storyboard */; };
+		5C78D8D8222A7D9D00ACC9A7 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8D7222A7D9D00ACC9A7 /* StoryboardScenes.swift */; };
+		5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8DA222A7DC700ACC9A7 /* TestViewController.swift */; };
+		5C78D8DE222A7EE700ACC9A7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */; };
 		5C83B1262225846A00311D29 /* Conveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1252225846A00311D29 /* Conveyor.swift */; };
 		5C83B1282225849D00311D29 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1272225849D00311D29 /* Trash.swift */; };
 		5C83B12A222584B400311D29 /* Silo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B129222584B400311D29 /* Silo.swift */; };
@@ -43,6 +48,11 @@
 		5C78D8C9222A736C00ACC9A7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5C78D8CD222A740400ACC9A7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		5C78D8CF222A742500ACC9A7 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		5C78D8D2222A79F900ACC9A7 /* TestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoordinator.swift; sourceTree = "<group>"; };
+		5C78D8D4222A7A9300ACC9A7 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		5C78D8D7222A7D9D00ACC9A7 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		5C78D8DA222A7DC700ACC9A7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		5C83B11A222583CB00311D29 /* HalfFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C83B11E222583CB00311D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C83B1252225846A00311D29 /* Conveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyor.swift; sourceTree = "<group>"; };
@@ -85,6 +95,7 @@
 		5C78D8B4222A72A600ACC9A7 /* Midesting */ = {
 			isa = PBXGroup;
 			children = (
+				5C78D8D6222A7D5F00ACC9A7 /* Constants */,
 				5C78D8C8222A735000ACC9A7 /* Resources */,
 				5C78D8C7222A733900ACC9A7 /* Application */,
 				5C78D8CB222A73E300ACC9A7 /* Workflows */,
@@ -123,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5C78D8CC222A73FB00ACC9A7 /* Main */,
+				5C78D8D1222A79E800ACC9A7 /* TestWorkflow */,
 			);
 			path = Workflows;
 			sourceTree = "<group>";
@@ -135,9 +147,36 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		5C78D8D1222A79E800ACC9A7 /* TestWorkflow */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8D9222A7DB800ACC9A7 /* ViewControllers */,
+				5C78D8D2222A79F900ACC9A7 /* TestCoordinator.swift */,
+				5C78D8D4222A7A9300ACC9A7 /* Test.storyboard */,
+			);
+			path = TestWorkflow;
+			sourceTree = "<group>";
+		};
+		5C78D8D6222A7D5F00ACC9A7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8D7222A7D9D00ACC9A7 /* StoryboardScenes.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		5C78D8D9222A7DB800ACC9A7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8DA222A7DC700ACC9A7 /* TestViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		5C83B110222583CB00311D29 = {
 			isa = PBXGroup;
 			children = (
+				5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */,
 				5C83B11C222583CB00311D29 /* HalfFive */,
 				5C78D8B4222A72A600ACC9A7 /* Midesting */,
 				5C83B11B222583CB00311D29 /* Products */,
@@ -236,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C78D8C2222A72AB00ACC9A7 /* Build configuration list for PBXNativeTarget "Midesting" */;
 			buildPhases = (
+				5C78D8DC222A7DED00ACC9A7 /* swiftgen */,
 				5C78D8AF222A72A600ACC9A7 /* Sources */,
 				5C78D8B0222A72A600ACC9A7 /* Frameworks */,
 				5C78D8B1222A72A600ACC9A7 /* Resources */,
@@ -310,8 +350,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C78D8D5222A7A9300ACC9A7 /* Test.storyboard in Resources */,
 				5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */,
 				5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */,
+				5C78D8DE222A7EE700ACC9A7 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,15 +366,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C78D8DC222A7DED00ACC9A7 /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen/bin/swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C78D8AF222A72A600ACC9A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
 				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
+				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
 				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
 				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,
+				5C78D8D8222A7D9D00ACC9A7 /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

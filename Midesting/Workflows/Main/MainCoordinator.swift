@@ -7,19 +7,19 @@ class MainCoordinator: Coordinator {
     let router: Router
     let context: Context
     
-    init(router: Router, context: Context) {
-        self.router = router
-        self.context = context
-        super.init()
-    }
+    let testCoordinator: TestCoordinator
     
     let navController = UINavigationController()
     
+    init(router: Router, context: Context) {
+        self.router = router
+        self.context = context
+        self.testCoordinator = TestCoordinator(router: navController, context: context)
+        super.init()
+    }
+    
     override func start() {
-        router.rootViewController = navController
+        testCoordinator.start()
         router.makeKeyAndVisible()
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.blue
-        navController.pushViewController(vc, animated: true)
     }
 }

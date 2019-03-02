@@ -1,0 +1,5 @@
+ib:
+  inputs: ./Midesting/Workflows/
+  outputs:
+    - templateName: scenes-swift4
+      output: ./Midesting/Constants/StoryboardScenes.swift
