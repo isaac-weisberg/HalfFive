@@ -13,7 +13,9 @@ class TestCoordinator: Coordinator {
     }
     
     override func start() {
+        let controller = testViewController()
         
+        router.pushViewController(controller, animated: true)
     }
 }
 
