@@ -1,6 +1,6 @@
 import Dispatch
 
-protocol Scheduling {
+public protocol Scheduling {
     
 }
 
@@ -8,11 +8,11 @@ protocol DeterminedScheduling: Scheduling {
     var queue: DispatchQueue { get }
 }
 
-struct SchedulingRandom: Scheduling {
+public struct SchedulingRandom: Scheduling {
     
 }
 
-struct SchedulingMain: DeterminedScheduling {
+public struct SchedulingMain: DeterminedScheduling {
     var queue: DispatchQueue {
         return .main
     }

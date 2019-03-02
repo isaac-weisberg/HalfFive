@@ -1,7 +1,7 @@
-class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Scheduler> {
+public class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Scheduler> {
     private(set) var value: Event
     
-    init(value: Event) {
+    public init(value: Event) {
         self.value = value
         super.init()
     }
@@ -11,7 +11,7 @@ class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Scheduler> {
         value = event
     }
     
-    override func run(silo: Silo<Event>) -> Trash {
+    override public func run(silo: Silo<Event, Scheduler>) -> Trash {
         let trash = super.run(silo: silo)
         silo.fire(event: value)
         return trash

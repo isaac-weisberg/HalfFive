@@ -1,5 +1,5 @@
-class Multiplexer<Event, Scheduler: Scheduling>: SiloType, ConveyorType {
-    private(set) var subscribers: [Silo<Event>] = []
+public class Multiplexer<Event, Scheduler: Scheduling>: SiloType, ConveyorType {
+    private(set) var subscribers: [Silo<Event, Scheduler>] = []
     
     init() {
         
@@ -9,7 +9,7 @@ class Multiplexer<Event, Scheduler: Scheduling>: SiloType, ConveyorType {
         subscribers.forEach { $0.fire(event: event) }
     }
     
-    func run(silo: Silo<Event>) -> Trash {
+    public func run(silo: Silo<Event, Scheduler>) -> Trash {
         var subscribers = self.subscribers
         subscribers.append(silo)
         self.subscribers = subscribers

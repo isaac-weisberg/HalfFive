@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C24967E222AC9E200BE72D9 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24967D222AC9E200BE72D9 /* TestCardView.swift */; };
+		5C249682222ACA0C00BE72D9 /* XibModularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C249681222ACA0C00BE72D9 /* XibModularView.swift */; };
+		5C249684222ACA9C00BE72D9 /* TestCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C249683222ACA9C00BE72D9 /* TestCardView.xib */; };
+		5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C249686222ACE5900BE72D9 /* TestCardViewModel.swift */; };
+		5C249689222ACF5200BE72D9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C249688222ACF5200BE72D9 /* TestViewModel.swift */; };
+		5C24968B222AD07F00BE72D9 /* TrashBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968A222AD07F00BE72D9 /* TrashBag.swift */; };
+		5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */; };
+		5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968F222AD3A100BE72D9 /* TestModel.swift */; };
+		5C249693222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */; };
 		5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */; };
 		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
 		5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */; };
@@ -39,6 +48,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C24967D222AC9E200BE72D9 /* TestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardView.swift; sourceTree = "<group>"; };
+		5C249681222ACA0C00BE72D9 /* XibModularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibModularView.swift; sourceTree = "<group>"; };
+		5C249683222ACA9C00BE72D9 /* TestCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCardView.xib; sourceTree = "<group>"; };
+		5C249686222ACE5900BE72D9 /* TestCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardViewModel.swift; sourceTree = "<group>"; };
+		5C249688222ACF5200BE72D9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		5C24968A222AD07F00BE72D9 /* TrashBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBag.swift; sourceTree = "<group>"; };
+		5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trash+disposedBy.swift"; sourceTree = "<group>"; };
+		5C24968F222AD3A100BE72D9 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Multiplexer+asConveyor.swift"; sourceTree = "<group>"; };
 		5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+combineLatest.swift"; sourceTree = "<group>"; };
 		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +110,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C24967C222AC9D400BE72D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5C249680222AC9FC00BE72D9 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5C24967F222AC9F400BE72D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C24967D222AC9E200BE72D9 /* TestCardView.swift */,
+				5C249683222ACA9C00BE72D9 /* TestCardView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C249680222AC9FC00BE72D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C249681222ACA0C00BE72D9 /* XibModularView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C249685222ACE4A00BE72D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C249688222ACF5200BE72D9 /* TestViewModel.swift */,
+				5C249686222ACE5900BE72D9 /* TestCardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C24968E222AD38D00BE72D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C24968F222AD3A100BE72D9 /* TestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5C78D8B4222A72A600ACC9A7 /* Midesting */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +193,9 @@
 		5C78D8CB222A73E300ACC9A7 /* Workflows */ = {
 			isa = PBXGroup;
 			children = (
+				5C24967C222AC9D400BE72D9 /* Common */,
 				5C78D8CC222A73FB00ACC9A7 /* Main */,
-				5C78D8D1222A79E800ACC9A7 /* TestWorkflow */,
+				5C78D8D1222A79E800ACC9A7 /* Test */,
 			);
 			path = Workflows;
 			sourceTree = "<group>";
@@ -147,14 +208,17 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		5C78D8D1222A79E800ACC9A7 /* TestWorkflow */ = {
+		5C78D8D1222A79E800ACC9A7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5C24968E222AD38D00BE72D9 /* Models */,
+				5C249685222ACE4A00BE72D9 /* ViewModels */,
+				5C24967F222AC9F400BE72D9 /* View */,
 				5C78D8D9222A7DB800ACC9A7 /* ViewControllers */,
 				5C78D8D2222A79F900ACC9A7 /* TestCoordinator.swift */,
 				5C78D8D4222A7A9300ACC9A7 /* Test.storyboard */,
 			);
-			path = TestWorkflow;
+			path = Test;
 			sourceTree = "<group>";
 		};
 		5C78D8D6222A7D5F00ACC9A7 /* Constants */ = {
@@ -227,6 +291,8 @@
 				5CE318692226E693005531E0 /* Conveyor+fireOn.swift */,
 				5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */,
 				5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */,
+				5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */,
+				5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -237,6 +303,7 @@
 				5C83B13C2225921B00311D29 /* TrashCompositeTwo.swift */,
 				5C83B14522259A8200311D29 /* TrashAbstract.swift */,
 				5CE318672226E29A005531E0 /* TrashDeferred.swift */,
+				5C24968A222AD07F00BE72D9 /* TrashBag.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -353,6 +420,7 @@
 				5C78D8D5222A7A9300ACC9A7 /* Test.storyboard in Resources */,
 				5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */,
 				5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */,
+				5C249684222ACA9C00BE72D9 /* TestCardView.xib in Resources */,
 				5C78D8DE222A7EE700ACC9A7 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,8 +462,13 @@
 			files = (
 				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
 				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
+				5C249682222ACA0C00BE72D9 /* XibModularView.swift in Sources */,
+				5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */,
+				5C249689222ACF5200BE72D9 /* TestViewModel.swift in Sources */,
+				5C24967E222AC9E200BE72D9 /* TestCardView.swift in Sources */,
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
 				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
+				5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */,
 				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
 				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,
 				5C78D8D8222A7D9D00ACC9A7 /* StoryboardScenes.swift in Sources */,
@@ -410,6 +483,7 @@
 				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
+				5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */,
 				5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */,
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,
 				5CBED6DA22284D33003C6974 /* Conveyor+withLatestFrom.swift in Sources */,
@@ -419,9 +493,11 @@
 				5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */,
 				5C83B13D2225921B00311D29 /* TrashCompositeTwo.swift in Sources */,
 				5C83B1382225907F00311D29 /* Conveyor+flatMapLatest.swift in Sources */,
+				5C24968B222AD07F00BE72D9 /* TrashBag.swift in Sources */,
 				5C83B12A222584B400311D29 /* Silo.swift in Sources */,
 				5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */,
 				5C83B14822259D1900311D29 /* Container.swift in Sources */,
+				5C249693222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift in Sources */,
 				5C83B1402225983F00311D29 /* Multiplexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
