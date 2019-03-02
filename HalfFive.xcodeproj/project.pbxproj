@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */; };
+		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
+		5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */; };
+		5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BE222A72AB00ACC9A7 /* LaunchScreen.storyboard */; };
+		5C78D8C6222A730F00ACC9A7 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
+		5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8C9222A736C00ACC9A7 /* Coordinator.swift */; };
+		5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8CD222A740400ACC9A7 /* MainCoordinator.swift */; };
+		5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8CF222A742500ACC9A7 /* Context.swift */; };
 		5C83B1262225846A00311D29 /* Conveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1252225846A00311D29 /* Conveyor.swift */; };
 		5C83B1282225849D00311D29 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1272225849D00311D29 /* Trash.swift */; };
 		5C83B12A222584B400311D29 /* Silo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B129222584B400311D29 /* Silo.swift */; };
@@ -28,6 +35,14 @@
 
 /* Begin PBXFileReference section */
 		5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+combineLatest.swift"; sourceTree = "<group>"; };
+		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C78D8BF222A72AB00ACC9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C78D8C1222A72AB00ACC9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C78D8C9222A736C00ACC9A7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5C78D8CD222A740400ACC9A7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		5C78D8CF222A742500ACC9A7 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		5C83B11A222583CB00311D29 /* HalfFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C83B11E222583CB00311D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C83B1252225846A00311D29 /* Conveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyor.swift; sourceTree = "<group>"; };
@@ -49,6 +64,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C78D8B0222A72A600ACC9A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C78D8C6222A730F00ACC9A7 /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C83B117222583CB00311D29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,11 +82,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C78D8B4222A72A600ACC9A7 /* Midesting */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8C8222A735000ACC9A7 /* Resources */,
+				5C78D8C7222A733900ACC9A7 /* Application */,
+				5C78D8CB222A73E300ACC9A7 /* Workflows */,
+			);
+			path = Midesting;
+			sourceTree = "<group>";
+		};
+		5C78D8C5222A730F00ACC9A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C78D8C7222A733900ACC9A7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8C1222A72AB00ACC9A7 /* Info.plist */,
+				5C78D8BE222A72AB00ACC9A7 /* LaunchScreen.storyboard */,
+				5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */,
+				5C78D8C9222A736C00ACC9A7 /* Coordinator.swift */,
+				5C78D8CF222A742500ACC9A7 /* Context.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5C78D8C8222A735000ACC9A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5C78D8CB222A73E300ACC9A7 /* Workflows */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8CC222A73FB00ACC9A7 /* Main */,
+			);
+			path = Workflows;
+			sourceTree = "<group>";
+		};
+		5C78D8CC222A73FB00ACC9A7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5C78D8CD222A740400ACC9A7 /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		5C83B110222583CB00311D29 = {
 			isa = PBXGroup;
 			children = (
 				5C83B11C222583CB00311D29 /* HalfFive */,
+				5C78D8B4222A72A600ACC9A7 /* Midesting */,
 				5C83B11B222583CB00311D29 /* Products */,
+				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5C83B11A222583CB00311D29 /* HalfFive.framework */,
+				5C78D8B3222A72A600ACC9A7 /* Midesting.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +232,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5C78D8B2222A72A600ACC9A7 /* Midesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C78D8C2222A72AB00ACC9A7 /* Build configuration list for PBXNativeTarget "Midesting" */;
+			buildPhases = (
+				5C78D8AF222A72A600ACC9A7 /* Sources */,
+				5C78D8B0222A72A600ACC9A7 /* Frameworks */,
+				5C78D8B1222A72A600ACC9A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Midesting;
+			productName = Midesting;
+			productReference = 5C78D8B3222A72A600ACC9A7 /* Midesting.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5C83B119222583CB00311D29 /* HalfFive */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C83B122222583CB00311D29 /* Build configuration list for PBXNativeTarget "HalfFive" */;
@@ -177,9 +273,13 @@
 		5C83B111222583CB00311D29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Isaac Weisberg";
 				TargetAttributes = {
+					5C78D8B2222A72A600ACC9A7 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					5C83B119222583CB00311D29 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -192,6 +292,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5C83B110222583CB00311D29;
 			productRefGroup = 5C83B11B222583CB00311D29 /* Products */;
@@ -199,11 +300,21 @@
 			projectRoot = "";
 			targets = (
 				5C83B119222583CB00311D29 /* HalfFive */,
+				5C78D8B2222A72A600ACC9A7 /* Midesting */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C78D8B1222A72A600ACC9A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */,
+				5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C83B118222583CB00311D29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +325,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C78D8AF222A72A600ACC9A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
+				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
+				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
+				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C83B116222583CB00311D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,7 +362,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		5C78D8BE222A72AB00ACC9A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C78D8BF222A72AB00ACC9A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		5C78D8C3222A72AB00ACC9A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZRPL4EC5L;
+				INFOPLIST_FILE = "$(SRCROOT)/Midesting/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.Midesting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C78D8C4222A72AB00ACC9A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZRPL4EC5L;
+				INFOPLIST_FILE = "$(SRCROOT)/Midesting/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.Midesting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5C83B120222583CB00311D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,6 +554,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFive";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -412,6 +584,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFive";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -423,6 +596,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C78D8C2222A72AB00ACC9A7 /* Build configuration list for PBXNativeTarget "Midesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C78D8C3222A72AB00ACC9A7 /* Debug */,
+				5C78D8C4222A72AB00ACC9A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5C83B114222583CB00311D29 /* Build configuration list for PBXProject "HalfFive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
