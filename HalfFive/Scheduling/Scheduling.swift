@@ -18,8 +18,8 @@ struct SchedulingMain: DeterminedScheduling {
     }
 }
 
-struct SchedulingGlobal: DeterminedScheduling {
+struct SchedulingSerial: DeterminedScheduling {
     var queue: DispatchQueue {
-        return .global()
+        return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
     }
 }
