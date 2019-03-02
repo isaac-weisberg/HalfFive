@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */; };
 		5C83B1262225846A00311D29 /* Conveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1252225846A00311D29 /* Conveyor.swift */; };
 		5C83B1282225849D00311D29 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1272225849D00311D29 /* Trash.swift */; };
 		5C83B12A222584B400311D29 /* Silo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B129222584B400311D29 /* Silo.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+combineLatest.swift"; sourceTree = "<group>"; };
 		5C83B11A222583CB00311D29 /* HalfFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C83B11E222583CB00311D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C83B1252225846A00311D29 /* Conveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyor.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */,
 				5CE318692226E693005531E0 /* Conveyor+fireOn.swift */,
 				5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */,
+				5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
+				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
 				5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */,
