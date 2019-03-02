@@ -4,7 +4,7 @@
 .Trashes
 .Spotlight-V100
 *.swp
-
+swiftgen/
 ## Xcode build files
 DerivedData/
 build/
