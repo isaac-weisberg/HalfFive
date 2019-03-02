@@ -1,11 +1,11 @@
-public class Silo<Event, Scheduler: Scheduling>: SiloType {
-    typealias Subscriber = (Event) -> ()
+public struct Silo<Event, Scheduler: Scheduling>: SiloType {
+    typealias Predicate = (Event) -> ()
     
     func fire(event: Event) -> Void {
         return predicate(event)
     }
     
-    let predicate: (Event) -> Void
+    let predicate: Predicate
     
     public init(fire: @escaping (Event) -> Void) {
         self.predicate = fire

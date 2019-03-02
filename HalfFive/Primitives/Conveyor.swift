@@ -1,4 +1,4 @@
-public class Conveyor<Event, Scheduler: Scheduling>: ConveyorType {
+public struct Conveyor<Event, Scheduler: Scheduling>: ConveyorType {
     public func run(silo: Silo<Event, Scheduler>) -> Trash {
         return predicate(silo)
     }
