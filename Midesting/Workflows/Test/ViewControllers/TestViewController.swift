@@ -28,6 +28,13 @@ class TestViewController: UIViewController {
                 self.nextQuestionLabel.text = value
             }
             .disposed(by: trashBag)
+        
+        viewModel.isSelectionValid
+            .run {[unowned self] value in
+                self.nextQuestionButton.isEnabled = value
+                
+            }
+            .disposed(by: trashBag)
     }
     
     @IBAction func nextQuestionButtonTap(_ sender: UIButton) {
