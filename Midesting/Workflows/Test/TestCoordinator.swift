@@ -1,5 +1,11 @@
 import UIKit
 
+let testData = TestModel(
+    questions: [
+        (title:"How to eat me a burger?", identity: "asdfvrv")
+    ]
+)
+
 class TestCoordinator: Coordinator {
     typealias Context = AppContext
     typealias Router = UINavigationController
@@ -13,15 +19,17 @@ class TestCoordinator: Coordinator {
     }
     
     override func start() {
-        let controller = testViewController()
+        let controller = testViewController(for: TestViewModelImpl(data: testData))
         
         router.pushViewController(controller, animated: true)
     }
 }
 
 private extension TestCoordinator {
-    func testViewController() -> TestViewController {
+    func testViewController(for viewModel: TestViewModel) -> TestViewController {
         let controller = StoryboardScene.Test.testViewController.instantiate()
+        
+        controller.viewModel = viewModel
         
         return controller
     }
