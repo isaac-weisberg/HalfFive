@@ -11,28 +11,48 @@ protocol TestViewModel {
 class TestViewModelImpl {
     let action = Multiplexer<Void, SchedulingMain>()
     
+    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain>
+    
     let question: Conveyor<TestCardViewModel, SchedulingMain>
+    
+    let nextQuestionLabel: Conveyor<String, SchedulingMain>
     
     init(data: TestModel) {
         let questionsCount = data.questions.count
         
         let questions = data.questions
             .enumerated()
-            .map { things -> TestCardViewModel in
+            .map { things -> (TestCardViewModel, isLast: Bool) in
                 let (index, question) = things
                 
-                return TestCardViewModelImpl(data: .init(
-                    title: question.title, questionIndex: index, questionsTotal: questionsCount)
-                )
+                let data = TestCardViewModelImpl.Data(
+                    title: question.title,
+                    questionIndex: index,
+                    questionsTotal: questionsCount)
+                
+                let isLast = index == questionsCount - 1
+                
+                return (TestCardViewModelImpl(data: data), isLast: isLast)
             }
         
         let actionConveyor = action
             .startWith(event: ())
         
-        let questionsConveyor = ConveyorFrom(array: questions)
+        let questionsConveyorMarked = ConveyorFrom(array: questions)
             .assumeRunsOnMain()
         
-        self.question = Conveyor.zip(questionsConveyor, actionConveyor) { q, _ in q }
+        
+        self.questionState = Conveyor.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
+        
+        self.nextQuestionLabel = questionState
+            .map { thigns in
+                thigns.isLast ? "Finish Testing" : "Next Question"
+            }
+        
+        self.question = questionState
+            .map { things in
+                things.0
+            }
     }
 }
 
@@ -40,10 +60,5 @@ extension TestViewModelImpl: TestViewModel {
     var nextQuestion: Silo<Void, SchedulingMain> {
         return action
             .asSilo()
-    }
-    
-    var nextQuestionLabel: Conveyor<String, SchedulingMain> {
-        return ConveyorFrom(array: ["Next Question"])
-            .assumeRunsOnMain()
     }
 }
