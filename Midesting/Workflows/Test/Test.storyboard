@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-Gy-vaT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="436" translatesAutoresizingMaskIntoConstraints="NO" id="du0-SQ-fuM" userLabel="ContentView" customClass="TestCardView" customModule="Midesting" customModuleProvider="target">
                                         <rect key="frame" x="12" y="16" width="351" height="436"/>
@@ -34,17 +34,39 @@
                                     <constraint firstItem="du0-SQ-fuM" firstAttribute="top" secondItem="6rQ-Gy-vaT" secondAttribute="top" constant="16" id="nhC-cb-hmT"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CG-1L-2fg">
+                                <rect key="frame" x="0.0" y="617" width="375" height="34"/>
+                                <connections>
+                                    <action selector="nextQuestionButtonTap:" destination="5AN-zt-c4X" eventType="touchUpInside" id="jO4-op-T2h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laeble quest" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTr-Hh-SvZ">
+                                <rect key="frame" x="140.5" y="633" width="94" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8546316964285714" green="0.76078376665714287" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XaJ-eS-Sge" firstAttribute="bottom" secondItem="7CG-1L-2fg" secondAttribute="bottom" constant="16" id="1Jg-fB-fe2"/>
                             <constraint firstItem="6rQ-Gy-vaT" firstAttribute="leading" secondItem="XaJ-eS-Sge" secondAttribute="leading" id="34u-hU-JfN"/>
+                            <constraint firstItem="nTr-Hh-SvZ" firstAttribute="bottom" secondItem="7CG-1L-2fg" secondAttribute="bottom" id="8US-Ff-9P8"/>
+                            <constraint firstItem="XaJ-eS-Sge" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nTr-Hh-SvZ" secondAttribute="trailing" constant="8" id="BPG-AX-dgi"/>
+                            <constraint firstItem="nTr-Hh-SvZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XaJ-eS-Sge" secondAttribute="leading" constant="8" id="QCV-U3-7SQ"/>
+                            <constraint firstItem="nTr-Hh-SvZ" firstAttribute="top" secondItem="7CG-1L-2fg" secondAttribute="top" constant="16" id="WBm-8l-XJq"/>
                             <constraint firstItem="6rQ-Gy-vaT" firstAttribute="top" secondItem="XaJ-eS-Sge" secondAttribute="top" id="fx2-25-VnH"/>
+                            <constraint firstItem="nTr-Hh-SvZ" firstAttribute="centerX" secondItem="7CG-1L-2fg" secondAttribute="centerX" id="kZ2-3e-gQ6"/>
                             <constraint firstItem="XaJ-eS-Sge" firstAttribute="trailing" secondItem="6rQ-Gy-vaT" secondAttribute="trailing" id="m1U-lm-qxo"/>
-                            <constraint firstItem="XaJ-eS-Sge" firstAttribute="bottom" secondItem="6rQ-Gy-vaT" secondAttribute="bottom" id="zQF-Ac-Jq9"/>
+                            <constraint firstItem="7CG-1L-2fg" firstAttribute="leading" secondItem="XaJ-eS-Sge" secondAttribute="leading" id="ncF-7k-f9I"/>
+                            <constraint firstItem="XaJ-eS-Sge" firstAttribute="trailing" secondItem="7CG-1L-2fg" secondAttribute="trailing" id="pba-cw-0Bj"/>
+                            <constraint firstItem="7CG-1L-2fg" firstAttribute="top" secondItem="6rQ-Gy-vaT" secondAttribute="bottom" id="r7o-6b-eRd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XaJ-eS-Sge"/>
                     </view>
                     <connections>
+                        <outlet property="nextQuestionButton" destination="7CG-1L-2fg" id="aFJ-HO-36l"/>
+                        <outlet property="nextQuestionLabel" destination="nTr-Hh-SvZ" id="H52-6H-o18"/>
                         <outlet property="testCardView" destination="du0-SQ-fuM" id="7bb-W9-isR"/>
                     </connections>
                 </viewController>

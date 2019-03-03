@@ -6,6 +6,8 @@ class TestViewController: UIViewController {
     
     let trashBag = TrashBag()
     
+    @IBOutlet var nextQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionButton: UIButton!
     @IBOutlet var testCardView: TestCardView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,5 +22,16 @@ class TestViewController: UIViewController {
         viewModel.question
             .run(silo: testCardView.viewModelSilo)
             .disposed(by: trashBag)
+        
+        viewModel.nextQuestionLabel
+            .run {[unowned self] value in
+                self.nextQuestionLabel.text = value
+            }
+            .disposed(by: trashBag)
+    }
+    
+    @IBAction func nextQuestionButtonTap(_ sender: UIButton) {
+        viewModel.nextQuestion
+            .fire(event: ())
     }
 }

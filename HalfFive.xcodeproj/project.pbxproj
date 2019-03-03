@@ -47,6 +47,7 @@
 		5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D44222BBA7500B54665 /* TrashVoid.swift */; };
 		5CD54D47222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */; };
 		5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */; };
+		5CD54D4B222BD33400B54665 /* Mutliplexer+asSilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
@@ -96,6 +97,7 @@
 		5CD54D44222BBA7500B54665 /* TrashVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashVoid.swift; sourceTree = "<group>"; };
 		5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
 		5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+startWith.swift"; sourceTree = "<group>"; };
+		5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mutliplexer+asSilo.swift"; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */,
 				5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */,
 				5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */,
+				5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */,
 				5CD54D40222BB12900B54665 /* Conveyor+zip.swift */,
 				5CD54D42222BB96200B54665 /* Conveyor+from.swift */,
 				5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */,
@@ -500,6 +503,7 @@
 				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
+				5CD54D4B222BD33400B54665 /* Mutliplexer+asSilo.swift in Sources */,
 				5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */,
 				5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */,
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,

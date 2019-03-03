@@ -1,7 +1,11 @@
 import HalfFive
 
 protocol TestViewModel {
+    var nextQuestion: Silo<Void, SchedulingMain> { get }
+    
     var question: Conveyor<TestCardViewModel, SchedulingMain> { get }
+    
+    var nextQuestionLabel: Conveyor<String, SchedulingMain> { get }
 }
 
 class TestViewModelImpl {
@@ -33,5 +37,13 @@ class TestViewModelImpl {
 }
 
 extension TestViewModelImpl: TestViewModel {
+    var nextQuestion: Silo<Void, SchedulingMain> {
+        return action
+            .asSilo()
+    }
     
+    var nextQuestionLabel: Conveyor<String, SchedulingMain> {
+        return ConveyorFrom(array: ["Next Question"])
+            .assumeRunsOnMain()
+    }
 }
