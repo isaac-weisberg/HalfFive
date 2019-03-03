@@ -9,6 +9,16 @@ class AnswerTextualView: XibModularView {
     var trashBag = TrashBag()
     var viewModel: AnswerTextualViewModel!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
     func apply(viewModel: AnswerTextualViewModel) {
         trashBag = TrashBag()
         self.viewModel = viewModel
@@ -24,6 +34,14 @@ class AnswerTextualView: XibModularView {
     }
     
     @IBAction func tap(_ sender: Any) {
-        viewModel.action.fire(event: ())
+        viewModel.action.asSilo().fire(event: ())
+    }
+}
+
+
+private extension AnswerTextualView {
+    func setup() {
+        deselectedView.layer.borderWidth = 2
+        deselectedView.layer.borderColor = ColorName.testAnswerDeselectedViewBorder.color.cgColor
     }
 }

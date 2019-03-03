@@ -25,6 +25,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
   /// Alpha: 100% <br/> (0x000000ff)
   internal static let testActionTextColorNormal = ColorName(rgbaValue: 0x000000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#020202"></span>
+  /// Alpha: 100% <br/> (0x020202ff)
+  internal static let testAnswerDeselectedViewBorder = ColorName(rgbaValue: 0x020202ff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
