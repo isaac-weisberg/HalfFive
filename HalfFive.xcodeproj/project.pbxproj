@@ -46,6 +46,7 @@
 		5CD54D43222BB96200B54665 /* Conveyor+from.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D42222BB96200B54665 /* Conveyor+from.swift */; };
 		5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D44222BBA7500B54665 /* TrashVoid.swift */; };
 		5CD54D47222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */; };
+		5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
@@ -94,6 +95,7 @@
 		5CD54D42222BB96200B54665 /* Conveyor+from.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+from.swift"; sourceTree = "<group>"; };
 		5CD54D44222BBA7500B54665 /* TrashVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashVoid.swift; sourceTree = "<group>"; };
 		5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
+		5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+startWith.swift"; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				5CD54D40222BB12900B54665 /* Conveyor+zip.swift */,
 				5CD54D42222BB96200B54665 /* Conveyor+from.swift */,
 				5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */,
+				5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */,
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
 				5CD54D41222BB12900B54665 /* Conveyor+zip.swift in Sources */,
 				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,

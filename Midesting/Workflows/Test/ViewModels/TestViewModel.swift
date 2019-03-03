@@ -22,10 +22,13 @@ class TestViewModelImpl {
                 )
             }
         
+        let actionConveyor = action
+            .startWith(event: ())
+        
         let questionsConveyor = ConveyorFrom(array: questions)
             .assumeRunsOnMain()
         
-        self.question = Conveyor.zip(questionsConveyor, action) { q, _ in q }
+        self.question = Conveyor.zip(questionsConveyor, actionConveyor) { q, _ in q }
     }
 }
 
