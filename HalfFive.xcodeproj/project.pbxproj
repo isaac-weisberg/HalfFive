@@ -48,6 +48,10 @@
 		5CD54D47222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */; };
 		5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */; };
 		5CD54D4B222BD33400B54665 /* Mutliplexer+asSilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */; };
+		5CD54D4D222BDC6000B54665 /* AnswerTextualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D4C222BDC6000B54665 /* AnswerTextualView.swift */; };
+		5CD54D4F222BDC7800B54665 /* AnswerTextualView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD54D4E222BDC7800B54665 /* AnswerTextualView.xib */; };
+		5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */; };
+		5CD54D53222BE01C00B54665 /* UIView+isShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D52222BE01C00B54665 /* UIView+isShown.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
@@ -98,6 +102,10 @@
 		5CD54D46222BBB7D00B54665 /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
 		5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+startWith.swift"; sourceTree = "<group>"; };
 		5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mutliplexer+asSilo.swift"; sourceTree = "<group>"; };
+		5CD54D4C222BDC6000B54665 /* AnswerTextualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTextualView.swift; sourceTree = "<group>"; };
+		5CD54D4E222BDC7800B54665 /* AnswerTextualView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTextualView.xib; sourceTree = "<group>"; };
+		5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTextualViewModel.swift; sourceTree = "<group>"; };
+		5CD54D52222BE01C00B54665 /* UIView+isShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+isShown.swift"; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5C249680222AC9FC00BE72D9 /* View */,
+				5CD54D52222BE01C00B54665 /* UIView+isShown.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -135,6 +144,8 @@
 			children = (
 				5C24967D222AC9E200BE72D9 /* TestCardView.swift */,
 				5C249683222ACA9C00BE72D9 /* TestCardView.xib */,
+				5CD54D4C222BDC6000B54665 /* AnswerTextualView.swift */,
+				5CD54D4E222BDC7800B54665 /* AnswerTextualView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +163,7 @@
 			children = (
 				5C249688222ACF5200BE72D9 /* TestViewModel.swift */,
 				5C249686222ACE5900BE72D9 /* TestCardViewModel.swift */,
+				5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -224,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				5C24968E222AD38D00BE72D9 /* Models */,
-				5C249685222ACE4A00BE72D9 /* ViewModels */,
 				5C24967F222AC9F400BE72D9 /* View */,
+				5C249685222ACE4A00BE72D9 /* ViewModels */,
 				5C78D8D9222A7DB800ACC9A7 /* ViewControllers */,
 				5C78D8D2222A79F900ACC9A7 /* TestCoordinator.swift */,
 				5C78D8D4222A7A9300ACC9A7 /* Test.storyboard */,
@@ -435,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD54D4F222BDC7800B54665 /* AnswerTextualView.xib in Resources */,
 				5C78D8D5222A7A9300ACC9A7 /* Test.storyboard in Resources */,
 				5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */,
 				5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */,
@@ -478,11 +491,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD54D4D222BDC6000B54665 /* AnswerTextualView.swift in Sources */,
 				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
+				5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */,
 				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
 				5C249682222ACA0C00BE72D9 /* XibModularView.swift in Sources */,
 				5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */,
 				5C249689222ACF5200BE72D9 /* TestViewModel.swift in Sources */,
+				5CD54D53222BE01C00B54665 /* UIView+isShown.swift in Sources */,
 				5C24967E222AC9E200BE72D9 /* TestCardView.swift in Sources */,
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
 				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
