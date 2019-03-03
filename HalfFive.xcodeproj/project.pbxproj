@@ -52,6 +52,8 @@
 		5CD54D4F222BDC7800B54665 /* AnswerTextualView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD54D4E222BDC7800B54665 /* AnswerTextualView.xib */; };
 		5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */; };
 		5CD54D53222BE01C00B54665 /* UIView+isShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D52222BE01C00B54665 /* UIView+isShown.swift */; };
+		5CD54D55222BE1C300B54665 /* TestAnswerSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D54222BE1C300B54665 /* TestAnswerSelectionViewModel.swift */; };
+		5CD54D57222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D56222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift */; };
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
@@ -106,6 +108,8 @@
 		5CD54D4E222BDC7800B54665 /* AnswerTextualView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTextualView.xib; sourceTree = "<group>"; };
 		5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTextualViewModel.swift; sourceTree = "<group>"; };
 		5CD54D52222BE01C00B54665 /* UIView+isShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+isShown.swift"; sourceTree = "<group>"; };
+		5CD54D54222BE1C300B54665 /* TestAnswerSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswerSelectionViewModel.swift; sourceTree = "<group>"; };
+		5CD54D56222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswerSelectionSingleViewModel.swift; sourceTree = "<group>"; };
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				5C249688222ACF5200BE72D9 /* TestViewModel.swift */,
 				5C249686222ACE5900BE72D9 /* TestCardViewModel.swift */,
 				5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */,
+				5CD54D54222BE1C300B54665 /* TestAnswerSelectionViewModel.swift */,
+				5CD54D56222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
 				5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */,
 				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
+				5CD54D57222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift in Sources */,
 				5C249682222ACA0C00BE72D9 /* XibModularView.swift in Sources */,
 				5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */,
 				5C249689222ACF5200BE72D9 /* TestViewModel.swift in Sources */,
@@ -502,6 +509,7 @@
 				5C24967E222AC9E200BE72D9 /* TestCardView.swift in Sources */,
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
 				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
+				5CD54D55222BE1C300B54665 /* TestAnswerSelectionViewModel.swift in Sources */,
 				5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */,
 				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
 				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,

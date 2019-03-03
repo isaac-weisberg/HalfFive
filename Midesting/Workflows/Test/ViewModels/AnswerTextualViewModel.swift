@@ -1,6 +1,6 @@
 import HalfFive
 
-protocol AnswerTextualViewModel {
+protocol AnswerTextualViewModel: class {
     var isSelected: Conveyor<Bool, SchedulingMain> { get }
     
     var action: Silo<Void, SchedulingMain> { get }
