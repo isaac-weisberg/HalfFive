@@ -1,7 +1,7 @@
 public struct Silo<Event, Scheduler: Scheduling>: SiloType {
     typealias Predicate = (Event) -> ()
     
-    func fire(event: Event) -> Void {
+    public func fire(event: Event) -> Void {
         return predicate(event)
     }
     

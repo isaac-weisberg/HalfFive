@@ -1,6 +1,6 @@
 extension Conveyor {
     static func combineLatest<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor where L.Scheduler == Scheduler, R.Scheduler == Scheduler {
-        return Conveyor { silo in
+        return Conveyor { handler in
             var lState = PrivateCombinerState<L.Event>.uninit
             var rState = PrivateCombinerState<R.Event>.uninit
             
@@ -14,20 +14,20 @@ extension Conveyor {
                         return
                     case .live(let rEvent):
                         let newEvent: Event = combiner(lEvent, rEvent)
-                        silo.fire(event: newEvent)
+                        handler(newEvent)
                     }
                 }
             }
             
-            let lTrash = lhs.run(silo: Silo { lEve in
+            let lTrash = lhs.run { lEve in
                 lState = .live(lEve)
                 evaluate()
-            })
+            }
             
-            let rTrash = rhs.run(silo: Silo { rEve in
+            let rTrash = rhs.run { rEve in
                 rState = .live(rEve)
                 evaluate()
-            })
+            }
             
             return TrashCompositeTwo(primary: lTrash, secondary: rTrash)
         }

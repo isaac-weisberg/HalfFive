@@ -1,6 +1,6 @@
 public extension Conveyor {
-    static func zip<L: ConveyorType, R: ConveyorType>(_ lhs: L, rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor where L.Scheduler == Scheduler, R.Scheduler == Scheduler {
-        return Conveyor { silo in
+    static func zip<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor where L.Scheduler == Scheduler, R.Scheduler == Scheduler {
+        return Conveyor { handler in
             var events = [Int: EventZip<L.Event, R.Event>]()
             
             let process = { (index: Int) in
@@ -11,7 +11,7 @@ public extension Conveyor {
                     return
                 }
                 let resulting = combiner(left, right)
-                silo.fire(event: resulting)
+                handler(resulting)
                 events[index] = nil
             }
             
@@ -19,7 +19,7 @@ public extension Conveyor {
             
             var leftCount = 0
             
-            leftTrash = lhs.run(silo: Silo { event in
+            leftTrash = lhs.run { event in
                 let index = leftCount
                 leftCount += 1
                 
@@ -27,18 +27,18 @@ public extension Conveyor {
                 events[index] = EventZip(lhs: .some(event), rhs: events[index]?.rhs ?? .uninit)
                 
                 process(index)
-            })
+            }
             
             var rightCount = 0
             
-            rightTrash = rhs.run(silo: Silo { event in
+            rightTrash = rhs.run { event in
                 let index = rightCount
                 rightCount += 1
                 
                 events[index] = EventZip(lhs: events[index]?.lhs ?? .uninit, rhs: .some(event))
                 
                 process(index)
-            })
+            }
             
             return TrashCompositeTwo(primary: leftTrash, secondary: rightTrash)
         }

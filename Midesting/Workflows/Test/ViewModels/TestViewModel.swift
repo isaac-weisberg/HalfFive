@@ -5,10 +5,13 @@ protocol TestViewModel {
 }
 
 class TestViewModelImpl {
-    let questionContainer: Container<TestCardViewModel, SchedulingMain>
+    let action = Multiplexer<Void, SchedulingMain>()
+    
+    let question: Conveyor<TestCardViewModel, SchedulingMain>
     
     init(data: TestModel) {
         let questionsCount = data.questions.count
+        
         let questions = data.questions
             .enumerated()
             .map { things -> TestCardViewModel in
@@ -19,15 +22,13 @@ class TestViewModelImpl {
                 )
             }
         
-        assert(questionsCount > 0, "Should be at least one question")
-        let firstQuestion = questions.first!
-        self.questionContainer = Container(value: firstQuestion)
+        let questionsConveyor = ConveyorFrom(array: questions)
+            .assumeRunsOnMain()
+        
+        self.question = Conveyor.zip(questionsConveyor, action) { q, _ in q }
     }
 }
 
 extension TestViewModelImpl: TestViewModel {
-    var question: Conveyor<TestCardViewModel, SchedulingMain> {
-        return questionContainer
-            .asConveyor()
-    }
+    
 }

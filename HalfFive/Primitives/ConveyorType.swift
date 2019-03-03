@@ -2,5 +2,11 @@ public protocol ConveyorType {
     associatedtype Event
     associatedtype Scheduler: Scheduling
     
-    func run(silo: Silo<Event, Scheduler>) -> Trash
+    func run(handler: @escaping (Event) -> Void) -> Trash
+}
+
+public extension ConveyorType {
+    func run<Silo: SiloType>(silo: Silo) -> Trash where Silo.Event == Event, Silo.Scheduler == Scheduler {
+        return run(handler: silo.fire(event:))
+    }
 }

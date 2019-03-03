@@ -1,15 +1,17 @@
 public struct Conveyor<Event, Scheduler: Scheduling>: ConveyorType {
-    public func run(silo: Silo<Event, Scheduler>) -> Trash {
-        return predicate(silo)
+    public func run(handler: @escaping (Event) -> Void) -> Trash {
+        return predicate { event in
+            handler(event)
+        }
     }
     
-    let predicate: (Silo<Event, Scheduler>) -> Trash
+    let predicate: (@escaping (Event) -> Void) -> Trash
     
-    init(_ factory: @escaping (Silo<Event, Scheduler>) -> Trash) {
+    init(_ factory: @escaping (@escaping (Event) -> Void) -> Trash) {
         self.predicate = factory
     }
     
-    public static func create<Event>(factory: @escaping ((Silo<Event, SchedulingRandom>) -> Trash)) -> Conveyor<Event, SchedulingRandom> {
+    public static func create<Event>(factory: @escaping ((Event) -> Void) -> Trash) -> Conveyor<Event, SchedulingRandom> {
         return Conveyor<Event, SchedulingRandom>(factory)
     }
 }

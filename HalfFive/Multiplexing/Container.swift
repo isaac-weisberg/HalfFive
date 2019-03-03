@@ -6,14 +6,14 @@ public class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Schedul
         super.init()
     }
     
-    override func fire(event: Event) {
+    override public func fire(event: Event) {
         super.fire(event: event)
         value = event
     }
     
-    override public func run(silo: Silo<Event, Scheduler>) -> Trash {
-        let trash = super.run(silo: silo)
-        silo.fire(event: value)
+    public override func run(handler: @escaping (Event) -> Void) -> Trash {
+        let trash = super.run(handler: handler)
+        handler(value)
         return trash
     }
 }

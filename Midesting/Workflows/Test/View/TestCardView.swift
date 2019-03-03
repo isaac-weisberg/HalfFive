@@ -6,8 +6,8 @@ class TestCardView: XibModularView {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var progress: UILabel!
     
-    lazy var viewModelSilo = Silo<TestCardViewModel, SchedulingMain> {[unowned self] viewModel in
-        self.questionTitle.text = viewModel.questionTitle
-        self.progress.text = viewModel.progressLabel
+    lazy var viewModelSilo = Silo<TestCardViewModel, SchedulingMain> {[weak self] viewModel in
+        self?.questionTitle.text = viewModel.questionTitle
+        self?.progress.text = viewModel.progressLabel
     }
 }
