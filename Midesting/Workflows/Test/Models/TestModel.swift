@@ -1,3 +1,3 @@
 struct TestModel {
-    let questions: [(title: String, identity: String)]
+    let questions: [(title: String, answers: [(id: String, String)])]
 }

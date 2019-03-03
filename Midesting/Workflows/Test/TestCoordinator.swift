@@ -2,10 +2,10 @@ import UIKit
 
 let testData = TestModel(
     questions: [
-        (title:"How to eat me a burger?", identity: "asdfvrv"),
-        (title:"Where to buy MGSV?", identity: "asdfvrasbdear"),
-        (title:"Can you stop this please?", identity: "asdfvrassbdear"),
-        (title:"How to ass?", identity: "dfgsny")
+        (title:"How to eat me a burger?", answers: [(id: "a", "With mouth")]),
+        (title:"Where to buy MGSV?", answers: [(id: "f","GameStop"), (id: "as", "PlayMarket")]),
+        (title:"Can you stop this please?", answers: [(id: "fof","FUck off")]),
+        (title:"How to ass?", answers: [(id: "load","dfgsny\naebrqebtbt bwrtb wtrb\nqerg qeh trh\n werg 145g\n qbtwbt")])
     ]
 )
 

@@ -1,4 +1,4 @@
-extension Conveyor {
+public extension ConveyorType {
     func flatMapLatest<NewEvent>(predicate: @escaping (Event) -> Conveyor<NewEvent, Scheduler>) -> Conveyor<NewEvent, Scheduler> {
         let run = self.run(handler:)
         return Conveyor<NewEvent, Scheduler> { handler in

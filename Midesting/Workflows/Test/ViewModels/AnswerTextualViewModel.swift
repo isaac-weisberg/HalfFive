@@ -1,22 +1,26 @@
 import HalfFive
 
 protocol AnswerTextualViewModel: class {
-    var isSelected: Conveyor<Bool, SchedulingMain> { get }
+    var isSelected: Multiplexer<Bool, SchedulingMain> { get }
     
-    var action: Silo<Void, SchedulingMain> { get }
+    var action: Multiplexer<Void, SchedulingMain> { get }
     
     var text: String { get }
+    
+    var trashBag: TrashBag { get }
 }
 
 class AnswerTextualViewModelImpl {
-    let action: Silo<Void, SchedulingMain>
-    let isSelected: Conveyor<Bool, SchedulingMain>
+    let action = Multiplexer<Void, SchedulingMain>()
+    let isSelected = Multiplexer<Bool, SchedulingMain>()
+    let identity: String
     let text: String
     
-    init(text: String, isSelected: Conveyor<Bool, SchedulingMain>, action: Silo<Void, SchedulingMain>) {
+    let trashBag = TrashBag()
+    
+    init(identity: String, text: String) {
         self.text = text
-        self.isSelected = isSelected
-        self.action = action
+        self.identity = identity
     }
 }
 

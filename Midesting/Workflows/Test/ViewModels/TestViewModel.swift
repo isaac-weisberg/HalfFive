@@ -6,6 +6,8 @@ protocol TestViewModel {
     var question: Conveyor<TestCardViewModel, SchedulingMain> { get }
     
     var nextQuestionLabel: Conveyor<String, SchedulingMain> { get }
+    
+    var isSelectionValid: Conveyor<Bool, SchedulingMain> { get }
 }
 
 class TestViewModelImpl {
@@ -28,7 +30,8 @@ class TestViewModelImpl {
                 let data = TestCardViewModelImpl.Data(
                     title: question.title,
                     questionIndex: index,
-                    questionsTotal: questionsCount)
+                    questionsTotal: questionsCount,
+                    answers: question.answers)
                 
                 let isLast = index == questionsCount - 1
                 
@@ -57,6 +60,13 @@ class TestViewModelImpl {
 }
 
 extension TestViewModelImpl: TestViewModel {
+    var isSelectionValid: Conveyor<Bool, SchedulingMain> {
+        return question
+            .flatMapLatest { vm in
+                vm.isSelectionValid
+            }
+    }
+    
     var nextQuestion: Silo<Void, SchedulingMain> {
         return action
             .asSilo()
