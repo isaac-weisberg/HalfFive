@@ -1,0 +1,2 @@
+TestActionTextColorNormal: #000000
+TestActionTextColorDisabled: #AAAAAA

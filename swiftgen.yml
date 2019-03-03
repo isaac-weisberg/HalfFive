@@ -3,3 +3,8 @@ ib:
   outputs:
     - templateName: scenes-swift4
       output: ./Midesting/Constants/StoryboardScenes.swift
+colors:
+  inputs: ./Midesting/Resources/Colors.txt
+  outputs:
+    templateName: swift4
+    output: ./Midesting/Constants/Colors.swift

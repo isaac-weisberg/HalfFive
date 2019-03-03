@@ -32,7 +32,9 @@ class TestViewController: UIViewController {
         viewModel.isSelectionValid
             .run {[unowned self] value in
                 self.nextQuestionButton.isEnabled = value
-                
+                self.nextQuestionLabel.textColor = value
+                    ? ColorName.testActionTextColorNormal.color
+                    : ColorName.testActionTextColorDisabled.color
             }
             .disposed(by: trashBag)
     }
