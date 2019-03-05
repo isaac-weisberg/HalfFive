@@ -12,19 +12,22 @@ protocol AnswerTextualViewModel: class {
 
 class AnswerTextualViewModelImpl {
     let action = Multiplexer<Void, SchedulingMain>()
-    let isSelected = Multiplexer<Bool, SchedulingMain>()
+    let isSelectedContainer: Container<Bool, SchedulingMain>
     let identity: String
     let text: String
     
     let trashBag = TrashBag()
     
-    init(identity: String, text: String) {
+    init(identity: String, text: String, isSelectedByDefault: Bool = false) {
         self.text = text
         self.identity = identity
+        self.isSelectedContainer = Container<Bool, SchedulingMain>(value: isSelectedByDefault)
     }
 }
 
 
 extension AnswerTextualViewModelImpl: AnswerTextualViewModel {
-    
+    var isSelected: Multiplexer<Bool, SchedulingMain> {
+        return isSelectedContainer
+    }
 }
