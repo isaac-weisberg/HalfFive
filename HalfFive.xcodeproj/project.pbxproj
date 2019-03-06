@@ -59,6 +59,7 @@
 		5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */; };
 		5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318672226E29A005531E0 /* TrashDeferred.swift */; };
 		5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE318692226E693005531E0 /* Conveyor+fireOn.swift */; };
+		5CF6166022301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+runOn.swift"; sourceTree = "<group>"; };
 		5CE318672226E29A005531E0 /* TrashDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashDeferred.swift; sourceTree = "<group>"; };
 		5CE318692226E693005531E0 /* Conveyor+fireOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+fireOn.swift"; sourceTree = "<group>"; };
+		5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswerSelectionMultipleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				5CD54D50222BDE5D00B54665 /* AnswerTextualViewModel.swift */,
 				5CD54D54222BE1C300B54665 /* TestAnswerSelectionViewModel.swift */,
 				5CD54D56222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift */,
+				5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD54D4D222BDC6000B54665 /* AnswerTextualView.swift in Sources */,
+				5CF6166022301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift in Sources */,
 				5CD54D5B222BE9A000B54665 /* Colors.swift in Sources */,
 				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
 				5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */,
