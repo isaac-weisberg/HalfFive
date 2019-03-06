@@ -42,7 +42,7 @@ class TestViewModelImpl {
             .startWith(event: ())
         
         let questionsConveyorMarked = ConveyorFrom(array: questions)
-            .assumeRunsOnMain()
+            .assumeFiresOnMain()
         
         
         self.questionState = Conveyor.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
