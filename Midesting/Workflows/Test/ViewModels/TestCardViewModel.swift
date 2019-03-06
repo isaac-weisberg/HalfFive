@@ -15,6 +15,7 @@ class TestCardViewModelImpl {
         let title: String
         let questionIndex: Int
         let questionsTotal: Int
+        let selection: TestModel.Selection
         let answers: [(id: String, String)]
     }
     
@@ -26,7 +27,13 @@ class TestCardViewModelImpl {
     init(data: Data) {
         self.data = data
         
-        let selectionViewModel: TestAnswerSelectionViewModel = TestAnswerSelectionSingleViewModel()
+        let selectionViewModel: TestAnswerSelectionViewModel
+        switch data.selection {
+        case .single:
+            selectionViewModel = TestAnswerSelectionSingleViewModel()
+        case .multiple:
+            selectionViewModel = TestAnswerSelectionMultipleViewModel()
+        }
         self.selectionViewModel = selectionViewModel
         
         answerVms = data.answers

@@ -31,6 +31,7 @@ class TestViewModelImpl {
                     title: question.title,
                     questionIndex: index,
                     questionsTotal: questionsCount,
+                    selection: question.selection,
                     answers: question.answers)
                 
                 let isLast = index == questionsCount - 1

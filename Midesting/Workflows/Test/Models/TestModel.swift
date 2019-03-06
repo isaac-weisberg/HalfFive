@@ -1,3 +1,8 @@
 struct TestModel {
-    let questions: [(title: String, answers: [(id: String, String)])]
+    enum Selection {
+        case single
+        case multiple
+    }
+    
+    let questions: [(title: String, selection: Selection, answers: [(id: String, String)])]
 }
