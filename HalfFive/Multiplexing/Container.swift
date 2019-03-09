@@ -1,5 +1,5 @@
 public class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Scheduler> {
-    private(set) var value: Event
+    public private(set) var value: Event
     
     public init(value: Event) {
         self.value = value
