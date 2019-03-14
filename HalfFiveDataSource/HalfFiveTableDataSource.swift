@@ -3,7 +3,7 @@ import UIKit
 
 
 
-public class HalfFiveTableDataSource<Event>: NSObject, UITableViewDataSource {
+public class HalfFiveTableDataSource<Event: Diffable>: NSObject, UITableViewDataSource {
     public typealias Sections = [HalfFiveSection<Event>]
     
     public typealias Configurer = (UITableView, HalfFiveTableDataSource, IndexPath, Event) -> UITableViewCell
