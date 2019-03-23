@@ -11,13 +11,13 @@ protocol TestViewModel {
 }
 
 class TestViewModelImpl {
-    let action = Multiplexer<Void>()
-    
     let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain>
     
     let question: Conveyor<TestCardViewModel, SchedulingMain>
     
     let nextQuestionLabel: Conveyor<String, SchedulingMain>
+    
+    let nextQuestion: Silo<Void, SchedulingMain>
     
     init(data: TestModel) {
         let questionsCount = data.questions.count
@@ -39,13 +39,17 @@ class TestViewModelImpl {
                 return (TestCardViewModelImpl(data: data), isLast: isLast)
             }
         
-        let actionConveyor = action
+        let actionMultiplexer = Multiplexer<Void>()
+        
+        nextQuestion = actionMultiplexer
+            .assumeRunsOnMain()
+        
+        let actionConveyor = actionMultiplexer
             .startWith(event: ())
             .assumeFiresOnMain()
         
         let questionsConveyorMarked = ConveyorFrom(array: questions)
             .assumeFiresOnMain()
-        
         
         self.questionState = Conveyor.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
         
@@ -67,10 +71,5 @@ extension TestViewModelImpl: TestViewModel {
             .flatMapLatest { vm in
                 vm.isSelectionValid
             }
-    }
-    
-    var nextQuestion: Silo<Void, SchedulingMain> {
-        return action
-            .assumeRunsOnMain()
     }
 }
