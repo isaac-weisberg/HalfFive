@@ -1,9 +1,9 @@
 import HalfFive
 
 class TestAnswerSelectionSingleViewModel {
-    let selectedAnswer = Container<AnswerTextualViewModel?, SchedulingMain>(value: nil)
+    let selectedAnswer = Container<AnswerTextualViewModel?>(value: nil)
     
-    let selectionMultiplexer = Multiplexer<AnswerTextualViewModel, SchedulingMain>()
+    let selectionMultiplexer = Multiplexer<AnswerTextualViewModel>()
     
     let trashBag = TrashBag()
     
@@ -18,16 +18,18 @@ class TestAnswerSelectionSingleViewModel {
 extension TestAnswerSelectionSingleViewModel: TestAnswerSelectionViewModel {
     func isAnswerSelected(_ answer: AnswerTextualViewModel) -> Conveyor<Bool, SchedulingMain> {
         return selectedAnswer
+            .assumeFiresOnMain()
             .map { $0 === answer }
     }
     
     var selectRequest: Silo<AnswerTextualViewModel, SchedulingMain> {
         return selectionMultiplexer
-            .asSilo()
+            .assumeRunsOnMain()
     }
     
     var isSelectionValid: Conveyor<Bool, SchedulingMain> {
         return selectedAnswer
+            .assumeFiresOnMain()
             .map { $0 != nil }
     }
 }

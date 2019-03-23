@@ -1,33 +1,41 @@
 import HalfFive
 
 protocol AnswerTextualViewModel: class {
-    var isSelected: Multiplexer<Bool, SchedulingMain> { get }
+    var isSelected: Conveyor<Bool, SchedulingMain>! { get }
     
-    var action: Multiplexer<Void, SchedulingMain> { get }
-    
+    var action: Silo<Void, SchedulingMain> { get }
+
     var text: String { get }
+    
+    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain>)
     
     var trashBag: TrashBag { get }
 }
 
 class AnswerTextualViewModelImpl {
-    let action = Multiplexer<Void, SchedulingMain>()
-    let isSelectedContainer: Container<Bool, SchedulingMain>
+    let actionSilo: Silo<AnswerTextualViewModel, SchedulingMain>
+    var isSelected: Conveyor<Bool, SchedulingMain>!
     let identity: String
     let text: String
     
-    let trashBag = TrashBag()
+    let trashBag: TrashBag = TrashBag()
     
-    init(identity: String, text: String, isSelectedByDefault: Bool = false) {
+    init(identity: String, text: String, action: Silo<AnswerTextualViewModel, SchedulingMain>) {
         self.text = text
         self.identity = identity
-        self.isSelectedContainer = Container<Bool, SchedulingMain>(value: isSelectedByDefault)
+        self.actionSilo = action
     }
 }
 
 
 extension AnswerTextualViewModelImpl: AnswerTextualViewModel {
-    var isSelected: Multiplexer<Bool, SchedulingMain> {
-        return isSelectedContainer
+    var action: Silo<Void, SchedulingMain> {
+        return actionSilo.map {
+            self
+        }
+    }
+    
+    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain>) {
+         isSelected = conveyor
     }
 }

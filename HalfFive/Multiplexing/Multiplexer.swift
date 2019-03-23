@@ -1,4 +1,6 @@
-public class Multiplexer<Event, Scheduler: Scheduling>: SiloType, ConveyorType {
+public class Multiplexer<Event>: SiloType, ConveyorType {
+    public typealias Scheduler = SchedulingRandom
+    
     private(set) var predicates: [(Event) -> Void] = []
     
     public init() {

@@ -40,16 +40,10 @@ class TestCardViewModelImpl {
             .map { stuff -> AnswerTextualViewModel in
                 let vm: AnswerTextualViewModel = AnswerTextualViewModelImpl(
                     identity: stuff.id,
-                    text: stuff.1)
+                    text: stuff.1,
+                    action: selectionViewModel.selectRequest)
                 
-                selectionViewModel.isAnswerSelected(vm)
-                    .run(silo: vm.isSelected.asSilo())
-                    .disposed(by: vm.trashBag)
-                
-                vm.action
-                    .map { _ in vm }
-                    .run(silo: selectionViewModel.selectRequest)
-                    .disposed(by: vm.trashBag)
+                vm.setIsSelected(conveyor: selectionViewModel.isAnswerSelected(vm))
                 
                 return vm
             }

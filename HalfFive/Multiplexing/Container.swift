@@ -1,4 +1,4 @@
-public class Container<Event, Scheduler: Scheduling>: Multiplexer<Event, Scheduler> {
+public class Container<Event>: Multiplexer<Event> {
     public private(set) var value: Event
     
     public init(value: Event) {

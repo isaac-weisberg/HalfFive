@@ -7,9 +7,9 @@ private extension Array where Element == AnswerTextualViewModel {
 }
 
 class TestAnswerSelectionMultipleViewModel {
-    let selectedAnswers = Container<[AnswerTextualViewModel], SchedulingMain>(value: [])
+    let selectedAnswers = Container<[AnswerTextualViewModel]>(value: [])
     
-    let selectionMultiplexer = Multiplexer<AnswerTextualViewModel, SchedulingMain>()
+    let selectionMultiplexer = Multiplexer<AnswerTextualViewModel>()
     
     let trashBag = TrashBag()
     
@@ -32,16 +32,18 @@ class TestAnswerSelectionMultipleViewModel {
 extension TestAnswerSelectionMultipleViewModel: TestAnswerSelectionViewModel {
     func isAnswerSelected(_ answer: AnswerTextualViewModel) -> Conveyor<Bool, SchedulingMain> {
         return selectedAnswers
+            .assumeFiresOnMain()
             .map { $0.contains { $0 === answer } }
     }
     
     var selectRequest: Silo<AnswerTextualViewModel, SchedulingMain> {
         return selectionMultiplexer
-            .asSilo()
+            .assumeRunsOnMain()
     }
     
     var isSelectionValid: Conveyor<Bool, SchedulingMain> {
         return selectedAnswers
+            .assumeFiresOnMain()
             .map { $0.count > 0 }
     }
 }

@@ -34,7 +34,7 @@ class AnswerTextualView: XibModularView {
     }
     
     @IBAction func tap(_ sender: Any) {
-        viewModel.action.asSilo().fire(event: ())
+        viewModel.action.fire(event: ())
     }
 }
 

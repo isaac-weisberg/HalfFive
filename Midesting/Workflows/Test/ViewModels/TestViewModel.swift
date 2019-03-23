@@ -11,7 +11,7 @@ protocol TestViewModel {
 }
 
 class TestViewModelImpl {
-    let action = Multiplexer<Void, SchedulingMain>()
+    let action = Multiplexer<Void>()
     
     let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain>
     
@@ -41,6 +41,7 @@ class TestViewModelImpl {
         
         let actionConveyor = action
             .startWith(event: ())
+            .assumeFiresOnMain()
         
         let questionsConveyorMarked = ConveyorFrom(array: questions)
             .assumeFiresOnMain()
@@ -70,6 +71,6 @@ extension TestViewModelImpl: TestViewModel {
     
     var nextQuestion: Silo<Void, SchedulingMain> {
         return action
-            .asSilo()
+            .assumeRunsOnMain()
     }
 }
