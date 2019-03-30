@@ -1,11 +1,11 @@
-class TrashAbstract: Trash {
-    func dispose() {
-        return predicate()
-    }
-    
+public class TrashAbstract: Trash {
     let predicate: () -> Void
     
-    init(predicate: @escaping () -> Void) {
+    public init(predicate: @escaping () -> Void) {
         self.predicate = predicate
+    }
+    
+    deinit {
+        predicate()
     }
 }

@@ -7,7 +7,7 @@ extension Conveyor {
         return Conveyor { handler in
             let trash = TrashDeferred()
             queue.async {
-                trash.update(with: run(handler))
+                trash.trash = run(handler)
             }
             return trash
         }

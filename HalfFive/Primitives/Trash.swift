@@ -1,3 +1,3 @@
-public protocol Trash {
-    func dispose()
+public protocol Trash: class {
+    
 }

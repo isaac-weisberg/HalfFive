@@ -4,7 +4,7 @@ public extension ConveyorType {
         return Conveyor<NewEvent, Scheduler> { handler in
             let composite = TrashCompositeTwo(primary: nil, secondary: nil)
             composite.primary = run { event in
-                composite.secondary?.dispose()
+                composite.secondary = nil
                 let newConveyor = predicate(event)
                 composite.secondary = newConveyor.run { event in
                     handler(event)

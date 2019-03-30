@@ -1,9 +1,4 @@
 class TrashCompositeTwo: Trash {
-    func dispose() {
-        primary?.dispose()
-        secondary?.dispose()
-    }
-    
     var primary: Trash?
     var secondary: Trash?
     
