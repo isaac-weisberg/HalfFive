@@ -7,7 +7,7 @@ class MainCoordinator: Coordinator {
     let router: Router
     let context: Context
     
-    unowned let testCoordinator: TestCoordinator
+    let testCoordinator: TestCoordinator
     
     let navController = UINavigationController()
     
@@ -17,7 +17,6 @@ class MainCoordinator: Coordinator {
         let coordinator = TestCoordinator(router: navController, context: context)
         self.testCoordinator = coordinator
         super.init()
-        addChild(coordinator: testCoordinator)
     }
     
     override func start() {
