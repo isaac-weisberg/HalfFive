@@ -83,6 +83,7 @@
 		5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Multiplexer+asConveyor.swift"; sourceTree = "<group>"; };
 		5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
+		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+combineLatest.swift"; sourceTree = "<group>"; };
 		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -304,6 +305,7 @@
 		5C83B110222583CB00311D29 = {
 			isa = PBXGroup;
 			children = (
+				5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */,
 				5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */,
 				5C83B11C222583CB00311D29 /* HalfFive */,
 				5C9AB4092233F72F00D9FCD0 /* HalfFiveDataSource */,
