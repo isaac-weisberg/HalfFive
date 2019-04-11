@@ -43,6 +43,7 @@
 		5C83B1442225999800311D29 /* ConveyorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1432225999800311D29 /* ConveyorType.swift */; };
 		5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14522259A8200311D29 /* TrashAbstract.swift */; };
 		5C83B14822259D1900311D29 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14722259D1900311D29 /* Container.swift */; };
+		5C84AF6C225F7B21007E922D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C84AF6B225F7B21007E922D /* README.md */; };
 		5C9AB4112233F76F00D9FCD0 /* HalfFiveTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */; };
 		5C9AB4132233F83500D9FCD0 /* HalfFiveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4122233F83500D9FCD0 /* HalfFiveSection.swift */; };
 		5C9AB4142233F9BB00D9FCD0 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
@@ -111,6 +112,7 @@
 		5C83B1432225999800311D29 /* ConveyorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConveyorType.swift; sourceTree = "<group>"; };
 		5C83B14522259A8200311D29 /* TrashAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashAbstract.swift; sourceTree = "<group>"; };
 		5C83B14722259D1900311D29 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		5C84AF6B225F7B21007E922D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9AB40B2233F72F00D9FCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfFiveTableDataSource.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		5C83B110222583CB00311D29 = {
 			isa = PBXGroup;
 			children = (
+				5C84AF6B225F7B21007E922D /* README.md */,
 				5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */,
 				5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */,
 				5C83B11C222583CB00311D29 /* HalfFive */,
@@ -550,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C84AF6C225F7B21007E922D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
