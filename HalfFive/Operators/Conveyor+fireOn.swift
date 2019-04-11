@@ -5,7 +5,7 @@ extension Conveyor {
         let run = self.run(handler:)
         return Conveyor<Event, Scheduler> { handler in
             run { event in
-                scheduler.queue.async {
+                Scheduler.queue.async {
                     handler(event)
                 }
             }

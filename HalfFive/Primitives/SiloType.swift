@@ -1,6 +1,6 @@
 public protocol SiloType {
     associatedtype Event
-    associatedtype Scheduler: Scheduling
+    associatedtype Scheduler: SchedulingConst
     
     func fire(event: Event) -> Void
 }

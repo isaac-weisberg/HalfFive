@@ -16,7 +16,6 @@
 		5C24968B222AD07F00BE72D9 /* TrashBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968A222AD07F00BE72D9 /* TrashBag.swift */; };
 		5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */; };
 		5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968F222AD3A100BE72D9 /* TestModel.swift */; };
-		5C249693222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */; };
 		5C34FE3722467925002AF74D /* Conveyor+assumeRunsOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */; };
 		5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3822467CA8002AF74D /* Silo+Map.swift */; };
 		5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */; };
@@ -46,6 +45,7 @@
 		5C84AF6C225F7B21007E922D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C84AF6B225F7B21007E922D /* README.md */; };
 		5C84AF71225F896D007E922D /* Conveyors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84AF70225F896D007E922D /* Conveyors.swift */; };
 		5C84AF73225F8A6D007E922D /* Conveyors+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84AF72225F8A6D007E922D /* Conveyors+async.swift */; };
+		5C84AF75225F8D4D007E922D /* Conveyors+sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */; };
 		5C9AB4112233F76F00D9FCD0 /* HalfFiveTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */; };
 		5C9AB4132233F83500D9FCD0 /* HalfFiveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4122233F83500D9FCD0 /* HalfFiveSection.swift */; };
 		5C9AB4142233F9BB00D9FCD0 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
@@ -83,7 +83,6 @@
 		5C24968A222AD07F00BE72D9 /* TrashBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBag.swift; sourceTree = "<group>"; };
 		5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trash+disposedBy.swift"; sourceTree = "<group>"; };
 		5C24968F222AD3A100BE72D9 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
-		5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Multiplexer+asConveyor.swift"; sourceTree = "<group>"; };
 		5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
 		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		5C84AF6B225F7B21007E922D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C84AF70225F896D007E922D /* Conveyors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyors.swift; sourceTree = "<group>"; };
 		5C84AF72225F8A6D007E922D /* Conveyors+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+async.swift"; sourceTree = "<group>"; };
+		5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+sync.swift"; sourceTree = "<group>"; };
 		5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9AB40B2233F72F00D9FCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfFiveTableDataSource.swift; sourceTree = "<group>"; };
@@ -368,7 +368,6 @@
 				5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */,
 				5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */,
 				5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */,
-				5C249692222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift */,
 				5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */,
 				5CD54D40222BB12900B54665 /* Conveyor+zip.swift */,
 				5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */,
@@ -407,6 +406,7 @@
 				5C84AF70225F896D007E922D /* Conveyors.swift */,
 				5CD54D42222BB96200B54665 /* Conveyors+from.swift */,
 				5C84AF72225F8A6D007E922D /* Conveyors+async.swift */,
+				5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -661,8 +661,8 @@
 				5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */,
 				5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */,
 				5C83B14822259D1900311D29 /* Container.swift in Sources */,
-				5C249693222AD7EF00BE72D9 /* Multiplexer+asConveyor.swift in Sources */,
 				5C83B1402225983F00311D29 /* Multiplexer.swift in Sources */,
+				5C84AF75225F8D4D007E922D /* Conveyors+sync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

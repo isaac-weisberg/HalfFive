@@ -10,8 +10,4 @@ public struct Conveyor<Event, Scheduler: Scheduling>: ConveyorType {
     init(_ factory: @escaping (@escaping (Event) -> Void) -> Trash) {
         self.predicate = factory
     }
-    
-    public static func create<Event>(factory: @escaping ((Event) -> Void) -> Trash) -> Conveyor<Event, SchedulingRandom> {
-        return Conveyor<Event, SchedulingRandom>(factory)
-    }
 }

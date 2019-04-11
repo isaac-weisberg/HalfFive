@@ -39,10 +39,10 @@ class TestViewModelImpl {
                 return (TestCardViewModelImpl(data: data), isLast: isLast)
             }
         
-        let actionMultiplexer = Multiplexer<Void>()
+        let actionMultiplexer = Multiplexer<Void, SchedulingMain>()
         
         nextQuestion = actionMultiplexer
-            .assumeRunsOnMain()
+            .asSilo()
         
         let actionConveyor = actionMultiplexer
             .startWith(event: ())

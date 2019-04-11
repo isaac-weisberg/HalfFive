@@ -4,26 +4,47 @@ public protocol Scheduling {
     
 }
 
-protocol DeterminedScheduling: Scheduling {
-    var queue: DispatchQueue { get }
-}
-
-public struct SchedulingRandom: Scheduling, SchedulingRandomOrMain {
+public protocol SchedulingRandom: Scheduling {
     
 }
 
-public struct SchedulingMain: DeterminedScheduling, SchedulingRandomOrMain {
-    var queue: DispatchQueue {
+public struct SchedulingUnknown: SchedulingRandom {
+    
+}
+
+public protocol SchedulingConst: Scheduling {
+    
+}
+
+public protocol SchedulingHot: SchedulingConst {
+    
+}
+
+public protocol SchedulingHotImpure: SchedulingHot {
+    associatedtype NoHot: SchedulingConst
+}
+
+public struct SchedulingSync: SchedulingHot {
+    
+}
+
+
+protocol DeterminedScheduling: SchedulingConst {
+    static var queue: DispatchQueue { get }
+}
+
+public struct SchedulingMain: DeterminedScheduling {
+    static var queue: DispatchQueue {
         return .main
     }
 }
 
-public protocol SchedulingRandomOrMain: Scheduling {
-    
+public struct SchedulingMainOrHot: SchedulingHotImpure, SchedulingRandom {
+    public typealias NoHot = SchedulingMain
 }
 
 struct SchedulingSerial: DeterminedScheduling {
-    var queue: DispatchQueue {
+    static var queue: DispatchQueue {
         return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
     }
 }
