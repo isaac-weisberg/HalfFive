@@ -1,12 +1,24 @@
 import Foundation
-import Dispatch
 
-extension Conveyor where Scheduler == SchedulingUnknown {
-    func run(on queue: DispatchQueue) -> Conveyor<Event, SchedulingUnknown> {
+public extension ConveyorType where Scheduler: SchedulingRandom {
+    func run<RunScheduler: DeterminedScheduling>(on scheduler: RunScheduler.Type) -> Conveyor<Event, Scheduler> {
         let run = self.run(handler:)
         return Conveyor { handler in
             let trash = TrashDeferred()
-            queue.async {
+            scheduler.queue.async {
+                trash.trash = run(handler)
+            }
+            return trash
+        }
+    }
+}
+
+public extension Conveyor where Scheduler: SchedulingHot {
+    func run<RunScheduler: DeterminedScheduling>(on scheduler: RunScheduler.Type) -> Conveyor<Event, Scheduler.Cold> {
+        let run = self.run(handler:)
+        return Conveyor { handler in
+            let trash = TrashDeferred()
+            scheduler.queue.async {
                 trash.trash = run(handler)
             }
             return trash

@@ -4,61 +4,56 @@ public protocol Scheduling {
     
 }
 
-//public protocol SchedulingRandom: Scheduling {
-//
-//}
 
-public struct SchedulingUnknown: Scheduling {
+public protocol SchedulingRandom: Scheduling {
     
 }
-
 
 public protocol SchedulingHot: Scheduling {
-    
+    associatedtype Cold
 }
-
-public protocol SchedulingCold: Scheduling {
-    
-}
-
-
 
 public protocol SchedulingConst: Scheduling {
-    
+    associatedtype NonConst
 }
 
-public protocol SchedulingColdConst: SchedulingConst {
-    typealias NoConst = SchedulingCold
-}
-
-public protocol SchedulingHotConst: SchedulingHot, SchedulingConst {
-    typealias NoConst = SchedulingHot
-}
-
-public protocol SchedulingHotImpure: SchedulingHot {
-    associatedtype NoHot: SchedulingConst
-}
-
-public struct SchedulingSync: SchedulingHot, SchedulingConst {
+public protocol SchedulingHotAndConst: SchedulingHot, SchedulingConst where Cold: SchedulingConst {
     
 }
 
 
-protocol DeterminedScheduling: SchedulingConst {
+public struct SchedulingUnknown: SchedulingRandom {
+    
+}
+
+public struct SchedulingUnknownAndSync: SchedulingRandom, SchedulingHot {
+    public typealias Cold = SchedulingUnknown
+}
+
+
+public protocol DeterminedScheduling: SchedulingConst {
     static var queue: DispatchQueue { get }
 }
 
-public struct SchedulingMain: DeterminedScheduling {
-    static var queue: DispatchQueue {
+public struct SchedulingMain: DeterminedScheduling, SchedulingConst {
+    public typealias NonConst = SchedulingUnknown
+    
+    public static var queue: DispatchQueue {
         return .main
     }
 }
 
-public struct SchedulingMainOrHot: SchedulingHotImpure, SchedulingConst {
-    public typealias NoHot = SchedulingMain
+public struct SchedulingMainOrHot: SchedulingHotAndConst, DeterminedScheduling {
+    public typealias Cold = SchedulingMain
+    
+    public typealias NonConst = SchedulingMainOrHot
+    
+    public static var queue: DispatchQueue = .main
 }
 
 struct SchedulingSerial: DeterminedScheduling {
+    typealias NonConst = SchedulingUnknown
+    
     static var queue: DispatchQueue {
         return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
     }
