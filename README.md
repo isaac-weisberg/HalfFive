@@ -23,4 +23,4 @@ Some other environments don't put any restrictions on scheduling just because th
 
 Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. Here, a full-pledged multithreaded environment allows for arbitrary concurrently scheduled code execution. UIKit does not support a multitude of its functionality to be run *not* from the main app thread and on such occasions you get a runtime error. And there is no way to statically check whether if you are interacting with UIKit APIs from the main thread or not.
 
-**Well, this framework is an attempt to start statically checking the execution context and preventing you from making mistakes.** 
+**Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime** 
