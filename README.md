@@ -31,3 +31,7 @@ Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. H
 Whenever you have an observable sequence on your hands, it also carries with it information about the scheduling of its emissions. It is represented by a generic type parameter that conforms to `Scheduling` protocol. This is similar to how observable sequences' traits are implemented in [RxSwift](https://github.com/ReactiveX/RxSwift).
 
 If you use a `map` operator on such observable, since `map`'s predicate is performed synchronously, it will produce a new observable **with the same scheduling trait** as the initial observable.
+
+You might be interested to combine this observable with some other observable using the `combineLatest` operator. In RxSwift, since 2 observables might both emit their events on different dispatch queues, my bet is that you either get an observable that emits in the contexts of 2 queues, each time undetermined, or additonal synchronization code comes into play that schedules the execution to one of the queues, or maybe some other queue, which causes runtime overhead.
+
+Well, here,
