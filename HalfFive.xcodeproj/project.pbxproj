@@ -45,6 +45,7 @@
 		5C83B14822259D1900311D29 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B14722259D1900311D29 /* Container.swift */; };
 		5C84AF6C225F7B21007E922D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C84AF6B225F7B21007E922D /* README.md */; };
 		5C84AF71225F896D007E922D /* Conveyors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84AF70225F896D007E922D /* Conveyors.swift */; };
+		5C84AF73225F8A6D007E922D /* Conveyors+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84AF72225F8A6D007E922D /* Conveyors+async.swift */; };
 		5C9AB4112233F76F00D9FCD0 /* HalfFiveTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */; };
 		5C9AB4132233F83500D9FCD0 /* HalfFiveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4122233F83500D9FCD0 /* HalfFiveSection.swift */; };
 		5C9AB4142233F9BB00D9FCD0 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
@@ -115,6 +116,7 @@
 		5C83B14722259D1900311D29 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		5C84AF6B225F7B21007E922D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C84AF70225F896D007E922D /* Conveyors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyors.swift; sourceTree = "<group>"; };
+		5C84AF72225F8A6D007E922D /* Conveyors+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+async.swift"; sourceTree = "<group>"; };
 		5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9AB40B2233F72F00D9FCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9AB4102233F76F00D9FCD0 /* HalfFiveTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfFiveTableDataSource.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				5C84AF70225F896D007E922D /* Conveyors.swift */,
 				5CD54D42222BB96200B54665 /* Conveyors+from.swift */,
+				5C84AF72225F8A6D007E922D /* Conveyors+async.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
+				5C84AF73225F8A6D007E922D /* Conveyors+async.swift in Sources */,
 				5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */,
 				5CD54D4B222BD33400B54665 /* Mutliplexer+asSilo.swift in Sources */,
 				5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */,
