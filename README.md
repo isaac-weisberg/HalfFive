@@ -1,5 +1,11 @@
 # HalfFive - a reactive programming framework
 
+## Features
+
+1. Strict static information on the events' emission scheduling context
+1. No `onError` and `completed` events
+1. No exceptioning support
+
 ## Rationale
 
 One of the core concepts established by the [ReactiveX](http://reactivex.io)'s Reactive extensions API is transparency of the mutlithreaded execution context in which an `Observable` emits its events. Simply put, the interface of an observable sequence does not carry any information about the following details:
@@ -15,4 +21,6 @@ Modification of the models that represent the view (spoiler: DOM objects) in Jav
 
 Some other environments don't put any restrictions on scheduling just because they do support being worked with on no matter what thread. There, you are free to `subscribeOn` and `observeOn` operators multiple times and the only consideration you will have is only the context transition logic you yourself put into it.
 
-Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. Here, a full-pledged multithreaded environment allows for arbitrary concurrently scheduled code execution. UIKit does not support a multitude of its functionality to be run not from the main app thread and on such occasions you get a runtime error. And there is no way to statically check whether if you are interacting with UIKit APIs from the main thread or not.
+Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. Here, a full-pledged multithreaded environment allows for arbitrary concurrently scheduled code execution. UIKit does not support a multitude of its functionality to be run *not* from the main app thread and on such occasions you get a runtime error. And there is no way to statically check whether if you are interacting with UIKit APIs from the main thread or not.
+
+**Well, this framework is an attempt to start statically checking the execution context and preventing you from making mistakes.** 
