@@ -4,27 +4,42 @@ public protocol Scheduling {
     
 }
 
-public protocol SchedulingRandom: Scheduling {
+//public protocol SchedulingRandom: Scheduling {
+//
+//}
+
+public struct SchedulingUnknown: Scheduling {
     
 }
 
-public struct SchedulingUnknown: SchedulingRandom {
+
+public protocol SchedulingHot: Scheduling {
     
 }
+
+public protocol SchedulingCold: Scheduling {
+    
+}
+
+
 
 public protocol SchedulingConst: Scheduling {
     
 }
 
-public protocol SchedulingHot: SchedulingConst {
-    
+public protocol SchedulingColdConst: SchedulingConst {
+    typealias NoConst = SchedulingCold
+}
+
+public protocol SchedulingHotConst: SchedulingHot, SchedulingConst {
+    typealias NoConst = SchedulingHot
 }
 
 public protocol SchedulingHotImpure: SchedulingHot {
     associatedtype NoHot: SchedulingConst
 }
 
-public struct SchedulingSync: SchedulingHot {
+public struct SchedulingSync: SchedulingHot, SchedulingConst {
     
 }
 
@@ -39,7 +54,7 @@ public struct SchedulingMain: DeterminedScheduling {
     }
 }
 
-public struct SchedulingMainOrHot: SchedulingHotImpure, SchedulingRandom {
+public struct SchedulingMainOrHot: SchedulingHotImpure, SchedulingConst {
     public typealias NoHot = SchedulingMain
 }
 
