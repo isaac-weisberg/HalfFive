@@ -25,3 +25,9 @@ Some other environments don't put any restrictions on scheduling just because th
 Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. Here, a full-pledged multithreaded environment allows for arbitrary concurrently scheduled code execution. UIKit does not support a multitude of its functionality to be run *not* from the main app thread and on such occasions you get a runtime error. And there is no way to statically check whether if you are interacting with UIKit APIs from the main thread or not.
 
 **Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime** 
+
+## How does it work?
+
+Whenever you have an observable sequence on your hands, it also carries with it information about the scheduling of its emissions. It is represented by a generic type parameter that conforms to `Scheduling` protocol. This is similar to how observable sequences' traits are implemented in [RxSwift](https://github.com/ReactiveX/RxSwift).
+
+If you use a `map` operator on such observable, since `map`'s predicate is performed synchronously, it will produce a new observable **with the same scheduling trait** as the initial observable.
