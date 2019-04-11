@@ -34,4 +34,4 @@ If you use a `map` operator on such observable, since `map`'s predicate is perfo
 
 You might be interested to combine this observable with some other observable using the `combineLatest` operator. In RxSwift, since 2 observables might both emit their events on different dispatch queues, my bet is that you either get an observable that emits in the contexts of 2 queues, each time undetermined, or additonal synchronization code comes into play that schedules the execution to one of the queues, or maybe some other queue, which causes runtime overhead.
 
-Well, here,
+Well, here, 2 observables are required to have the same scheduling in order for the code to compile, forcing the programmer to actually think how are they going to expect the sequences to behave.
