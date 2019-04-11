@@ -4,6 +4,7 @@
 
 1. Strict static information on the events' emission scheduling context
 1. No `onError` and `completed` events
+1. No synchronization code
 1. No exceptioning support
 
 ## Rationale
