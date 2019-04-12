@@ -1,11 +1,11 @@
-public protocol HotnessType {
+public protocol HotnessTrait {
     
 }
 
-public struct HotnessCold: HotnessType {
+public struct HotnessCold: HotnessTrait {
     
 }
 
-public struct HotnessHot: HotnessType {
+public struct HotnessHot: HotnessTrait {
     
 }

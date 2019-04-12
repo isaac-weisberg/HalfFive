@@ -1,7 +1,7 @@
 public protocol ConveyorType {
     associatedtype Event
     associatedtype Scheduler: Scheduling
-    associatedtype Hotness: HotnessType
+    associatedtype Hotness: HotnessTrait
     
     func run(handler: @escaping (Event) -> Void) -> Trash
 }
