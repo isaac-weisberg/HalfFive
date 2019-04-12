@@ -8,6 +8,7 @@
 1. No execution atomicity enforcing synchronization code for operator predicates and subscriptions handlers because it relies on execution atomicity of GCD work items in serial GCD queues
 1. No disposal synchronization code because it relies on atomicity of deinitializers
 1. No exceptioning support
+1. No NSThread and POSIX threads support
 
 ## Rationale
 
