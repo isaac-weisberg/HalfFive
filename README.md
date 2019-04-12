@@ -32,7 +32,7 @@ Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. H
 
 **Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime** 
 
-### How does it work?
+#### How does it work?
 
 Whenever you have an observable sequence on your hands, it also carries with it information about the scheduling of its emissions. It is represented by a generic type parameter that conforms to `Scheduling` protocol. This is similar to how observable sequences' traits are implemented in [RxSwift](https://github.com/ReactiveX/RxSwift).
 
@@ -45,3 +45,9 @@ Well, here, 2 observables are required to have the same scheduling in order for 
 Changes in the execution context are performed in a fashion similar to Rx's `subscribeOn` and `observeOn` (but called different). 
 
 And usage a `flatMap` operator commonly produces observables with the same scheduling as what you flat-map *into*.
+
+Now let's take a look at the first problem
+
+### Synchronous emission upon subscription
+
+The question is "Will subscribing to an observable cause the subscription handler to be run synchronously in the current execution context?". Another concept introduced by Reactive extensions is *Hotness* on an observable sequence. Here, an observable sequence is known to be hot in case if subscribing to it will cause the subscription handler to be run synchronously in the same execution context as the one in which the `subscribe` call is performed. And if it won't, then it's counted as cold. 
