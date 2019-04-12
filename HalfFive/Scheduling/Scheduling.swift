@@ -1,11 +1,11 @@
 import Dispatch
 
-public protocol Scheduling {
+public protocol SchedulingTrait {
     
 }
 
 
-public protocol SchedulingRandom: Scheduling {
+public protocol SchedulingRandom: SchedulingTrait {
     
 }
 
@@ -14,7 +14,7 @@ public struct SchedulingUnknown: SchedulingRandom {
     
 }
 
-public protocol DeterminedScheduling: Scheduling {
+public protocol DeterminedScheduling: SchedulingTrait {
     var queue: DispatchQueue { get }
 }
 

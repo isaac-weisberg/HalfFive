@@ -1,4 +1,4 @@
-public struct Conveyor<Event, Scheduler: Scheduling, Hotness: HotnessTrait>: ConveyorType {
+public struct Conveyor<Event, Scheduler: SchedulingTrait, Hotness: HotnessTrait>: ConveyorType {
     public func run(handler: @escaping (Event) -> Void) -> Trash {
         return predicate { event in
             handler(event)
