@@ -73,7 +73,20 @@
 		D304ED4D2260257D00639991 /* Hotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED4C2260257D00639991 /* Hotness.swift */; };
 		D304ED4F226033D500639991 /* MultiplexingPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED4E226033D500639991 /* MultiplexingPrimitive.swift */; };
 		D304ED5222605EE700639991 /* Conveyor+convertToHot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED5122605EE700639991 /* Conveyor+convertToHot.swift */; };
+		D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
+		D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6222608AAD00639991 /* HotConveyorTest.swift */; };
+		D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6422608E6200639991 /* Conveyors+just.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D304ED5D22608A9500639991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C83B111222583CB00311D29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C83B119222583CB00311D29;
+			remoteInfo = HalfFive;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C0C2812223AA76700F3D742 /* Diffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffable.swift; sourceTree = "<group>"; };
@@ -148,6 +161,10 @@
 		D304ED4E226033D500639991 /* MultiplexingPrimitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplexingPrimitive.swift; sourceTree = "<group>"; };
 		D304ED502260370800639991 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D304ED5122605EE700639991 /* Conveyor+convertToHot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+convertToHot.swift"; sourceTree = "<group>"; };
+		D304ED5722608A9500639991 /* HalfFiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalfFiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D304ED5B22608A9500639991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D304ED6222608AAD00639991 /* HotConveyorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotConveyorTest.swift; sourceTree = "<group>"; };
+		D304ED6422608E6200639991 /* Conveyors+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+just.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +188,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9AB4142233F9BB00D9FCD0 /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D304ED5422608A9500639991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +348,7 @@
 				5C83B11C222583CB00311D29 /* HalfFive */,
 				5C9AB4092233F72F00D9FCD0 /* HalfFiveDataSource */,
 				5C78D8B4222A72A600ACC9A7 /* Midesting */,
+				D304ED5822608A9500639991 /* HalfFiveTests */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -334,6 +360,7 @@
 				5C83B11A222583CB00311D29 /* HalfFive.framework */,
 				5C78D8B3222A72A600ACC9A7 /* Midesting.app */,
 				5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */,
+				D304ED5722608A9500639991 /* HalfFiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,6 +438,7 @@
 				5C84AF70225F896D007E922D /* Conveyors.swift */,
 				5CD54D42222BB96200B54665 /* Conveyors+from.swift */,
 				5C84AF72225F8A6D007E922D /* Conveyors+async.swift */,
+				D304ED6422608E6200639991 /* Conveyors+just.swift */,
 				5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */,
 				5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */,
 				5CD54D40222BB12900B54665 /* Conveyors+zip.swift */,
@@ -437,6 +465,15 @@
 				D304ED4C2260257D00639991 /* Hotness.swift */,
 			);
 			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		D304ED5822608A9500639991 /* HalfFiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				D304ED5B22608A9500639991 /* Info.plist */,
+				D304ED6222608AAD00639991 /* HotConveyorTest.swift */,
+			);
+			path = HalfFiveTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,13 +550,31 @@
 			productReference = 5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D304ED5622608A9500639991 /* HalfFiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D304ED6122608A9500639991 /* Build configuration list for PBXNativeTarget "HalfFiveTests" */;
+			buildPhases = (
+				D304ED5322608A9500639991 /* Sources */,
+				D304ED5422608A9500639991 /* Frameworks */,
+				D304ED5522608A9500639991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D304ED5E22608A9500639991 /* PBXTargetDependency */,
+			);
+			name = HalfFiveTests;
+			productName = HalfFiveTests;
+			productReference = D304ED5722608A9500639991 /* HalfFiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5C83B111222583CB00311D29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Isaac Weisberg";
 				TargetAttributes = {
@@ -533,6 +588,9 @@
 					5C9AB4072233F72E00D9FCD0 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+					};
+					D304ED5622608A9500639991 = {
+						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
@@ -552,6 +610,7 @@
 				5C83B119222583CB00311D29 /* HalfFive */,
 				5C78D8B2222A72A600ACC9A7 /* Midesting */,
 				5C9AB4072233F72E00D9FCD0 /* HalfFiveDataSource */,
+				D304ED5622608A9500639991 /* HalfFiveTests */,
 			);
 		};
 /* End PBXProject section */
@@ -580,6 +639,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5C9AB4062233F72E00D9FCD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D304ED5522608A9500639991 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -668,6 +734,7 @@
 				5C83B12A222584B400311D29 /* Silo.swift in Sources */,
 				D304ED5222605EE700639991 /* Conveyor+convertToHot.swift in Sources */,
 				5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */,
+				D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */,
 				D304ED4F226033D500639991 /* MultiplexingPrimitive.swift in Sources */,
 				5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */,
 				5C83B14822259D1900311D29 /* Container.swift in Sources */,
@@ -687,7 +754,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D304ED5322608A9500639991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D304ED5E22608A9500639991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C83B119222583CB00311D29 /* HalfFive */;
+			targetProxy = D304ED5D22608A9500639991 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5C78D8BE222A72AB00ACC9A7 /* LaunchScreen.storyboard */ = {
@@ -977,6 +1060,42 @@
 			};
 			name = Release;
 		};
+		D304ED5F22608A9500639991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalfFiveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFiveTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D304ED6022608A9500639991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HalfFiveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFiveTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1012,6 +1131,15 @@
 			buildConfigurations = (
 				5C9AB40D2233F72F00D9FCD0 /* Debug */,
 				5C9AB40E2233F72F00D9FCD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D304ED6122608A9500639991 /* Build configuration list for PBXNativeTarget "HalfFiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D304ED5F22608A9500639991 /* Debug */,
+				D304ED6022608A9500639991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

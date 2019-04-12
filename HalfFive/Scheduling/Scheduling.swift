@@ -37,3 +37,11 @@ public struct SchedulingSerial: DeterminedScheduling {
         
     }
 }
+
+internal struct SchedulingLiterallyAny: DeterminedScheduling, SchedulingRandom {
+    var queue: DispatchQueue {
+        return DispatchQueue.main
+    }
+    
+    
+}
