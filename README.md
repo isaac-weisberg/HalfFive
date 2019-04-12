@@ -58,3 +58,17 @@ The thing however is that in Rx the observable types are totally transparent abo
 Now imagine that the earlier `Obsevable` used to emit events on the main thread, but later its implementation was changed to emit on background queue. Initially you used to subscribe to it on main queue and it emitted on main queue onwards, so you decide to leave the code as is knowing that in this case it's completely safe to propagate these emissions into the "view layer" of the app. You subscribing caused the Subject to emit its initial value synchronously and there, the first configuration of your view occured.
 
 Once the earlier observable started emitting items on the background queue, it is necessary for you to transfer the scheduling of these events to the main queue using the `observeOn` operator with an async instance of `MainScheduler`. However, oh dear, it will cause the event emission upon subscription to happen through this context transfer and you will happily have a single frame of your apps view in an unconfigured state because the subscriptions handler doesn't run synchronously anymore.
+
+**This framework aims to fix that that and make the semantics more opaque.**
+
+#### How does it work?
+
+Whenever you have an observable on your hands it also carries a trait that denotes whether if an observable is hot.
+
+You apply a `map` operator, predecat of which is performed synchronously, and the hotness of the new observable is preserved.
+
+Say, you had an observable that was known not to emit any of its elements synchronously on subscription and so it was cold. Then you use a `startWith` operator. The new observable, as you guess, will be hot.
+
+The `PublishSubject` (spoiler: here it is called `Multiplexer`) is cold. But the `BehaviorSubject` (spoiler: `Container`) is actually hot.
+
+**NB: the scheduling of an observable does not apply to the context of hot emissions.**
