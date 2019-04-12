@@ -72,3 +72,8 @@ Say, you had an observable that was known not to emit any of its elements synchr
 The `PublishSubject` (spoiler: here it is called `Multiplexer`) is cold. But the `BehaviorSubject` (spoiler: `Container`) is actually hot.
 
 **NB: the scheduling of an observable does not apply to the context of hot emissions.**
+
+The following `HotnessTrait` implementations are available
+
+- `HotnessHot`
+- `HotnessCold`
