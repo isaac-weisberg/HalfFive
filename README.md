@@ -83,3 +83,16 @@ The following `HotnessTrait` implementations are available
 
 - `HotnessHot`
 - `HotnessCold`
+
+## Thesaurus
+
+| RxSwift semantics | HalfFive semantics |
+|-----------------------------|--------------------|
+| `Observable` | `Conveyor` |
+| `Observer` | `Silo` |
+| `subscribe` | `run` |
+| `observe` | `fire` |
+| `subscribeOn` | `runOn` |
+| `observeOn` | `fireOn` |
+| `PublishSubject` and alike | `Multiplexer` |
+| `BehaviorSubject` and alike | `Container` |
