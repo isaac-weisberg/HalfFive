@@ -1,6 +1,4 @@
-import Dispatch
-
-extension Conveyor {
+public extension ConveyorType {
     func fire<Scheduler: DeterminedScheduling>(on scheduler: Scheduler) -> Conveyor<Event, Scheduler, HotnessCold> {
         let run = self.run(handler:)
         return .init { handler in

@@ -3,19 +3,19 @@ import HalfFive
 protocol TestViewModel {
     var nextQuestion: Silo<Void, SchedulingMain> { get }
     
-    var question: Conveyor<TestCardViewModel, SchedulingMain> { get }
+    var question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot> { get }
     
-    var nextQuestionLabel: Conveyor<String, SchedulingMain> { get }
+    var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot> { get }
     
-    var isSelectionValid: Conveyor<Bool, SchedulingMain> { get }
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
 }
 
 class TestViewModelImpl {
-    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain>
+    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain, HotnessHot>
     
-    let question: Conveyor<TestCardViewModel, SchedulingMain>
+    let question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot>
     
-    let nextQuestionLabel: Conveyor<String, SchedulingMain>
+    let nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot>
     
     let nextQuestion: Silo<Void, SchedulingMain>
     
@@ -46,7 +46,6 @@ class TestViewModelImpl {
         
         let actionConveyor = actionMultiplexer
             .startWith(event: ())
-            .assumeFiresOnMain()
         
         let questionsConveyorMarked = Conveyors.from(array: questions)
             .assumeFiresOnMain()
@@ -66,7 +65,7 @@ class TestViewModelImpl {
 }
 
 extension TestViewModelImpl: TestViewModel {
-    var isSelectionValid: Conveyor<Bool, SchedulingMain> {
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> {
         return question
             .flatMapLatest { vm in
                 vm.isSelectionValid

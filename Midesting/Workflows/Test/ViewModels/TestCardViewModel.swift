@@ -5,7 +5,7 @@ protocol TestCardViewModel {
     
     var questionTitle: String { get }
     
-    var isSelectionValid: Conveyor<Bool, SchedulingMain> { get }
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
     
     var answerVms: [AnswerTextualViewModel] { get }
 }
@@ -59,7 +59,7 @@ extension TestCardViewModelImpl: TestCardViewModel {
         return data.title
     }
     
-    var isSelectionValid: Conveyor<Bool, SchedulingMain> {
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> {
         return selectionViewModel.isSelectionValid
     }
 }

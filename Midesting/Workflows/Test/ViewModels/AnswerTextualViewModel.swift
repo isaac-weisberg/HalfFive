@@ -1,20 +1,20 @@
 import HalfFive
 
 protocol AnswerTextualViewModel: class {
-    var isSelected: Conveyor<Bool, SchedulingMain>! { get }
+    var isSelected: Conveyor<Bool, SchedulingMain, HotnessHot>! { get }
     
     var action: Silo<Void, SchedulingMain> { get }
 
     var text: String { get }
     
-    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain>)
+    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain, HotnessHot>)
     
     var trashBag: TrashBag { get }
 }
 
 class AnswerTextualViewModelImpl {
     let actionSilo: Silo<AnswerTextualViewModel, SchedulingMain>
-    var isSelected: Conveyor<Bool, SchedulingMain>!
+    var isSelected: Conveyor<Bool, SchedulingMain, HotnessHot>!
     let identity: String
     let text: String
     
@@ -35,7 +35,7 @@ extension AnswerTextualViewModelImpl: AnswerTextualViewModel {
         }
     }
     
-    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain>) {
+    func setIsSelected(conveyor: Conveyor<Bool, SchedulingMain, HotnessHot>) {
          isSelected = conveyor
     }
 }

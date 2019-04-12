@@ -22,10 +22,18 @@ public struct SchedulingMain: DeterminedScheduling {
     public var queue: DispatchQueue {
         return .main
     }
+    
+    public init() {
+        
+    }
 }
 
 public struct SchedulingSerial: DeterminedScheduling {
     public var queue: DispatchQueue {
         return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
+    }
+    
+    public init() {
+        
     }
 }
