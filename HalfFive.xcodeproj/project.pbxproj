@@ -73,6 +73,7 @@
 		5CF6166022301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */; };
 		D304ED4D2260257D00639991 /* Hotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED4C2260257D00639991 /* Hotness.swift */; };
 		D304ED4F226033D500639991 /* MultiplexingPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED4E226033D500639991 /* MultiplexingPrimitive.swift */; };
+		D304ED5222605EE700639991 /* Conveyor+convertToCold.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED5122605EE700639991 /* Conveyor+convertToCold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		D304ED4C2260257D00639991 /* Hotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotness.swift; sourceTree = "<group>"; };
 		D304ED4E226033D500639991 /* MultiplexingPrimitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplexingPrimitive.swift; sourceTree = "<group>"; };
 		D304ED502260370800639991 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D304ED5122605EE700639991 /* Conveyor+convertToCold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+convertToCold.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 				5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */,
 				5C9AB4152233FD3F00D9FCD0 /* Conveyor+do.swift */,
 				5C34FE3822467CA8002AF74D /* Silo+Map.swift */,
+				D304ED5122605EE700639991 /* Conveyor+convertToCold.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				5C24968B222AD07F00BE72D9 /* TrashBag.swift in Sources */,
 				5C83B12A222584B400311D29 /* Silo.swift in Sources */,
 				5C34FE3722467925002AF74D /* Conveyor+assumeRunsOnMain.swift in Sources */,
+				D304ED5222605EE700639991 /* Conveyor+convertToCold.swift in Sources */,
 				5C83B12E2225861D00311D29 /* Conveyor+map.swift in Sources */,
 				D304ED4F226033D500639991 /* MultiplexingPrimitive.swift in Sources */,
 				5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */,
