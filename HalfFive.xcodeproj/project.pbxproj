@@ -147,6 +147,7 @@
 		5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswerSelectionMultipleViewModel.swift; sourceTree = "<group>"; };
 		D304ED4C2260257D00639991 /* Hotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotness.swift; sourceTree = "<group>"; };
 		D304ED4E226033D500639991 /* MultiplexingPrimitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplexingPrimitive.swift; sourceTree = "<group>"; };
+		D304ED502260370800639991 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +316,7 @@
 		5C83B110222583CB00311D29 = {
 			isa = PBXGroup;
 			children = (
+				D304ED502260370800639991 /* .gitignore */,
 				5C84AF6B225F7B21007E922D /* README.md */,
 				5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */,
 				5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */,
