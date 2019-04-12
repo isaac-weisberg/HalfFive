@@ -31,7 +31,7 @@ Some other environments don't put any restrictions on scheduling just because th
 
 Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. Here, a full-pledged multithreaded environment allows for arbitrary concurrently scheduled code execution. UIKit does not support a multitude of its functionality to be run *not* from the main app thread and on such occasions you get a runtime error. And there is no way to statically check whether if you are interacting with UIKit APIs from the main thread or not.
 
-**Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime** 
+Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime
 
 #### How does it work?
 
@@ -47,6 +47,12 @@ Changes in the execution context are performed in a fashion similar to Rx's `sub
 
 And usage a `flatMap` operator commonly produces observables with the same scheduling as what you flat-map *into*.
 
+The following `SchedulingTrait` implementations are available
+
+- `SchedulingUnknown` - may emit events on different queues
+- `SchedulingMain` - will emit events ONLY on the main queue
+- `SchedulingSerial` - will emit events ONLY on a serial non-main dispatch queue 
+
 Now let's take a look at the first problem
 
 ### Synchronous emission upon subscription
@@ -59,7 +65,7 @@ Now imagine that the earlier `Obsevable` used to emit events on the main thread,
 
 Once the earlier observable started emitting items on the background queue, it is necessary for you to transfer the scheduling of these events to the main queue using the `observeOn` operator with an async instance of `MainScheduler`. However, oh dear, it will cause the event emission upon subscription to happen through this context transfer and you will happily have a single frame of your apps view in an unconfigured state because the subscriptions handler doesn't run synchronously anymore.
 
-**This framework aims to fix that that and make the semantics more opaque.**
+This framework aims to fix that that and make the semantics more opaque.
 
 #### How does it work?
 
@@ -71,7 +77,7 @@ Say, you had an observable that was known not to emit any of its elements synchr
 
 The `PublishSubject` (spoiler: here it is called `Multiplexer`) is cold. But the `BehaviorSubject` (spoiler: `Container`) is actually hot.
 
-**NB: the scheduling of an observable does not apply to the context of hot emissions.**
+**NB: the scheduling of an observable does not apply to the context of hot emissions. If it's scheduled on a background queue, but is hot and is subscribed to on the main queue - it still counts as scheduled on background queue.**
 
 The following `HotnessTrait` implementations are available
 
