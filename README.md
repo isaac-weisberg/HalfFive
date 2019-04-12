@@ -16,6 +16,10 @@ One of the core concepts established by the [ReactiveX](http://reactivex.io)'s R
 1. Will subscribing to an `Observable` cause any of its events to be emitted synchronously?
 1. Will an `Observable` emit events at times when it's not opportune due to the restrictions of the platform?
 
+Let us kick off with the second problem.
+
+### Runtime execution context equaliy
+
 The most famous implementation of Reactive extensions was established for a single threaded environment which supported scheduling of arbitrary code to be executed on the next primary event loop iteration. The platform was the JavaScript virtual machine and the language it was written in was `JavaScript`.
 
 In JavaScript runtime, execution of client code is performed isolated from environment critical functionality, for instance, networking or rendering. Rendering, being a costly and heavily low-level operation, requires the models that represent the contents to be rendered to be frozen and immutable for the duration of rasterization process in order to provide consistent, determined results. This decision is conscious and is seen in at most all implementations in the world ever.
@@ -28,7 +32,7 @@ Spoiler: Foundation platforms are not that. UIKit part of iOS - in particular. H
 
 **Well, this framework is an attempt to statically check the execution context and prevent you from making mistakes that will be known only on runtime** 
 
-## How does it work?
+### How does it work?
 
 Whenever you have an observable sequence on your hands, it also carries with it information about the scheduling of its emissions. It is represented by a generic type parameter that conforms to `Scheduling` protocol. This is similar to how observable sequences' traits are implemented in [RxSwift](https://github.com/ReactiveX/RxSwift).
 
@@ -39,3 +43,5 @@ You might be interested to combine this observable with some other observable us
 Well, here, 2 observables are required to have the same scheduling in order for the code to compile, forcing the programmer to actually think how are they going to expect the sequences to behave.
 
 Changes in the execution context are performed in a fashion similar to Rx's `subscribeOn` and `observeOn` (but called different). 
+
+And usage a `flatMap` operator commonly produces observables with the same scheduling as what you flat-map *into*.
