@@ -18,7 +18,7 @@
 		5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968F222AD3A100BE72D9 /* TestModel.swift */; };
 		5C34FE3722467925002AF74D /* Conveyor+assumeRunsOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */; };
 		5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3822467CA8002AF74D /* Silo+Map.swift */; };
-		5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */; };
+		5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */; };
 		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
 		5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */; };
 		5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BE222A72AB00ACC9A7 /* LaunchScreen.storyboard */; };
@@ -53,7 +53,7 @@
 		5C9AB4182233FED500D9FCD0 /* PlainDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AB4172233FED500D9FCD0 /* PlainDiff.swift */; };
 		5CBED6D722284678003C6974 /* Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBED6D622284678003C6974 /* Scheduling.swift */; };
 		5CBED6DA22284D33003C6974 /* Conveyor+withLatestFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */; };
-		5CD54D41222BB12900B54665 /* Conveyor+zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D40222BB12900B54665 /* Conveyor+zip.swift */; };
+		5CD54D41222BB12900B54665 /* Conveyors+zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D40222BB12900B54665 /* Conveyors+zip.swift */; };
 		5CD54D43222BB96200B54665 /* Conveyors+from.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D42222BB96200B54665 /* Conveyors+from.swift */; };
 		5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D44222BBA7500B54665 /* TrashVoid.swift */; };
 		5CD54D47222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD54D46222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift */; };
@@ -89,7 +89,7 @@
 		5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeRunsOnMain.swift"; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
 		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+combineLatest.swift"; sourceTree = "<group>"; };
+		5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+combineLatest.swift"; sourceTree = "<group>"; };
 		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		5C9AB4172233FED500D9FCD0 /* PlainDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainDiff.swift; sourceTree = "<group>"; };
 		5CBED6D622284678003C6974 /* Scheduling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduling.swift; sourceTree = "<group>"; };
 		5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+withLatestFrom.swift"; sourceTree = "<group>"; };
-		5CD54D40222BB12900B54665 /* Conveyor+zip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+zip.swift"; sourceTree = "<group>"; };
+		5CD54D40222BB12900B54665 /* Conveyors+zip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+zip.swift"; sourceTree = "<group>"; };
 		5CD54D42222BB96200B54665 /* Conveyors+from.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+from.swift"; sourceTree = "<group>"; };
 		5CD54D44222BBA7500B54665 /* TrashVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashVoid.swift; sourceTree = "<group>"; };
 		5CD54D46222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeFiresOnMain.swift"; sourceTree = "<group>"; };
@@ -374,10 +374,8 @@
 				5CE318642226DBDB005531E0 /* Conveyor+runOn.swift */,
 				5CE318692226E693005531E0 /* Conveyor+fireOn.swift */,
 				5CBED6D922284D33003C6974 /* Conveyor+withLatestFrom.swift */,
-				5C78D8AD222A547E00ACC9A7 /* Conveyor+combineLatest.swift */,
 				5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */,
 				5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */,
-				5CD54D40222BB12900B54665 /* Conveyor+zip.swift */,
 				5C34FE3622467925002AF74D /* Conveyor+assumeRunsOnMain.swift */,
 				5CD54D46222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift */,
 				5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */,
@@ -417,6 +415,8 @@
 				5CD54D42222BB96200B54665 /* Conveyors+from.swift */,
 				5C84AF72225F8A6D007E922D /* Conveyors+async.swift */,
 				5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */,
+				5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */,
+				5CD54D40222BB12900B54665 /* Conveyors+zip.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -647,8 +647,8 @@
 				5C9AB4162233FD3F00D9FCD0 /* Conveyor+do.swift in Sources */,
 				5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */,
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
-				5CD54D41222BB12900B54665 /* Conveyor+zip.swift in Sources */,
-				5C78D8AE222A547E00ACC9A7 /* Conveyor+combineLatest.swift in Sources */,
+				5CD54D41222BB12900B54665 /* Conveyors+zip.swift in Sources */,
+				5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
 				5C84AF73225F8A6D007E922D /* Conveyors+async.swift in Sources */,

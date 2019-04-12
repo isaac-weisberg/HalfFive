@@ -50,7 +50,7 @@ class TestViewModelImpl {
         let questionsConveyorMarked = Conveyors.from(array: questions)
             .assumeFiresOnMain()
         
-        self.questionState = Conveyor.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
+        self.questionState = Conveyors.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
         
         self.nextQuestionLabel = questionState
             .map { thigns in
