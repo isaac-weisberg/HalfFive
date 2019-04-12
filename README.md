@@ -4,7 +4,8 @@
 
 1. Strict static information on the events' emission scheduling context
 1. No `onError` and `completed` events
-1. No synchronization code
+1. No execution atomicity enforcing synchronization code for operator predicates and subscriptions handlers because it relies on execution atomicity of GCD work items in serial GCD queues.
+1. No disposal synchronization code because it relies on atomicity of deinitializers
 1. No exceptioning support
 
 ## Rationale
