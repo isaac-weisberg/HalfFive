@@ -75,6 +75,8 @@ You apply a `map` operator, predecat of which is performed synchronously, and th
 
 Say, you had an observable that was known not to emit any of its elements synchronously on subscription and so it was cold. Then you use a `startWith` operator. The new observable, as you guess, will be hot.
 
+One could be interested in zipping the emissions in pairs uzing a `zip` operator. If at least one of the observables is cold, this means that initially upon subscription there will just be nothing to emit and thus the resulting observable is cold. However, if both are hot, this will lead to an emission of at least one event, resulting in a hot observable. Same behavior applies to `combineLatest`.
+
 The `PublishSubject` (spoiler: here it is called `Multiplexer`) is cold. But the `BehaviorSubject` (spoiler: `Container`) is actually hot.
 
 **NB: the scheduling of an observable does not apply to the context of hot emissions. If it's scheduled on a background queue, but is hot and is subscribed to on the main queue - it still counts as scheduled on background queue.**
