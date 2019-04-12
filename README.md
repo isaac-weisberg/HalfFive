@@ -53,7 +53,7 @@ The following `SchedulingTrait` implementations are available
 - `SchedulingMain` - will emit events ONLY on the main queue
 - `SchedulingSerial` - will emit events ONLY on a serial non-main dispatch queue 
 
-Now let's take a look at the first problem
+And now let's take a look at the first problem called out earlier
 
 ### Synchronous emission upon subscription
 
