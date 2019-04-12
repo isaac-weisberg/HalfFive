@@ -5,7 +5,7 @@ public extension Conveyors {
     }
     
     static func combineLatest<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
-        return Conveyor { handler in
+        return .init { handler in
             var lState = PrivateCombinerState<L.Event>.uninit
             var rState = PrivateCombinerState<R.Event>.uninit
             
