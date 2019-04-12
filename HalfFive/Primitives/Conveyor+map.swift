@@ -1,7 +1,7 @@
 public extension ConveyorType {
-    func map<NewEvent>(_ predicate: @escaping (Event) -> NewEvent) -> Conveyor<NewEvent, Scheduler> {
+    func map<NewEvent>(_ predicate: @escaping (Event) -> NewEvent) -> Conveyor<NewEvent, Scheduler, Hotness> {
         let run = self.run(handler:)
-        return Conveyor<NewEvent, Scheduler> { handler in
+        return .init { handler in
             run { event in
                 handler(predicate(event))
             }

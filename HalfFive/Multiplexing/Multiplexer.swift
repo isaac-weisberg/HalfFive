@@ -1,23 +1,17 @@
-public class Multiplexer<Event, Scheduler: SchedulingConst>: SiloType, ConveyorType {
-    private(set) var predicates: [(Event) -> Void] = []
+public class Multiplexer<Event, Scheduler: DeterminedScheduling>: MultiplexingPrimitive {
+    public typealias Hotness = HotnessCold
+    
+    var predicates: [(Event) -> Void] = []
     
     public init() {
         
     }
     
     public func fire(event: Event) {
-        predicates.forEach { $0(event) }
+        fireAllPredicates(event)
     }
     
     public func run(handler: @escaping (Event) -> Void) -> Trash {
-        var subscribers = self.predicates
-        subscribers.append(handler)
-        self.predicates = subscribers
-        return TrashAbstract {[weak self] in
-            guard let self = self else {
-                return
-            }
-            self.predicates = self.predicates.filter { ($0 as AnyObject) !== (handler as AnyObject) }
-        }
+        return addPredicate(handler: handler)
     }
 }

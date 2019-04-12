@@ -1,4 +1,4 @@
-public struct Silo<Event, Scheduler: SchedulingConst>: SiloType {
+public struct Silo<Event, Scheduler: DeterminedScheduling>: SiloType {
     typealias Predicate = (Event) -> ()
     
     public func fire(event: Event) -> Void {

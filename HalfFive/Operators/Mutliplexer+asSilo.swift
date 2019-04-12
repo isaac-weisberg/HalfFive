@@ -1,5 +1,5 @@
-public extension Multiplexer where Scheduler: SchedulingHotAndConst {
-    func asSilo() -> Silo<Event, Scheduler.Cold> {
+public extension Container {
+    func asSilo() -> Silo<Event, Scheduler> {
         return Silo(fire: fire(event:))
     }
 }

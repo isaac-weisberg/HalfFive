@@ -1,5 +1,5 @@
 public extension ConveyorType {
-    func `do`(_ predicate: @escaping (Event) -> Void) -> Conveyor<Event, Scheduler> {
+    func `do`(_ predicate: @escaping (Event) -> Void) -> Conveyor<Event, Scheduler, Hotness> {
         let run = self.run(handler:)
         return Conveyor { handler in
             run { event in
