@@ -86,6 +86,8 @@ The following `HotnessTrait` implementations are available
 - `HotnessHot`
 - `HotnessCold`
 
+At some point you of course get to a system-close task and feel a need to wrap an interaction with the system into an observable. These occasions most often are wrappings around `URLSession.dataTask` and `Data.init(contentsOf:)`.
+
 ## Thesaurus
 
 | RxSwift semantics | HalfFive semantics |
