@@ -16,6 +16,8 @@
 		5C24968B222AD07F00BE72D9 /* TrashBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968A222AD07F00BE72D9 /* TrashBag.swift */; };
 		5C24968D222AD0EF00BE72D9 /* Trash+disposedBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */; };
 		5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24968F222AD3A100BE72D9 /* TestModel.swift */; };
+		5C2AAA5F226258FE00CA1178 /* FileDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA5E226258FE00CA1178 /* FileDownloaderService.swift */; };
+		5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA612262598800CA1178 /* ResultTing.swift */; };
 		5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3822467CA8002AF74D /* Silo+Map.swift */; };
 		5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */; };
 		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
@@ -98,6 +100,8 @@
 		5C24968A222AD07F00BE72D9 /* TrashBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBag.swift; sourceTree = "<group>"; };
 		5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trash+disposedBy.swift"; sourceTree = "<group>"; };
 		5C24968F222AD3A100BE72D9 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		5C2AAA5E226258FE00CA1178 /* FileDownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderService.swift; sourceTree = "<group>"; };
+		5C2AAA612262598800CA1178 /* ResultTing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTing.swift; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
 		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+combineLatest.swift"; sourceTree = "<group>"; };
@@ -251,11 +255,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5C2AAA5D226258EA00CA1178 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C2AAA5E226258FE00CA1178 /* FileDownloaderService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5C2AAA602262597A00CA1178 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5C2AAA612262598800CA1178 /* ResultTing.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5C78D8B4222A72A600ACC9A7 /* Midesting */ = {
 			isa = PBXGroup;
 			children = (
+				5C2AAA602262597A00CA1178 /* Util */,
 				5C78D8D6222A7D5F00ACC9A7 /* Constants */,
 				5C78D8C8222A735000ACC9A7 /* Resources */,
+				5C2AAA5D226258EA00CA1178 /* Services */,
 				5C78D8C7222A733900ACC9A7 /* Application */,
 				5C78D8CB222A73E300ACC9A7 /* Workflows */,
 			);
@@ -686,6 +708,7 @@
 				5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */,
 				5CD54D51222BDE5D00B54665 /* AnswerTextualViewModel.swift in Sources */,
 				5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */,
+				5C2AAA5F226258FE00CA1178 /* FileDownloaderService.swift in Sources */,
 				5CD54D57222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift in Sources */,
 				5C249682222ACA0C00BE72D9 /* XibModularView.swift in Sources */,
 				5C249690222AD3A100BE72D9 /* TestModel.swift in Sources */,
@@ -695,6 +718,7 @@
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
 				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
 				5CD54D55222BE1C300B54665 /* TestAnswerSelectionViewModel.swift in Sources */,
+				5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */,
 				5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */,
 				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
 				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,
