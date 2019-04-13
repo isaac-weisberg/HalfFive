@@ -86,8 +86,6 @@ The following `HotnessTrait` implementations are available
 - `HotnessHot`
 - `HotnessCold`
 
-At some point you of course get to a system-close task and feel a need to wrap an interaction with the system into an observable. These occasions most often are wrappings around `URLSession.dataTask` and `Data.init(contentsOf:)`.
-
 ## Thesaurus
 
 | RxSwift semantics | HalfFive semantics |
@@ -100,3 +98,12 @@ At some point you of course get to a system-close task and feel a need to wrap a
 | `observeOn` | `fireOn` |
 | `PublishSubject` and alike | `Multiplexer` |
 | `BehaviorSubject` and alike | `Container` |
+
+## Usage Guidelines
+
+### Prefer hot creational operators over cold
+
+At some point you of course get to a system-close task and feel a need to wrap an interaction with the system into an observable. These occasions most often are wrappings around `URLSession.dataTask` and `Data.init(contentsOf:)`. The rules to remember are the following:
+
+1. If the operation can be performed synchronously, use `sync` creational operator to produce an explicitly hot observable
+1. If the operation notifies of its results in an asynchronous context and you can't pefrorm it synchronously without locking the thread of execution using synchronization primitives, only then should you use `async` creational operator
