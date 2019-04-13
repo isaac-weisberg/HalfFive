@@ -438,8 +438,8 @@
 				5C84AF70225F896D007E922D /* Conveyors.swift */,
 				5CD54D42222BB96200B54665 /* Conveyors+from.swift */,
 				5C84AF72225F8A6D007E922D /* Conveyors+async.swift */,
-				D304ED6422608E6200639991 /* Conveyors+just.swift */,
 				5C84AF74225F8D4D007E922D /* Conveyors+sync.swift */,
+				D304ED6422608E6200639991 /* Conveyors+just.swift */,
 				5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */,
 				5CD54D40222BB12900B54665 /* Conveyors+zip.swift */,
 			);
