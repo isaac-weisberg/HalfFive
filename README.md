@@ -107,3 +107,21 @@ At some point you of course get to a system-close task and feel a need to wrap a
 
 1. If the operation can be performed synchronously, use `sync` creational operator to produce an explicitly hot observable
 1. If the operation notifies of its results in an asynchronous context and you can't pefrorm it synchronously without locking the thread of execution using synchronization primitives, only then should you use `async` creational operator to produce an observable that is explicitly cold
+
+Let's take a look at an example of wrapping a `Data.init(contentsOf:)`
+
+```swift
+    func download(contentsOf url: URL) -> Conveyor<DownloadResult, SchedulingUnknown, HotnessHot> {
+        return Conveyors.sync {
+            let data: Data
+            do {
+                data = try Data(contentsOf: url)
+            } catch {
+                return Conveyors.just(.failure(error))
+            }
+            return Conveyors.just(.success(data))
+        }
+    }
+```
+
+Legit. The call to the `Data.init(contentsOf:)` will block the current thread until the data is downloaded. You explicitly show that the subscription event handling code will be run synchronously by creating the conveyor with `sync` operator.
