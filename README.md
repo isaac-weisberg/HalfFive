@@ -101,7 +101,7 @@ The following `HotnessTrait` implementations are available
 
 ## Usage Guidelines
 
-### Prefer hot creational operators over cold
+### Prefer hot creational operators over cold whenever possible
 
 At some point you of course get to a system-close task and feel a need to wrap an interaction with the system into an observable. These occasions most often are wrappings around `URLSession.dataTask` and `Data.init(contentsOf:)`. The rules to remember are the following:
 
