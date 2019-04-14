@@ -19,6 +19,7 @@
 		5C2AAA5F226258FE00CA1178 /* FileDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA5E226258FE00CA1178 /* FileDownloaderService.swift */; };
 		5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA612262598800CA1178 /* ResultTing.swift */; };
 		5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3822467CA8002AF74D /* Silo+Map.swift */; };
+		5C5AFF87226373F900DD4557 /* BusinessLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */; };
 		5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */; };
 		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
 		5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		5C2AAA612262598800CA1178 /* ResultTing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTing.swift; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
 		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicTests.swift; sourceTree = "<group>"; };
 		5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+combineLatest.swift"; sourceTree = "<group>"; };
 		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 			children = (
 				D304ED5B22608A9500639991 /* Info.plist */,
 				D304ED6222608AAD00639991 /* HotConveyorTest.swift */,
+				5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */,
 			);
 			path = HalfFiveTests;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5AFF87226373F900DD4557 /* BusinessLogicTests.swift in Sources */,
 				D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
