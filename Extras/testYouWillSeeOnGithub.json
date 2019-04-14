@@ -1,0 +1,52 @@
+{
+    "questions": [
+        {
+            "title": "Hey bitch are you above 18?",
+            "answers": [
+                {
+                    "title": "Yes, I am"
+                },
+                {
+                    "title": "Nope, I am not"
+                }
+            ],
+            "selection": 1
+        },
+        {
+            "title": "Your favorite IT website",
+            "answers": [
+                {
+                    "title": "ebanoe.it"
+                },
+                {
+                    "title": "stackoverflow.com"
+                },
+                {
+                    "title": "bark-computing.woof"
+                },
+                {
+                    "title": "medium.com"
+                }
+            ],
+            "selection": 1
+        },
+        {
+            "title": "Districts that are located in Novosibirsk",
+            "answers": [
+                {
+                    "title": "Petrogradskiy"
+                },
+                {
+                    "title": "Cademy"
+                },
+                {
+                    "title": "Hydro"
+                },
+                {
+                    "title": "Gates"
+                }
+            ],
+            "selection": 2
+        }
+    ]
+}

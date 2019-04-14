@@ -80,6 +80,7 @@
 		D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6422608E6200639991 /* Conveyors+just.swift */; };
 		D37CC92C2262F7590041F0C8 /* TestRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */; };
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
+		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		D304ED6422608E6200639991 /* Conveyors+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+just.swift"; sourceTree = "<group>"; };
 		D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRetrievalService.swift; sourceTree = "<group>"; };
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
+		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 				5C9AB4092233F72F00D9FCD0 /* HalfFiveDataSource */,
 				5C78D8B4222A72A600ACC9A7 /* Midesting */,
 				D304ED5822608A9500639991 /* HalfFiveTests */,
+				D37CC9302262FC940041F0C8 /* Extras */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -510,6 +513,14 @@
 				D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D37CC9302262FC940041F0C8 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */,
+			);
+			path = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +672,7 @@
 				5C78D8D5222A7A9300ACC9A7 /* Test.storyboard in Resources */,
 				5C78D8C0222A72AB00ACC9A7 /* LaunchScreen.storyboard in Resources */,
 				5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */,
+				D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */,
 				5C249684222ACA9C00BE72D9 /* TestCardView.xib in Resources */,
 				5C78D8DE222A7EE700ACC9A7 /* swiftgen.yml in Resources */,
 			);
