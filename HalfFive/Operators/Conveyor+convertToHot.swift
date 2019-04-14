@@ -5,4 +5,11 @@ internal extension ConveyorType where Hotness == HotnessCold {
             run(handle)
         }
     }
+    
+    func convertIntoWhateverApplies<Hotness: HotnessTrait>() -> Conveyor<Event, Scheduler, Hotness> {
+        let run = self.run(handler:)
+        return Conveyor { handle in
+            run(handle)
+        }
+    }
 }
