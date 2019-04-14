@@ -69,6 +69,9 @@ class BusinessLogicTests: XCTestCase {
                  are not atomic, and when you get array's `count`
                  in the midst of the `append` happening, you get
                  EXC_BAD_ACCESS which is sorta-- logical...
+                 However, at the same time-- wasn't it supposed to be on a serial query?
+                 hence.. you know what i mean
+                 hence thread safe
                  */
                 lock.lock()
                 defer { lock.unlock() }
@@ -81,6 +84,6 @@ class BusinessLogicTests: XCTestCase {
             }
             .disposed(by: trashBag)
         
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 15.0)
     }
 }

@@ -30,7 +30,7 @@ public struct SchedulingMain: DeterminedScheduling {
 
 public struct SchedulingSerial: DeterminedScheduling {
     public var queue: DispatchQueue {
-        return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
+        return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq", attributes: [])
     }
     
     public init() {
