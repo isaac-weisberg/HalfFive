@@ -20,7 +20,7 @@ class TestRetrievalServiceImpl: TestRetrievalService {
     }
     
     func downloadGithubTest() -> Conveyor<DownloadResult, SchedulingUnknown, HotnessHot> {
-        let url = URL(string: "http://github.com/isaac-weisberg/HalfFive/test")!
+        let url = URL(string: "https://raw.githubusercontent.com/isaac-weisberg/HalfFive/master/Extras/testYouWillSeeOnGithub.json")!
         
         return fileDownloader
             .download(contentsOf: url)
