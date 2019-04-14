@@ -9,6 +9,10 @@ protocol FileDownloaderService {
     typealias DownloadResult = ResultTing<Data, FileDownloaderServiceError>
     
     func download(contentsOf url: URL) -> Conveyor<DownloadResult, SchedulingUnknown, HotnessHot>
+    
+    typealias HTTPDownloadResult = ResultTing<(HTTPURLResponse, Data?), FileDownloaderServiceError>
+    
+    func download(request: URLRequest) -> Conveyor<HTTPDownloadResult, SchedulingUnknown, HotnessCold>
 }
 
 class FileDownloaderServiceImpl: FileDownloaderService {
@@ -40,13 +44,11 @@ class FileDownloaderServiceImpl: FileDownloaderService {
         }
     }
     
-    typealias HTTPDownloadResult = ResultTing<(HTTPURLResponse, Data?), Error>
-    
     func download(request: URLRequest) -> Conveyor<HTTPDownloadResult, SchedulingUnknown, HotnessCold> {
         return Conveyors.async { handler in
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
-                    handler(.failure(error))
+                    handler(.failure(.download(error)))
                     return
                 }
                 
