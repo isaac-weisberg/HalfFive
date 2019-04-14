@@ -81,6 +81,7 @@
 		D37CC92C2262F7590041F0C8 /* TestRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */; };
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
+		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRetrievalService.swift; sourceTree = "<group>"; };
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
+		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +439,7 @@
 				5C9AB4152233FD3F00D9FCD0 /* Conveyor+do.swift */,
 				5C34FE3822467CA8002AF74D /* Silo+Map.swift */,
 				D304ED5122605EE700639991 /* Conveyor+convertToHot.swift */,
+				D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				5CE3186A2226E693005531E0 /* Conveyor+fireOn.swift in Sources */,
 				5C83B1262225846A00311D29 /* Conveyor.swift in Sources */,
 				5CBED6DA22284D33003C6974 /* Conveyor+withLatestFrom.swift in Sources */,
+				D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */,
 				5C83B142222598A400311D29 /* SiloType.swift in Sources */,
 				5C83B1442225999800311D29 /* ConveyorType.swift in Sources */,
 				5CBED6D722284678003C6974 /* Scheduling.swift in Sources */,

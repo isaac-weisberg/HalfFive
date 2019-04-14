@@ -3,41 +3,62 @@ import HalfFive
 protocol TestViewModel {
     var nextQuestion: Silo<Void, SchedulingMain> { get }
     
-    var question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot> { get }
+    var question: Conveyor<TestCardViewModel, SchedulingMain, HotnessCold> { get }
     
-    var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot> { get }
+    var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold> { get }
     
-    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold> { get }
 }
 
 class TestViewModelImpl {
-    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain, HotnessHot>
+    typealias Context = TestRetrievalServiceContext
     
-    let question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot>
+    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain, HotnessCold>
     
-    let nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot>
+    let question: Conveyor<TestCardViewModel, SchedulingMain, HotnessCold>
+    
+    let nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold>
     
     let nextQuestion: Silo<Void, SchedulingMain>
     
-    init(data: TestModel) {
-        let questionsCount = data.questions.count
-        
-        let questions = data.questions
-            .enumerated()
-            .map { things -> (TestCardViewModel, isLast: Bool) in
-                let (index, question) = things
-                
-                let data = TestCardViewModelImpl.Data(
-                    title: question.title,
-                    questionIndex: index,
-                    questionsTotal: questionsCount,
-                    selection: question.selection,
-                    answers: question.answers)
-                
-                let isLast = index == questionsCount - 1
-                
-                return (TestCardViewModelImpl(data: data), isLast: isLast)
+    init(context: TestRetrievalServiceContext) {
+        let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
+            .map { res -> TestModel? in
+                let res = res.then { dto in
+                    .success(TestModel(github: dto))
+                }
+                if case .success(let data) = res {
+                    return data
+                }
+                return nil
             }
+            .filter { $0 != nil }.map { $0! }
+            .map { data -> [(TestCardViewModel, isLast: Bool)] in
+                let questionsCount = data.questions.count
+                
+                let questions = data.questions
+                    .enumerated()
+                    .map { things -> (TestCardViewModel, isLast: Bool) in
+                        let (index, question) = things
+                        
+                        let data = TestCardViewModelImpl.Data(
+                            title: question.title,
+                            questionIndex: index,
+                            questionsTotal: questionsCount,
+                            selection: question.selection,
+                            answers: question.answers)
+                        
+                        let isLast = index == questionsCount - 1
+                        
+                        return (TestCardViewModelImpl(data: data), isLast: isLast)
+                    }
+                return questions
+            }
+            .flatMapLatest { questions in
+                Conveyors.from(array: questions)
+            }
+            .run(on: SchedulingSerial())
+            .fire(on: SchedulingMain())
         
         let actionMultiplexer = Multiplexer<Void, SchedulingMain>()
         
@@ -46,9 +67,6 @@ class TestViewModelImpl {
         
         let actionConveyor = actionMultiplexer
             .startWith(event: ())
-        
-        let questionsConveyorMarked = Conveyors.from(array: questions)
-            .assumeFiresOnMain()
         
         self.questionState = Conveyors.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
         
@@ -65,7 +83,7 @@ class TestViewModelImpl {
 }
 
 extension TestViewModelImpl: TestViewModel {
-    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> {
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold> {
         return question
             .flatMapLatest { vm in
                 vm.isSelectionValid
