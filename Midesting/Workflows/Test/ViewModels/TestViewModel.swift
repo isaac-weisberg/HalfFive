@@ -7,7 +7,7 @@ protocol TestViewModel {
     
     var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold> { get }
     
-    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold> { get }
+    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
 }
 
 class TestViewModelImpl {
@@ -21,7 +21,7 @@ class TestViewModelImpl {
     
     let nextQuestion: Silo<Void, SchedulingMain>
     
-    let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold>
+    let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
     
     init(context: TestRetrievalServiceContext) {
         let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
@@ -86,6 +86,7 @@ class TestViewModelImpl {
             .flatMapLatest { vm in
                 vm.isSelectionValid
             }
+            .startWith(event: false)
     }
 }
 
