@@ -125,3 +125,53 @@ func download(contentsOf url: URL) -> Conveyor<DownloadResult, SchedulingUnknown
 ```
 
 Seems legit. The call to the `Data.init(contentsOf:)` will block the current thread until the data is downloaded. You explicitly show that the subscription event handling code will be run synchronously by creating the conveyor with `sync` operator.
+
+The wrong way to do it is the following idiom using the `async` operator:
+
+```swift
+func wrong() -> Conveyor<Void, SchedulingUnknown, HotnessCold> {
+    return Conveyors.async { handler in
+        handler(())
+        handler(())
+        return TrashVoid()
+    }
+}
+```
+
+Here, at least one of the emissions will happen synchronously and it's your responsibility to prove it to the compiler by rewriting it with `sync` operator so it looks like this:
+
+```swift
+func right() -> Conveyor<Void, SchedulingUnknown, HotnessHot> {
+    return Conveyors.sync {
+        return Conveyors.from(array: [(), ()])
+    }
+}
+```
+
+If you break this rule then, I'm afraid, you are confirmed to have [ligma](https://knowyourmeme.com/memes/ligma).
+
+Here is a sample of working with `async` operator in a proper fashion:
+
+```swift
+typealias HTTPDownloadResult = ResultTing<(HTTPURLResponse, Data?), Error>
+
+func download(request: URLRequest) -> Conveyor<HTTPDownloadResult, SchedulingUnknown, HotnessCold> {
+    return Conveyors.async { handler in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                handler(.failure(error))
+                return
+            }
+            
+            let res = response as! HTTPURLResponse
+            handler(.success((res, data)))
+        }
+        
+        task.resume()
+        
+        return TrashAbstract {
+            task.cancel()
+        }
+    }
+}
+```
