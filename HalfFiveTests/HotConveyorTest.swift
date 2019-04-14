@@ -31,6 +31,7 @@ class HotConveyorTest: XCTestCase {
     let combinatorialConvs = [
         C.combineLatest(C.just(12), C.just(235)) { _, _ in () },
         C.zip(C.just(31), C.from(array: ["dic", "fuc"])) { _, _ in () },
+        C.just(3).flatMapLatest { _ in Conveyors.just(()) }
     ]
     
     func testCombinatorialConvs() {
