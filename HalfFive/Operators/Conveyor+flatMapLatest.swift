@@ -1,5 +1,5 @@
 public extension ConveyorType {
-    internal func flatMapLatestCold<NewConveyor: ConveyorType>(predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, HotnessCold> {
+    internal func flatMapLatestCold<NewConveyor: ConveyorType>(_ predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, HotnessCold> {
         let run = self.run(handler:)
         return .init { handler in
             let composite = TrashCompositeTwo(primary: nil, secondary: nil)
@@ -14,12 +14,12 @@ public extension ConveyorType {
         }
     }
     
-    func flatMapLatest<NewConveyor: ConveyorType>(predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, HotnessCold> where Hotness == HotnessCold {
-        return flatMapLatestCold(predicate: predicate)
+    func flatMapLatest<NewConveyor: ConveyorType>(_ predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, HotnessCold> where Hotness == HotnessCold {
+        return flatMapLatestCold(predicate)
     }
     
-    func flatMapLatest<NewConveyor: ConveyorType>(predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, NewConveyor.Hotness> where Hotness == HotnessHot {
-        return flatMapLatestCold(predicate: predicate)
+    func flatMapLatest<NewConveyor: ConveyorType>(_ predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, NewConveyor.Hotness> where Hotness == HotnessHot {
+        return flatMapLatestCold(predicate)
             .convertIntoWhateverApplies()
     }
 }
