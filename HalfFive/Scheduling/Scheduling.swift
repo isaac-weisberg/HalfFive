@@ -19,9 +19,7 @@ public protocol DeterminedScheduling: SchedulingTrait {
 }
 
 public struct SchedulingMain: DeterminedScheduling {
-    public var queue: DispatchQueue {
-        return .main
-    }
+    public var queue: DispatchQueue = .main
     
     public init() {
         
@@ -29,19 +27,9 @@ public struct SchedulingMain: DeterminedScheduling {
 }
 
 public struct SchedulingSerial: DeterminedScheduling {
-    public var queue: DispatchQueue {
-        return DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq", attributes: [])
-    }
+    public let queue: DispatchQueue = DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
     
     public init() {
         
     }
-}
-
-internal struct SchedulingLiterallyAny: DeterminedScheduling, SchedulingRandom {
-    var queue: DispatchQueue {
-        return DispatchQueue.main
-    }
-    
-    
 }

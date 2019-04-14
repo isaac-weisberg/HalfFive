@@ -45,8 +45,6 @@ class BusinessLogicTests: XCTestCase {
         let multiplyAgainst = self.multiplyAgainst
         let expectedResults = self.expectedResults
         
-        let lock = NSLock()
-        
         let initial = Conveyors
             .from(array: initialSequence)
             .run(on: SchedulingMain())
@@ -64,18 +62,6 @@ class BusinessLogicTests: XCTestCase {
         
         appliedFlatMap
             .run { res in
-                /* I tried without using the lock
-                 but evidently, Array objects mutations
-                 are not atomic, and when you get array's `count`
-                 in the midst of the `append` happening, you get
-                 EXC_BAD_ACCESS which is sorta-- logical...
-                 However, at the same time-- wasn't it supposed to be on a serial query?
-                 hence.. you know what i mean
-                 hence thread safe
-                 */
-                lock.lock()
-                defer { lock.unlock() }
-                
                 syncResults.append(res)
                 if syncResults.count == expectedResults.count {
                     XCTAssertEqual(syncResults.sorted(), expectedResults.sorted(), "All the results should've been populated and be equal")
@@ -84,6 +70,6 @@ class BusinessLogicTests: XCTestCase {
             }
             .disposed(by: trashBag)
         
-        wait(for: [exp], timeout: 15.0)
+        wait(for: [exp], timeout: 2.0)
     }
 }
