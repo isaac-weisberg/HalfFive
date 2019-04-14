@@ -21,6 +21,8 @@ class TestViewModelImpl {
     
     let nextQuestion: Silo<Void, SchedulingMain>
     
+    let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold>
+    
     init(context: TestRetrievalServiceContext) {
         let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
             .map { res -> TestModel? in
@@ -79,14 +81,14 @@ class TestViewModelImpl {
             .map { things in
                 things.0
             }
-    }
-}
-
-extension TestViewModelImpl: TestViewModel {
-    var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessCold> {
-        return question
+        
+        self.isSelectionValid = question
             .flatMapLatest { vm in
                 vm.isSelectionValid
             }
     }
+}
+
+extension TestViewModelImpl: TestViewModel {
+    
 }
