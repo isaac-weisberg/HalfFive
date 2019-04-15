@@ -79,6 +79,7 @@
 		D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6222608AAD00639991 /* HotConveyorTest.swift */; };
 		D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6422608E6200639991 /* Conveyors+just.swift */; };
+		D3391E5B2264418E006EF628 /* Conveyor+share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3391E5A2264418E006EF628 /* Conveyor+share.swift */; };
 		D37CC92C2262F7590041F0C8 /* TestRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */; };
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
@@ -175,6 +176,7 @@
 		D304ED5B22608A9500639991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D304ED6222608AAD00639991 /* HotConveyorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotConveyorTest.swift; sourceTree = "<group>"; };
 		D304ED6422608E6200639991 /* Conveyors+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+just.swift"; sourceTree = "<group>"; };
+		D3391E5A2264418E006EF628 /* Conveyor+share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+share.swift"; sourceTree = "<group>"; };
 		D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRetrievalService.swift; sourceTree = "<group>"; };
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				5C34FE3822467CA8002AF74D /* Silo+Map.swift */,
 				D304ED5122605EE700639991 /* Conveyor+convertToHot.swift */,
 				D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */,
+				D3391E5A2264418E006EF628 /* Conveyor+share.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				5CBED6D722284678003C6974 /* Scheduling.swift in Sources */,
 				5CD54D43222BB96200B54665 /* Conveyors+from.swift in Sources */,
 				5CD54D47222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift in Sources */,
+				D3391E5B2264418E006EF628 /* Conveyor+share.swift in Sources */,
 				D304ED4D2260257D00639991 /* Hotness.swift in Sources */,
 				5CE318682226E29A005531E0 /* TrashDeferred.swift in Sources */,
 				5C83B13D2225921B00311D29 /* TrashCompositeTwo.swift in Sources */,
