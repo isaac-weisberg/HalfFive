@@ -57,7 +57,6 @@ class FlatMapTests: XCTestCase {
                 .run(on: SchedulingSerial())
             }
             .fire(on: SchedulingSerial())
-            .fire(on: SchedulingMain())
         
         var syncResults: [Int] = []
         
@@ -71,6 +70,6 @@ class FlatMapTests: XCTestCase {
             }
             .disposed(by: trashBag)
         
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 20.0)
     }
 }
