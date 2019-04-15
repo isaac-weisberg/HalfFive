@@ -14,11 +14,11 @@ class TestGithubRemoteDTO: Decodable {
                 let value = try container.decode(Int.self)
                 if value > 1 {
                     self = .multiple
-                    return
                 } else if value < 1 {
                     self = .arbitrary
+                } else {
+                    self = .single
                 }
-                self = .single
             }
         }
         
