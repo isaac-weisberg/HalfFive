@@ -47,7 +47,7 @@ class FlatMapTests: XCTestCase {
         
         let initial = Conveyors
             .from(array: initialSequence)
-            .run(on: SchedulingMain())
+            .run(on: SchedulingSerial())
         
         let appliedFlatMap = initial
             .flatMapLatest { val in

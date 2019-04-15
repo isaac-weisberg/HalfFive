@@ -29,10 +29,10 @@ class ZipTests: XCTestCase {
         
         
         let one = Conveyors.from(array: valuesOne)
-            .fire(on: SchedulingMain())
+            .fire(on: SchedulingSerial())
         
         let another = Conveyors.from(array: valuesTwo)
-            .fire(on: SchedulingMain())
+            .fire(on: SchedulingSerial())
         
         var results = [Zip]()
         
