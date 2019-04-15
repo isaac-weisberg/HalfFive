@@ -29,6 +29,8 @@ class TestCardViewModelImpl {
         
         let selectionViewModel: TestAnswerSelectionViewModel
         switch data.selection {
+        case .arbitrary:
+            selectionViewModel =  TestAnswerSelectionArbitraryViewModel()
         case .single:
             selectionViewModel = TestAnswerSelectionSingleViewModel()
         case .multiple:

@@ -1,5 +1,6 @@
 struct TestModel {
     enum Selection {
+        case arbitrary
         case single
         case multiple
         

@@ -80,6 +80,7 @@
 		D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6222608AAD00639991 /* HotConveyorTest.swift */; };
 		D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED6422608E6200639991 /* Conveyors+just.swift */; };
 		D3391E5B2264418E006EF628 /* Conveyor+share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3391E5A2264418E006EF628 /* Conveyor+share.swift */; };
+		D3391E5D22647A3C006EF628 /* TestAnswerSelectionArbitraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3391E5C22647A3C006EF628 /* TestAnswerSelectionArbitraryViewModel.swift */; };
 		D37CC92C2262F7590041F0C8 /* TestRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */; };
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
@@ -177,6 +178,7 @@
 		D304ED6222608AAD00639991 /* HotConveyorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotConveyorTest.swift; sourceTree = "<group>"; };
 		D304ED6422608E6200639991 /* Conveyors+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+just.swift"; sourceTree = "<group>"; };
 		D3391E5A2264418E006EF628 /* Conveyor+share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+share.swift"; sourceTree = "<group>"; };
+		D3391E5C22647A3C006EF628 /* TestAnswerSelectionArbitraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswerSelectionArbitraryViewModel.swift; sourceTree = "<group>"; };
 		D37CC92B2262F7590041F0C8 /* TestRetrievalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRetrievalService.swift; sourceTree = "<group>"; };
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				5CD54D54222BE1C300B54665 /* TestAnswerSelectionViewModel.swift */,
 				5CD54D56222BE22B00B54665 /* TestAnswerSelectionSingleViewModel.swift */,
 				5CF6165F22301C070080B2A7 /* TestAnswerSelectionMultipleViewModel.swift */,
+				D3391E5C22647A3C006EF628 /* TestAnswerSelectionArbitraryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				5C78D8D0222A742500ACC9A7 /* Context.swift in Sources */,
 				5C78D8D3222A79F900ACC9A7 /* TestCoordinator.swift in Sources */,
 				D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */,
+				D3391E5D22647A3C006EF628 /* TestAnswerSelectionArbitraryViewModel.swift in Sources */,
 				5CD54D55222BE1C300B54665 /* TestAnswerSelectionViewModel.swift in Sources */,
 				5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */,
 				5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */,
