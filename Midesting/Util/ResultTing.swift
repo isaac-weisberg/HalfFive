@@ -31,4 +31,13 @@ extension ResultTing {
             return predicate(error)
         }
     }
+    
+    func `catch`<NewError>(_ predicate: (Error) -> NewError) -> ResultTing<Value, NewError> {
+        switch self {
+        case .success(let value):
+            return .success(value)
+        case .failure(let error):
+            return .failure(predicate(error))
+        }
+    }
 }
