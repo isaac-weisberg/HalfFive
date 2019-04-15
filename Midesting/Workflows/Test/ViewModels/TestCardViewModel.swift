@@ -43,7 +43,7 @@ class TestCardViewModelImpl {
                     text: stuff.1,
                     action: selectionViewModel.selectRequest)
                 
-                vm.setIsSelected(conveyor: selectionViewModel.isAnswerSelected(vm))
+                vm.setIsSelected(conveyor: selectionViewModel.isAnswerSelected(stuff.id))
                 
                 return vm
             }

@@ -1,24 +1,18 @@
 import HalfFive
 
-private extension Array where Element == AnswerTextualViewModel {
-    func contains(element: Element) -> Bool {
-        return contains { $0 === element }
-    }
-}
-
 class TestAnswerSelectionMultipleViewModel {
-    let selectedAnswers = Container<[AnswerTextualViewModel], SchedulingMain>(value: [])
+    let selectedAnswers = Container<[String], SchedulingMain>(value: [])
     
-    let selectionMultiplexer = Multiplexer<AnswerTextualViewModel, SchedulingMain>()
+    let selectionMultiplexer = Multiplexer<String, SchedulingMain>()
     
     let trashBag = TrashBag()
     
     init() {
         selectionMultiplexer
             .withLatest(from: selectedAnswers) { (new: $0, old: $1) }
-            .map { stuff -> [AnswerTextualViewModel] in
-                if stuff.old.contains(element: stuff.new) {
-                    return stuff.old.filter { $0 !== stuff.new }
+            .map { stuff -> [String] in
+                if stuff.old.contains(stuff.new) {
+                    return stuff.old.filter { $0 != stuff.new }
                 }
                 var rw = stuff.old
                 rw.append(stuff.new)
@@ -30,12 +24,12 @@ class TestAnswerSelectionMultipleViewModel {
 }
 
 extension TestAnswerSelectionMultipleViewModel: TestAnswerSelectionViewModel {
-    func isAnswerSelected(_ answer: AnswerTextualViewModel) -> Conveyor<Bool, SchedulingMain, HotnessHot> {
+    func isAnswerSelected(_ answer: String) -> Conveyor<Bool, SchedulingMain, HotnessHot> {
         return selectedAnswers
-            .map { $0.contains { $0 === answer } }
+            .map { $0.contains { $0 == answer } }
     }
     
-    var selectRequest: Silo<AnswerTextualViewModel, SchedulingMain> {
+    var selectRequest: Silo<String, SchedulingMain> {
         return selectionMultiplexer
             .asSilo()
     }

@@ -13,14 +13,14 @@ protocol AnswerTextualViewModel: class {
 }
 
 class AnswerTextualViewModelImpl {
-    let actionSilo: Silo<AnswerTextualViewModel, SchedulingMain>
+    let actionSilo: Silo<String, SchedulingMain>
     var isSelected: Conveyor<Bool, SchedulingMain, HotnessHot>!
     let identity: String
     let text: String
     
     let trashBag: TrashBag = TrashBag()
     
-    init(identity: String, text: String, action: Silo<AnswerTextualViewModel, SchedulingMain>) {
+    init(identity: String, text: String, action: Silo<String, SchedulingMain>) {
         self.text = text
         self.identity = identity
         self.actionSilo = action
@@ -31,7 +31,7 @@ class AnswerTextualViewModelImpl {
 extension AnswerTextualViewModelImpl: AnswerTextualViewModel {
     var action: Silo<Void, SchedulingMain> {
         return actionSilo.map {
-            self
+            self.identity
         }
     }
     
