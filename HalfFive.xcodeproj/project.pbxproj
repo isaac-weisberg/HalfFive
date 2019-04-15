@@ -19,7 +19,7 @@
 		5C2AAA5F226258FE00CA1178 /* FileDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA5E226258FE00CA1178 /* FileDownloaderService.swift */; };
 		5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2AAA612262598800CA1178 /* ResultTing.swift */; };
 		5C34FE3922467CA8002AF74D /* Silo+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C34FE3822467CA8002AF74D /* Silo+Map.swift */; };
-		5C5AFF87226373F900DD4557 /* BusinessLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */; };
+		5C5AFF87226373F900DD4557 /* FlatMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AFF86226373F900DD4557 /* FlatMapTests.swift */; };
 		5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */; };
 		5C78D8B6222A72A600ACC9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */; };
 		5C78D8BD222A72AB00ACC9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8BC222A72AB00ACC9A7 /* Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		5C78D8D8222A7D9D00ACC9A7 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8D7222A7D9D00ACC9A7 /* StoryboardScenes.swift */; };
 		5C78D8DB222A7DC700ACC9A7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78D8DA222A7DC700ACC9A7 /* TestViewController.swift */; };
 		5C78D8DE222A7EE700ACC9A7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */; };
+		5C7962AF2264C067009FA515 /* ZipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7962AE2264C067009FA515 /* ZipTests.swift */; };
 		5C83B1262225846A00311D29 /* Conveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1252225846A00311D29 /* Conveyor.swift */; };
 		5C83B1282225849D00311D29 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B1272225849D00311D29 /* Trash.swift */; };
 		5C83B12A222584B400311D29 /* Silo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83B129222584B400311D29 /* Silo.swift */; };
@@ -111,7 +112,7 @@
 		5C2AAA612262598800CA1178 /* ResultTing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTing.swift; sourceTree = "<group>"; };
 		5C34FE3822467CA8002AF74D /* Silo+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Silo+Map.swift"; sourceTree = "<group>"; };
 		5C4FE2B8225CEF5B00C3CFE7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicTests.swift; sourceTree = "<group>"; };
+		5C5AFF86226373F900DD4557 /* FlatMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMapTests.swift; sourceTree = "<group>"; };
 		5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+combineLatest.swift"; sourceTree = "<group>"; };
 		5C78D8B3222A72A600ACC9A7 /* Midesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78D8B5222A72A600ACC9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		5C78D8D7222A7D9D00ACC9A7 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
 		5C78D8DA222A7DC700ACC9A7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5C78D8DD222A7EE700ACC9A7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
+		5C7962AE2264C067009FA515 /* ZipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTests.swift; sourceTree = "<group>"; };
 		5C83B11A222583CB00311D29 /* HalfFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C83B11E222583CB00311D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C83B1252225846A00311D29 /* Conveyor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conveyor.swift; sourceTree = "<group>"; };
@@ -514,7 +516,8 @@
 			children = (
 				D304ED5B22608A9500639991 /* Info.plist */,
 				D304ED6222608AAD00639991 /* HotConveyorTest.swift */,
-				5C5AFF86226373F900DD4557 /* BusinessLogicTests.swift */,
+				5C5AFF86226373F900DD4557 /* FlatMapTests.swift */,
+				5C7962AE2264C067009FA515 /* ZipTests.swift */,
 			);
 			path = HalfFiveTests;
 			sourceTree = "<group>";
@@ -825,8 +828,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5AFF87226373F900DD4557 /* BusinessLogicTests.swift in Sources */,
+				5C5AFF87226373F900DD4557 /* FlatMapTests.swift in Sources */,
 				D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */,
+				5C7962AF2264C067009FA515 /* ZipTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

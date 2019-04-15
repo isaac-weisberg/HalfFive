@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 @testable import HalfFive
 
-class BusinessLogicTests: XCTestCase {
+class FlatMapTests: XCTestCase {
     let trashBag = TrashBag()
     
     let initialSequence =  [1, 2, 34, 5]
