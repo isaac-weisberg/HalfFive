@@ -25,7 +25,6 @@ class TestViewModelImpl {
     
     init(context: TestRetrievalServiceContext) {
         let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
-            .share()
             .map { res -> TestModel? in
                 let res = res.then { dto in
                     .success(TestModel(github: dto))
@@ -60,6 +59,7 @@ class TestViewModelImpl {
             .flatMapLatest { questions in
                 Conveyors.from(array: questions)
             }
+            .share()
             .run(on: SchedulingSerial())
             .fire(on: SchedulingMain())
         
