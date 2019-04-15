@@ -59,7 +59,6 @@ class TestViewModelImpl {
             .flatMapLatest { questions in
                 Conveyors.from(array: questions)
             }
-            .share()
             .run(on: SchedulingSerial())
             .fire(on: SchedulingMain())
         
@@ -72,6 +71,7 @@ class TestViewModelImpl {
             .startWith(event: ())
         
         self.questionState = Conveyors.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
+            .share()
         
         self.nextQuestionLabel = questionState
             .map { thigns in
