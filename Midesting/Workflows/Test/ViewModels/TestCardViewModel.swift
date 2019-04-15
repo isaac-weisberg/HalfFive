@@ -38,14 +38,11 @@ class TestCardViewModelImpl {
         
         answerVms = data.answers
             .map { stuff -> AnswerTextualViewModel in
-                let vm: AnswerTextualViewModel = AnswerTextualViewModelImpl(
+                AnswerTextualViewModelImpl(
                     identity: stuff.id,
                     text: stuff.1,
-                    action: selectionViewModel.selectRequest)
-                
-                vm.setIsSelected(conveyor: selectionViewModel.isAnswerSelected(stuff.id))
-                
-                return vm
+                    action: selectionViewModel.selectRequest,
+                    isSelected: selectionViewModel.isAnswerSelected(stuff.id))
             }
     }
 }
