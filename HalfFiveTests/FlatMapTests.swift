@@ -57,6 +57,7 @@ class FlatMapTests: XCTestCase {
                 .run(on: SchedulingSerial())
             }
             .fire(on: SchedulingSerial())
+            .fire(on: SchedulingMain())
         
         var syncResults: [Int] = []
         
