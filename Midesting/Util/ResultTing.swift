@@ -5,6 +5,15 @@ enum ResultTing<Value, Error> {
 
 
 extension ResultTing {
+    func then<NewValue>(_ predicate: (Value) -> NewValue) -> ResultTing<NewValue, Error> {
+        switch self {
+        case .success(let value):
+            return .success(predicate(value))
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
     func then<NewValue>(_ predicate: (Value) -> ResultTing<NewValue, Error>) -> ResultTing<NewValue, Error> {
         switch self {
         case .success(let value):
