@@ -12,6 +12,7 @@ protocol TestCardViewModel {
 
 class TestCardViewModelImpl {
     struct Data {
+        let id: String
         let title: String
         let questionIndex: Int
         let questionsTotal: Int

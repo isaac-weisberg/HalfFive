@@ -22,10 +22,10 @@ class TestGithubRemoteDTO: Decodable {
             }
         }
         
+        let id: String
         let title: String
         let answers: [Answer]
         let selection: Selection
     }
-    
     let questions: [QuestionDTO]
 }
