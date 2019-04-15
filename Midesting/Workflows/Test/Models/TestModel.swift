@@ -6,6 +6,8 @@ struct TestModel {
         
         init(github: TestGithubRemoteDTO.QuestionDTO.Selection) {
             switch github {
+            case .arbitrary:
+                self = .arbitrary
             case .single:
                 self = .single
             case .multiple:

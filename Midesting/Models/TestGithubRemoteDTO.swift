@@ -5,6 +5,7 @@ class TestGithubRemoteDTO: Decodable {
         }
         
         enum Selection: Decodable {
+            case arbitrary
             case single
             case multiple
             
@@ -14,6 +15,8 @@ class TestGithubRemoteDTO: Decodable {
                 if value > 1 {
                     self = .multiple
                     return
+                } else if value < 1 {
+                    self = .arbitrary
                 }
                 self = .single
             }
