@@ -3,8 +3,6 @@ import XCTest
 @testable import HalfFive
 
 class FlatMapTests: XCTestCase {
-    let trashBag = TrashBag()
-    
     let initialSequence =  [1, 2, 34, 5]
     let multiplyAgainst = [ 002, 18, 33 ]
     
@@ -15,6 +13,8 @@ class FlatMapTests: XCTestCase {
         .reduce([]) { $0 + $1 }
     
     func testSyncFlatmap() {
+        let trashBag = TrashBag()
+        
         let multiplyAgainst = self.multiplyAgainst
         
         let initial = Conveyors
@@ -40,6 +40,8 @@ class FlatMapTests: XCTestCase {
     }
     
     func testAsyncFlatmap() {
+        let trashBag = TrashBag()
+        
         let exp = expectation(description: "Should've successfully finished producing all the elements")
         
         let multiplyAgainst = self.multiplyAgainst
@@ -63,6 +65,7 @@ class FlatMapTests: XCTestCase {
         
         appliedFlatMap
             .run { res in
+                _ = self
                 syncResults.append(res)
                 if syncResults.count == expectedResults.count {
                     XCTAssertEqual(syncResults.sorted(), expectedResults.sorted(), "All the results should've been populated and be equal")

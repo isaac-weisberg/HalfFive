@@ -5,7 +5,7 @@ class ZipTests: XCTestCase {
     let trashBag = TrashBag()
     
     typealias Zip = [Int]
-    let countBound = 5
+    let countBound = 900
     let rangeBound = 350
     
     lazy var range = 0...Int.random(in: 1..<countBound)
@@ -30,49 +30,54 @@ class ZipTests: XCTestCase {
     let schedulingSerial = SchedulingSerial.new()
     
     func testZipCreationalOpSync() {
+        let trashBag = TrashBag()
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one, another) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one, another) { [$0, $1] }, trashBag: trashBag, exp: exp)
         
         wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsync() {
+        let trashBag = TrashBag()
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.fire(on: schedulingMain), another.fire(on: schedulingMain)) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.fire(on: schedulingMain), another.fire(on: schedulingMain)) { [$0, $1] }, trashBag: trashBag, exp: exp)
         
         wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgFire() {
+        let trashBag = TrashBag()
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.fire(on: schedulingSerial), another.fire(on: schedulingSerial)) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.fire(on: schedulingSerial), another.fire(on: schedulingSerial)) { [$0, $1] }, trashBag: trashBag, exp: exp)
         
         wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgRun() {
+        let trashBag = TrashBag()
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.run(on: schedulingSerial), another.run(on: schedulingSerial)) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.run(on: schedulingSerial), another.run(on: schedulingSerial)) { [$0, $1] }, trashBag: trashBag, exp: exp)
         
         wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgRunMainFire() {
+        let trashBag = TrashBag()
         let exp = expectation(description: "Shoulda did all the ting")
         
         checkZip(Conveyors.zip(
             one.run(on: schedulingSerial).fire(on: schedulingMain),
             another.run(on: schedulingSerial).fire(on: schedulingMain)
-        ) { [$0, $1] }, exp: exp)
+        ) { [$0, $1] }, trashBag: trashBag, exp: exp)
         
         wait(for: [ exp ], timeout: timeout)
     }
     
-    func checkZip<Scheduler: SchedulingTrait, Hotness: HotnessTrait>(_ zip: Conveyor<Zip, Scheduler, Hotness>, exp: XCTestExpectation) {
+    func checkZip<Scheduler: SchedulingTrait, Hotness: HotnessTrait>(_ zip: Conveyor<Zip, Scheduler, Hotness>, trashBag: TrashBag, exp: XCTestExpectation) {
         var results = [Zip]()
         zip
             .run { tuple in
