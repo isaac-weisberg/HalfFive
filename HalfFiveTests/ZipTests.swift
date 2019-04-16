@@ -89,4 +89,13 @@ class ZipTests: XCTestCase {
             }
             .disposed(by: trashBag)
     }
+    
+    func testZipCreationalOpAsyncBgFireMix() {
+        let trashBag = TrashBag()
+        let exp = expectation(description: "Shoulda did all the ting")
+        
+        checkZip(Conveyors.zip(one.fire(on: schedulingSerial), another.run(on: schedulingMain).fire(on: schedulingSerial)) { [$0, $1] }, trashBag: trashBag, exp: exp)
+        
+        wait(for: [ exp ], timeout: timeout)
+    }
 }
