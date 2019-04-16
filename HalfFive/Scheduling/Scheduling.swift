@@ -19,15 +19,15 @@ public protocol DeterminedScheduling: SchedulingTrait {
 }
 
 public struct SchedulingMain: DeterminedScheduling {
-    public var queue: DispatchQueue = .main
+    public let queue: DispatchQueue = .main
     
     public init() {
         
     }
 }
 
-public struct SchedulingSerial: DeterminedScheduling {
-    public let queue: DispatchQueue = DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
+public class SchedulingSerial: DeterminedScheduling {
+    public let queue = DispatchQueue(label: "net.caroline-weisberg.HalfFive.serialq")
     
     public init() {
         

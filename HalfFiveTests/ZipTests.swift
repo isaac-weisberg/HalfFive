@@ -24,6 +24,9 @@ class ZipTests: XCTestCase {
         return res
     }()
     
+    let schedulingMain = SchedulingMain()
+    let schedulingSerial = SchedulingSerial()
+    
     func testZipCreationalOpSync() {
         let exp = expectation(description: "Shoulda did all the ting")
         
@@ -35,7 +38,7 @@ class ZipTests: XCTestCase {
     func testZipCreationalOpAsync() {
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.fire(on: SchedulingMain()), another.fire(on: SchedulingMain())) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.fire(on: schedulingMain), another.fire(on: schedulingMain)) { [$0, $1] }, exp: exp)
         
         wait(for: [ exp ], timeout: 20)
     }
@@ -43,7 +46,7 @@ class ZipTests: XCTestCase {
     func testZipCreationalOpAsyncBgFire() {
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.fire(on: SchedulingSerial()), another.fire(on: SchedulingSerial())) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.fire(on: schedulingSerial), another.fire(on: schedulingSerial)) { [$0, $1] }, exp: exp)
         
         wait(for: [ exp ], timeout: 20)
     }
@@ -51,7 +54,7 @@ class ZipTests: XCTestCase {
     func testZipCreationalOpAsyncBgRun() {
         let exp = expectation(description: "Shoulda did all the ting")
         
-        checkZip(Conveyors.zip(one.run(on: SchedulingSerial()), another.run(on: SchedulingSerial())) { [$0, $1] }, exp: exp)
+        checkZip(Conveyors.zip(one.run(on: schedulingSerial), another.run(on: schedulingSerial)) { [$0, $1] }, exp: exp)
         
         wait(for: [ exp ], timeout: 20)
     }
@@ -60,8 +63,8 @@ class ZipTests: XCTestCase {
         let exp = expectation(description: "Shoulda did all the ting")
         
         checkZip(Conveyors.zip(
-            one.run(on: SchedulingSerial()).fire(on: SchedulingMain()),
-            another.run(on: SchedulingSerial()).fire(on: SchedulingMain())
+            one.run(on: schedulingSerial).fire(on: schedulingMain),
+            another.run(on: schedulingSerial).fire(on: schedulingMain)
         ) { [$0, $1] }, exp: exp)
         
         wait(for: [ exp ], timeout: 20)

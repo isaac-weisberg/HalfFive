@@ -44,19 +44,20 @@ class FlatMapTests: XCTestCase {
         
         let multiplyAgainst = self.multiplyAgainst
         let expectedResults = self.expectedResults
+        let serialScheduling = SchedulingSerial()
         
         let initial = Conveyors
             .from(array: initialSequence)
-            .run(on: SchedulingSerial())
+            .run(on: serialScheduling)
         
         let appliedFlatMap = initial
             .flatMapLatest { val in
                 Conveyors.sync {
                     Conveyors.from(array: multiplyAgainst.map { val * $0 })
                 }
-                .run(on: SchedulingSerial())
+                .run(on: serialScheduling)
             }
-            .fire(on: SchedulingSerial())
+            .fire(on: serialScheduling)
         
         var syncResults: [Int] = []
         
