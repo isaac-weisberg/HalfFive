@@ -44,7 +44,7 @@ class FlatMapTests: XCTestCase {
         
         let multiplyAgainst = self.multiplyAgainst
         let expectedResults = self.expectedResults
-        let serialScheduling = SchedulingSerial()
+        let serialScheduling = SchedulingSerial.new()
         
         let initial = Conveyors
             .from(array: initialSequence)

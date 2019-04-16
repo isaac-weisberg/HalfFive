@@ -24,8 +24,8 @@ class ZipTests: XCTestCase {
         return res
     }()
     
-    let schedulingMain = SchedulingMain()
-    let schedulingSerial = SchedulingSerial()
+    let schedulingMain = SchedulingMain.instance
+    let schedulingSerial = SchedulingSerial.new()
     
     func testZipCreationalOpSync() {
         let exp = expectation(description: "Shoulda did all the ting")

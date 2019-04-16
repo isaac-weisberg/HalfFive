@@ -23,6 +23,8 @@ class TestViewModelImpl {
     
     let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
     
+    let scheduling = SchedulingSerial.new()
+    
     init(context: TestRetrievalServiceContext) {
         let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
             .map { res -> TestModel? in
@@ -60,8 +62,8 @@ class TestViewModelImpl {
             .flatMapLatest { questions in
                 Conveyors.from(array: questions)
             }
-            .run(on: SchedulingSerial())
-            .fire(on: SchedulingMain())
+            .run(on: scheduling)
+            .fire(on: SchedulingMain.instance)
         
         let actionMultiplexer = Multiplexer<Void, SchedulingMain>()
         
