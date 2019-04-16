@@ -6,10 +6,14 @@ public extension Conveyors {
     
     static func zip<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
         return .init { handler in
-            var events = [Int: EventZip<L.Event, R.Event>]()
+            let trash = ZipTrash<L.Event, R.Event>()
+            weak var weakTrash = trash
             
             let process = { (index: Int) in
-                guard let zip = events[index] else {
+                guard let trash = weakTrash else {
+                    return
+                }
+                guard let zip = trash.events[index] else {
                     return
                 }
                 guard let (left, right) = zip.events else {
@@ -17,7 +21,7 @@ public extension Conveyors {
                 }
                 let resulting = combiner(left, right)
                 handler(resulting)
-                events[index] = nil
+                trash.events[index] = nil
             }
             
             let leftTrash, rightTrash: Trash
@@ -25,11 +29,14 @@ public extension Conveyors {
             var leftCount = 0
             
             leftTrash = lhs.run { event in
+                guard let trash = weakTrash else {
+                    return
+                }
                 let index = leftCount
                 leftCount += 1
                 
                 
-                events[index] = EventZip(lhs: .some(event), rhs: events[index]?.rhs ?? .uninit)
+                trash.events[index] = EventZip(lhs: .some(event), rhs: trash.events[index]?.rhs ?? .uninit)
                 
                 process(index)
             }
@@ -37,15 +44,20 @@ public extension Conveyors {
             var rightCount = 0
             
             rightTrash = rhs.run { event in
+                guard let trash = weakTrash else {
+                    return
+                }
                 let index = rightCount
                 rightCount += 1
                 
-                events[index] = EventZip(lhs: events[index]?.lhs ?? .uninit, rhs: .some(event))
+                trash.events[index] = EventZip(lhs: trash.events[index]?.lhs ?? .uninit, rhs: .some(event))
                 
                 process(index)
             }
             
-            return TrashCompositeTwo(primary: leftTrash, secondary: rightTrash)
+            trash.composite = TrashCompositeTwo(primary: leftTrash, secondary: rightTrash)
+            
+            return trash
         }
     }
 }
@@ -73,5 +85,14 @@ private struct EventZip<L, R> {
             return (lhs, rhs)
         }
         return nil
+    }
+}
+
+private class ZipTrash<LE, RE>: Trash {
+    var events = [Int: EventZip<LE, RE>]()
+    var composite: TrashCompositeTwo?
+    
+    init() {
+        
     }
 }
