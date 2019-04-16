@@ -6,10 +6,8 @@ public extension ConveyorType {
             weak var weakTrash: Trash?
             let trash = run { event in
                 scheduler.queue.async {
-                    if `init` {
-                        guard weakTrash != nil else {
-                            return
-                        }
+                    if !`init`, weakTrash == nil {
+                        return
                     }
                     
                     handler(event)
