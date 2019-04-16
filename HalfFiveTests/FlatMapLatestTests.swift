@@ -2,8 +2,8 @@ import Foundation
 import XCTest
 @testable import HalfFive
 
-class FlatMapTests: XCTestCase {
-    let initialSequence =  [1, 2, 34, 5, 1, 2, 34, 5, 1, 2, 34, 5, 1, 2, 34, 5]
+class FlatMapLatestTests: XCTestCase {
+    let initialSequence =  [1, 2, 34, 5, 1]
     let multiplyAgainst = [ 002, 18, 33 ]
     
     lazy var expectedResults = initialSequence
@@ -12,7 +12,7 @@ class FlatMapTests: XCTestCase {
         }
         .reduce([]) { $0 + $1 }
     
-    func testSyncFlatmap() {
+    func testSyncFlatmapLatest() {
         let trashBag = TrashBag()
         
         let multiplyAgainst = self.multiplyAgainst
@@ -39,7 +39,7 @@ class FlatMapTests: XCTestCase {
         XCTAssertEqual(syncResults, expectedResults, "Should've already by now emitted all of the events since it's all sync")
     }
     
-    func testAsyncFlatmap() {
+    func testAsyncFlatmapLatest() {
         let trashBag = TrashBag()
         
         let exp = expectation(description: "Should've successfully finished producing all the elements")
@@ -57,17 +57,28 @@ class FlatMapTests: XCTestCase {
             .flatMapLatest { val in
                 Conveyors.sync {
                     Conveyors.from(array: multiplyAgainst.map { val * $0 })
-                }
-                .fire(on: SchedulingMain.instance)
+                } // MAKE SURE IS SYNC BECAUSE OTHERWISE ELEMENTS WILL BE FUCKING LOST
             }
+            .fire(on: SchedulingMain.instance)
             .fire(on: serialScheduling)
+            .run(on: SchedulingMain.instance)
             .run(on: serialScheduling)
             .fire(on: SchedulingMain.instance)
             .fire(on: serialScheduling)
+            .run(on: SchedulingMain.instance)
             .run(on: serialScheduling)
-            .run(on: serialScheduling)
+            .fire(on: SchedulingMain.instance)
             .fire(on: serialScheduling)
             .run(on: SchedulingMain.instance)
+            .run(on: serialScheduling)
+            .fire(on: SchedulingMain.instance)
+            .fire(on: serialScheduling)
+            .run(on: SchedulingMain.instance)
+            .run(on: serialScheduling)
+            .fire(on: SchedulingMain.instance)
+            .fire(on: serialScheduling)
+            .run(on: SchedulingMain.instance)
+            .run(on: serialScheduling)
             .run { res in
                 syncResults.append(res)
                 if syncResults.count == expectedResults.count {
