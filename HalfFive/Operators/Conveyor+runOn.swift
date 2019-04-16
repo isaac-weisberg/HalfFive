@@ -2,15 +2,10 @@ public extension ConveyorType {
     internal func runInternal<RunScheduler: DeterminedScheduling>(on scheduler: RunScheduler) -> Conveyor<Event, RunScheduler, HotnessCold> {
         let run = self.run(handler:)
         return Conveyor { handler in
-            weak var weakTrash: TrashDeferred?
             let trash = TrashDeferred()
             scheduler.queue.async {
-                guard let trash = weakTrash else {
-                    return
-                }
                 trash.trash = run(handler)
             }
-            weakTrash = trash
             return trash
         }
     }
