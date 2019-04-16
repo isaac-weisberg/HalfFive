@@ -3,7 +3,7 @@ import XCTest
 @testable import HalfFive
 
 class FlatMapTests: XCTestCase {
-    let initialSequence =  [1, 2, 34, 5]
+    let initialSequence =  [1, 2, 34, 5, 1, 2, 34, 5, 1, 2, 34, 5, 1, 2, 34, 5]
     let multiplyAgainst = [ 002, 18, 33 ]
     
     lazy var expectedResults = initialSequence
@@ -48,24 +48,27 @@ class FlatMapTests: XCTestCase {
         let expectedResults = self.expectedResults
         let serialScheduling = SchedulingSerial.new()
         
-        let initial = Conveyors
-            .from(array: initialSequence)
-            .run(on: serialScheduling)
+        var syncResults: [Int] = []
         
-        let appliedFlatMap = initial
+        Conveyors
+            .from(array: initialSequence)
+            .fire(on: serialScheduling)
+            .run(on: serialScheduling)
             .flatMapLatest { val in
                 Conveyors.sync {
                     Conveyors.from(array: multiplyAgainst.map { val * $0 })
                 }
-                .run(on: serialScheduling)
+                .fire(on: SchedulingMain.instance)
             }
             .fire(on: serialScheduling)
-        
-        var syncResults: [Int] = []
-        
-        appliedFlatMap
+            .run(on: serialScheduling)
+            .fire(on: SchedulingMain.instance)
+            .fire(on: serialScheduling)
+            .run(on: serialScheduling)
+            .run(on: serialScheduling)
+            .fire(on: serialScheduling)
+            .run(on: SchedulingMain.instance)
             .run { res in
-                _ = self
                 syncResults.append(res)
                 if syncResults.count == expectedResults.count {
                     XCTAssertEqual(syncResults.sorted(), expectedResults.sorted(), "All the results should've been populated and be equal")

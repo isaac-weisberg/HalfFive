@@ -3,7 +3,11 @@ public extension ConveyorType {
         let run = self.run(handler:)
         return Conveyor { handler in
             let trash = TrashDeferred()
+            weak var weakTrash = trash
             scheduler.queue.async {
+                guard let trash = weakTrash else {
+                    return
+                }
                 trash.trash = run(handler)
             }
             return trash
