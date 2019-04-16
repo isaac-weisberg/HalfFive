@@ -71,6 +71,6 @@ class FlatMapTests: XCTestCase {
             }
             .disposed(by: trashBag)
         
-        wait(for: [exp], timeout: 20.0)
+        wait(for: [exp], timeout: 5)
     }
 }

@@ -5,8 +5,8 @@ class ZipTests: XCTestCase {
     let trashBag = TrashBag()
     
     typealias Zip = [Int]
-    let countBound = 225
-    let rangeBound = 226
+    let countBound = 5
+    let rangeBound = 350
     
     lazy var range = 0...Int.random(in: 1..<countBound)
     
@@ -24,6 +24,8 @@ class ZipTests: XCTestCase {
         return res
     }()
     
+    let timeout: TimeInterval = 2
+    
     let schedulingMain = SchedulingMain.instance
     let schedulingSerial = SchedulingSerial.new()
     
@@ -32,7 +34,7 @@ class ZipTests: XCTestCase {
         
         checkZip(Conveyors.zip(one, another) { [$0, $1] }, exp: exp)
         
-        wait(for: [ exp ], timeout: 20)
+        wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsync() {
@@ -40,7 +42,7 @@ class ZipTests: XCTestCase {
         
         checkZip(Conveyors.zip(one.fire(on: schedulingMain), another.fire(on: schedulingMain)) { [$0, $1] }, exp: exp)
         
-        wait(for: [ exp ], timeout: 20)
+        wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgFire() {
@@ -48,7 +50,7 @@ class ZipTests: XCTestCase {
         
         checkZip(Conveyors.zip(one.fire(on: schedulingSerial), another.fire(on: schedulingSerial)) { [$0, $1] }, exp: exp)
         
-        wait(for: [ exp ], timeout: 20)
+        wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgRun() {
@@ -56,7 +58,7 @@ class ZipTests: XCTestCase {
         
         checkZip(Conveyors.zip(one.run(on: schedulingSerial), another.run(on: schedulingSerial)) { [$0, $1] }, exp: exp)
         
-        wait(for: [ exp ], timeout: 20)
+        wait(for: [ exp ], timeout: timeout)
     }
     
     func testZipCreationalOpAsyncBgRunMainFire() {
@@ -67,7 +69,7 @@ class ZipTests: XCTestCase {
             another.run(on: schedulingSerial).fire(on: schedulingMain)
         ) { [$0, $1] }, exp: exp)
         
-        wait(for: [ exp ], timeout: 20)
+        wait(for: [ exp ], timeout: timeout)
     }
     
     func checkZip<Scheduler: SchedulingTrait, Hotness: HotnessTrait>(_ zip: Conveyor<Zip, Scheduler, Hotness>, exp: XCTestExpectation) {
