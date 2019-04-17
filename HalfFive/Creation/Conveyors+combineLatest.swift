@@ -6,15 +6,18 @@ public extension Conveyors {
     
     static func combineLatest<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
         return .init { handler in
-            var lState = PrivateCombinerState<L.Event>.uninit
-            var rState = PrivateCombinerState<R.Event>.uninit
+            let trash = CombineLatestTrash<L.Event, R.Event>(primary: nil, secondary: nil)
+            weak var weakTrash = trash
             
             let evaluate = {
-                switch lState {
+                guard let trash = weakTrash else {
+                    return
+                }
+                switch trash.lState {
                 case .uninit:
                     return
                 case .live(let lEvent):
-                    switch rState {
+                    switch trash.rState {
                     case .uninit:
                         return
                     case .live(let rEvent):
@@ -24,17 +27,23 @@ public extension Conveyors {
                 }
             }
             
-            let lTrash = lhs.run { lEve in
-                lState = .live(lEve)
+            trash.secondary = lhs.run { lEve in
+                guard let trash = weakTrash else {
+                    return
+                }
+                trash.lState = .live(lEve)
                 evaluate()
             }
             
-            let rTrash = rhs.run { rEve in
-                rState = .live(rEve)
+            trash.primary = rhs.run { rEve in
+                guard let trash = weakTrash else {
+                    return
+                }
+                trash.rState = .live(rEve)
                 evaluate()
             }
             
-            return TrashCompositeTwo(primary: lTrash, secondary: rTrash)
+            return trash
         }
     }
 }
@@ -42,4 +51,9 @@ public extension Conveyors {
 private enum PrivateCombinerState<Event> {
     case uninit
     case live(Event)
+}
+
+private class CombineLatestTrash<LE, RE>: TrashCompositeTwo {
+    var lState = PrivateCombinerState<LE>.uninit
+    var rState = PrivateCombinerState<RE>.uninit
 }
