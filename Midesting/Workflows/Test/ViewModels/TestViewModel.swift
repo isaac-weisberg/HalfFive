@@ -70,10 +70,8 @@ class TestViewModelImpl {
         nextQuestion = actionMultiplexer
             .asSilo()
         
-        let actionConveyor = actionMultiplexer
-            .startWith(event: ())
         
-        self.questionState = Conveyors.zip(questionsConveyorMarked, actionConveyor) { q, _ in q }
+        self.questionState = Conveyors.zip(questionsConveyorMarked, actionMultiplexer) { q, _ in q }
             .share()
         
         self.nextQuestionLabel = questionState

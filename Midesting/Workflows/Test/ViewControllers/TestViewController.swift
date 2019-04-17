@@ -37,6 +37,8 @@ class TestViewController: UIViewController {
                     : ColorName.testActionTextColorDisabled.color
             }
             .disposed(by: trashBag)
+        
+        viewModel.nextQuestion.fire(event: ())
     }
     
     @IBAction func nextQuestionButtonTap(_ sender: UIButton) {
