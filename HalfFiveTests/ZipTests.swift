@@ -98,4 +98,13 @@ class ZipTests: XCTestCase {
         
         wait(for: [ exp ], timeout: timeout)
     }
+    
+    func testZipCreationalOpDelayedSerial() {
+        let trashBag = TrashBag()
+        let exp = expectation(description: "Shoulda did all the ting")
+        
+        checkZip(Conveyors.zip(one.delay(.now() + 0.05, on: schedulingSerial, ordered: true), another.fire(on: schedulingSerial)) { [$0, $1] }, trashBag: trashBag, exp: exp)
+        
+        wait(for: [ exp ], timeout: timeout)
+    }
 }
