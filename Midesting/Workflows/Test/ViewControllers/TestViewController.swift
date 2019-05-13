@@ -9,6 +9,7 @@ class TestViewController: UIViewController {
     @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var nextQuestionButton: UIButton!
     @IBOutlet var testCardView: TestCardView!
+    @IBOutlet var loadingView: LoadingView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

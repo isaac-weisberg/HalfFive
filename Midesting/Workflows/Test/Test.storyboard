@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +46,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-1K-dmc" customClass="LoadingView" customModule="Midesting" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="279.5" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8546316964285714" green="0.76078376665714287" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -55,7 +59,9 @@
                             <constraint firstItem="XaJ-eS-Sge" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nTr-Hh-SvZ" secondAttribute="trailing" constant="8" id="BPG-AX-dgi"/>
                             <constraint firstItem="nTr-Hh-SvZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XaJ-eS-Sge" secondAttribute="leading" constant="8" id="QCV-U3-7SQ"/>
                             <constraint firstItem="nTr-Hh-SvZ" firstAttribute="top" secondItem="7CG-1L-2fg" secondAttribute="top" constant="16" id="WBm-8l-XJq"/>
+                            <constraint firstItem="fdc-1K-dmc" firstAttribute="centerY" secondItem="XaJ-eS-Sge" secondAttribute="centerY" id="cPW-cF-yLu"/>
                             <constraint firstItem="6rQ-Gy-vaT" firstAttribute="top" secondItem="XaJ-eS-Sge" secondAttribute="top" id="fx2-25-VnH"/>
+                            <constraint firstItem="fdc-1K-dmc" firstAttribute="centerX" secondItem="XaJ-eS-Sge" secondAttribute="centerX" id="huF-8q-sFS"/>
                             <constraint firstItem="nTr-Hh-SvZ" firstAttribute="centerX" secondItem="7CG-1L-2fg" secondAttribute="centerX" id="kZ2-3e-gQ6"/>
                             <constraint firstItem="XaJ-eS-Sge" firstAttribute="trailing" secondItem="6rQ-Gy-vaT" secondAttribute="trailing" id="m1U-lm-qxo"/>
                             <constraint firstItem="7CG-1L-2fg" firstAttribute="leading" secondItem="XaJ-eS-Sge" secondAttribute="leading" id="ncF-7k-f9I"/>
@@ -65,6 +71,7 @@
                         <viewLayoutGuide key="safeArea" id="XaJ-eS-Sge"/>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="fdc-1K-dmc" id="fpF-wd-E9F"/>
                         <outlet property="nextQuestionButton" destination="7CG-1L-2fg" id="aFJ-HO-36l"/>
                         <outlet property="nextQuestionLabel" destination="nTr-Hh-SvZ" id="H52-6H-o18"/>
                         <outlet property="testCardView" destination="du0-SQ-fuM" id="7bb-W9-isR"/>
