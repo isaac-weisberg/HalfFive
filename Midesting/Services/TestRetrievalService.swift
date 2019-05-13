@@ -2,7 +2,7 @@ import Foundation
 import HalfFive
 
 protocol TestRetrievalService {
-    typealias DownloadResult = ResultTing<TestGithubRemoteDTO, TestRetrievalServiceError>
+    typealias DownloadResult = ResultTing<TestModel, TestRetrievalServiceError>
     
     func downloadGithubTest() -> Conveyor<DownloadResult, SchedulingUnknown, HotnessHot>
 }
@@ -34,6 +34,7 @@ class TestRetrievalServiceImpl: TestRetrievalService {
                             return .failure(.parsing(error))
                         }
                     }
+                    .then(TestModel.init(github:))
             }
     }
 }

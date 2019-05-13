@@ -10,6 +10,16 @@ protocol TestCardViewModel {
     var answerVms: [AnswerTextualViewModel] { get }
 }
 
+class TestCardViewModelLoadingStub: TestCardViewModel {
+    let progressLabel: String = "Loading..."
+    
+    let questionTitle: String = "Loading..."
+    
+    let isSelectionValid = Conveyors.just(false).assumeFiresOnMain()
+    
+    let answerVms: [AnswerTextualViewModel] = []
+}
+
 class TestCardViewModelImpl {
     struct Data {
         let id: String

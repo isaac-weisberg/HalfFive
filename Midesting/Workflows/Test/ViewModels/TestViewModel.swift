@@ -3,9 +3,9 @@ import HalfFive
 protocol TestViewModel {
     var nextQuestion: Silo<Void, SchedulingMain> { get }
     
-    var question: Conveyor<TestCardViewModel, SchedulingMain, HotnessCold> { get }
+    var question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot> { get }
     
-    var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold> { get }
+    var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot> { get }
     
     var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
     
@@ -15,84 +15,124 @@ protocol TestViewModel {
 class TestViewModelImpl {
     typealias Context = TestRetrievalServiceContext
     
-    let questionState: Conveyor<(TestCardViewModel, isLast: Bool), SchedulingMain, HotnessCold>
+    enum State {
+        case loading
+        case success([TestCardViewModel], index: Int)
+        case failed(TestRetrievalServiceError)
+    }
     
-    let question: Conveyor<TestCardViewModel, SchedulingMain, HotnessCold>
+    let trashBag = TrashBag()
     
-    let nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold>
-    
+    let question: Conveyor<TestCardViewModel, SchedulingMain, HotnessHot>
+    let nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessHot>
+    let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
+    let isLoading: Conveyor<Bool, SchedulingMain, HotnessHot>
     let nextQuestion: Silo<Void, SchedulingMain>
     
-    let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
-    
-    let scheduling = SchedulingSerial.new()
-    
-    let isLoading: Conveyor<Bool, SchedulingMain, HotnessHot> = Conveyors.just(false).assumeFiresOnMain()
-    
     init(context: TestRetrievalServiceContext) {
-        let questionsConveyorMarked = context.testRetriever.downloadGithubTest()
-            .map { res -> TestModel? in
-                let res = res.then { dto in
-                    .success(TestModel(github: dto))
-                }
-                if case .success(let data) = res {
-                    return data
-                }
-                return nil
-            }
-            .filter { $0 != nil }.map { $0! }
-            .map { data -> [(TestCardViewModel, isLast: Bool)] in
-                let questionsCount = data.questions.count
-                
-                let questions = data.questions
-                    .enumerated()
-                    .map { things -> (TestCardViewModel, isLast: Bool) in
-                        let (index, question) = things
-                        
-                        let data = TestCardViewModelImpl.Data(
-                            id: question.id,
-                            title: question.title,
-                            questionIndex: index,
-                            questionsTotal: questionsCount,
-                            selection: question.selection,
-                            answers: question.answers)
-                        
-                        let isLast = index == questionsCount - 1
-                        
-                        return (TestCardViewModelImpl(data: data), isLast: isLast)
-                    }
-                return questions
-            }
-            .flatMapLatest { questions in
-                Conveyors.from(array: questions)
-            }
-            .run(on: scheduling)
-            .fire(on: SchedulingMain.instance)
-        
         let actionMultiplexer = Multiplexer<Void, SchedulingMain>()
         
         nextQuestion = actionMultiplexer
             .asSilo()
         
+        let state = Container<State, SchedulingMain>(value: State.loading)
+        let scheduling = SchedulingSerial.new()
         
-        self.questionState = Conveyors.zip(questionsConveyorMarked, actionMultiplexer) { q, _ in q }
-            .share()
+        context.testRetriever.downloadGithubTest()
+            .map { res in
+                res
+                    .then { test -> [TestCardViewModel] in
+                        let questionsCount = test.questions.count
+                        
+                        let questions = test.questions
+                            .enumerated()
+                            .map { things -> TestCardViewModel in
+                                let (index, question) = things
+                                
+                                let data = TestCardViewModelImpl.Data(
+                                    id: question.id,
+                                    title: question.title,
+                                    questionIndex: index,
+                                    questionsTotal: questionsCount,
+                                    selection: question.selection,
+                                    answers: question.answers)
+                                
+                                return TestCardViewModelImpl(data: data)
+                            }
+                        return questions
+                    }
+            }
+            .map { res -> State in
+                switch res {
+                case .success(let test):
+                    return .success(test, index: 0)
+                case .failure(let error):
+                    return .failed(error)
+                }
+            }
+            .run(on: scheduling)
+            .fire(on: SchedulingMain.instance)
+            .run(silo: state)
+            .disposed(by: trashBag)
         
-        self.nextQuestionLabel = questionState
-            .map { thigns in
-                thigns.isLast ? "Finish Testing" : "Next Question"
+        question = state
+            .map { state -> TestCardViewModel in
+                switch state {
+                case .success(let questions, let index):
+                    return questions[index]
+                case .loading:
+                    return TestCardViewModelLoadingStub()
+                case .failed(let error):
+                    return TestCardViewModelLoadingStub()
+                }
             }
         
-        self.question = questionState
-            .map { things in
-                things.0
+        isLoading = state
+            .map { state in
+                if case .loading = state {
+                    return true
+                }
+                return false
             }
         
-        self.isSelectionValid = question
+        nextQuestionLabel = state
+            .map { state in
+                switch state {
+                case .success(let questions, let index):
+                    let isLast = questions.count - 1 == index
+                    return isLast
+                        ? "Finish Testing"
+                        : "Next Question"
+                case .failed(let error):
+                    return "Error :("
+                case .loading:
+                    return "Loading"
+                }
+            }
+        
+        isSelectionValid = question
             .flatMapLatest { vm in
                 vm.isSelectionValid
             }
             .startWith(event: false)
+        
+        
+        actionMultiplexer
+            .withLatest(from: state) { $1 }
+            .map { state -> State in
+                switch state {
+                case .success(let questions, let index):
+                    let newIndex = index + 1
+                    if questions.count > newIndex {
+                        return .success(questions, index: newIndex)
+                    }
+                    return .success(questions, index: index)
+                case .failed, .loading:
+                    return state
+                }
+            }
+            .run(silo: state)
+            .disposed(by: trashBag)
     }
 }
 
