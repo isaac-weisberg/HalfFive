@@ -19,7 +19,7 @@ One of the core concepts established by the [ReactiveX](http://reactivex.io)'s R
 
 Let us kick off with the second problem.
 
-### Runtime execution context equaliy
+### Runtime execution context equality
 
 The most famous implementation of Reactive extensions was established for a single threaded environment which supported scheduling of arbitrary code to be executed on the next primary event loop iteration. The platform was the JavaScript virtual machine and the language it was written in was `JavaScript`.
 
