@@ -8,6 +8,8 @@ protocol TestViewModel {
     var nextQuestionLabel: Conveyor<String, SchedulingMain, HotnessCold> { get }
     
     var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
+    
+    var isLoading: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
 }
 
 class TestViewModelImpl {
@@ -24,6 +26,8 @@ class TestViewModelImpl {
     let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
     
     let scheduling = SchedulingSerial.new()
+    
+    let isLoading: Conveyor<Bool, SchedulingMain, HotnessHot> = Conveyors.just(false).assumeFiresOnMain()
     
     init(context: TestRetrievalServiceContext) {
         let questionsConveyorMarked = context.testRetriever.downloadGithubTest()

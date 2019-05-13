@@ -39,6 +39,12 @@ class TestViewController: UIViewController {
             }
             .disposed(by: trashBag)
         
+        viewModel.isLoading
+            .run {[loadingView = loadingView!] isLoading in
+                loadingView.isShown = isLoading
+            }
+            .disposed(by: trashBag)
+        
         viewModel.nextQuestion.fire(event: ())
     }
     
