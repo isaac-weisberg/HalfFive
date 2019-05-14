@@ -90,6 +90,11 @@
 		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
 		FACD75EE2289565300894BC1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD75ED2289565300894BC1 /* LoadingView.swift */; };
+		FAD0962F228AB172007130F3 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0962E228AB172007130F3 /* Unity.swift */; };
+		FAD09631228AB33D007130F3 /* Conveyor+assumeIsCold.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09630228AB33D007130F3 /* Conveyor+assumeIsCold.swift */; };
+		FAD09633228AB45C007130F3 /* UIAlertController+fromUnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09632228AB45C007130F3 /* UIAlertController+fromUnity.swift */; };
+		FAD09635228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09634228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift */; };
+		FAD09637228AC176007130F3 /* Conveyor+filterNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +198,11 @@
 		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
 		FACD75EB2289553800894BC1 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		FACD75ED2289565300894BC1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		FAD0962E228AB172007130F3 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
+		FAD09630228AB33D007130F3 /* Conveyor+assumeIsCold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+assumeIsCold.swift"; sourceTree = "<group>"; };
+		FAD09632228AB45C007130F3 /* UIAlertController+fromUnity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+fromUnity.swift"; sourceTree = "<group>"; };
+		FAD09634228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+distinctUntilChanged.swift"; sourceTree = "<group>"; };
+		FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filterNil.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +245,7 @@
 			children = (
 				5C249680222AC9FC00BE72D9 /* View */,
 				5CD54D52222BE01C00B54665 /* UIView+isShown.swift */,
+				FAD0962E228AB172007130F3 /* Unity.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				5C249681222ACA0C00BE72D9 /* XibModularView.swift */,
+				FAD09632228AB45C007130F3 /* UIAlertController+fromUnity.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +466,7 @@
 				5C24968C222AD0EF00BE72D9 /* Trash+disposedBy.swift */,
 				5CD54D4A222BD33400B54665 /* Mutliplexer+asSilo.swift */,
 				5CD54D46222BBB7D00B54665 /* Conveyor+assumeFiresOnMain.swift */,
+				FAD09630228AB33D007130F3 /* Conveyor+assumeIsCold.swift */,
 				5CD54D48222BD0F900B54665 /* Conveyor+startWith.swift */,
 				5C9AB4152233FD3F00D9FCD0 /* Conveyor+do.swift */,
 				5C34FE3822467CA8002AF74D /* Silo+Map.swift */,
@@ -462,6 +475,8 @@
 				D3391E5A2264418E006EF628 /* Conveyor+share.swift */,
 				5C7962B02264E539009FA515 /* Conveyor+delay.swift */,
 				D368796822684641009AE8BD /* Conveyor+enumerate.swift */,
+				FAD09634228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift */,
+				FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -778,7 +793,9 @@
 				5C2AAA622262598800CA1178 /* ResultTing.swift in Sources */,
 				5C249687222ACE5900BE72D9 /* TestCardViewModel.swift in Sources */,
 				D37CC92C2262F7590041F0C8 /* TestRetrievalService.swift in Sources */,
+				FAD09633228AB45C007130F3 /* UIAlertController+fromUnity.swift in Sources */,
 				5C78D8CE222A740400ACC9A7 /* MainCoordinator.swift in Sources */,
+				FAD0962F228AB172007130F3 /* Unity.swift in Sources */,
 				5C78D8CA222A736C00ACC9A7 /* Coordinator.swift in Sources */,
 				5C78D8D8222A7D9D00ACC9A7 /* StoryboardScenes.swift in Sources */,
 			);
@@ -794,6 +811,7 @@
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
 				5CD54D41222BB12900B54665 /* Conveyors+zip.swift in Sources */,
 				5C78D8AE222A547E00ACC9A7 /* Conveyors+combineLatest.swift in Sources */,
+				FAD09635228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift in Sources */,
 				5CE318652226DBDB005531E0 /* Conveyor+runOn.swift in Sources */,
 				5C83B1282225849D00311D29 /* Trash.swift in Sources */,
 				5C84AF73225F8A6D007E922D /* Conveyors+async.swift in Sources */,
@@ -805,6 +823,7 @@
 				5CBED6DA22284D33003C6974 /* Conveyor+withLatestFrom.swift in Sources */,
 				D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */,
 				5C83B142222598A400311D29 /* SiloType.swift in Sources */,
+				FAD09637228AC176007130F3 /* Conveyor+filterNil.swift in Sources */,
 				5C83B1442225999800311D29 /* ConveyorType.swift in Sources */,
 				5CBED6D722284678003C6974 /* Scheduling.swift in Sources */,
 				5CD54D43222BB96200B54665 /* Conveyors+from.swift in Sources */,
@@ -823,6 +842,7 @@
 				D304ED6522608E6200639991 /* Conveyors+just.swift in Sources */,
 				D304ED4F226033D500639991 /* MultiplexingPrimitive.swift in Sources */,
 				5CD54D45222BBA7500B54665 /* TrashVoid.swift in Sources */,
+				FAD09631228AB33D007130F3 /* Conveyor+assumeIsCold.swift in Sources */,
 				5C83B14822259D1900311D29 /* Container.swift in Sources */,
 				5C83B1402225983F00311D29 /* Multiplexer.swift in Sources */,
 				5C84AF75225F8D4D007E922D /* Conveyors+sync.swift in Sources */,

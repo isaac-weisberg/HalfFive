@@ -10,15 +10,28 @@ protocol TestViewModel {
     var isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
     
     var isLoading: Conveyor<Bool, SchedulingMain, HotnessHot> { get }
+    
+    var unitySingular: Conveyor<UnitySingular, SchedulingMain, HotnessCold> { get }
 }
 
 class TestViewModelImpl {
     typealias Context = TestRetrievalServiceContext
     
+    enum Error: Swift.Error {
+        case testRetrieval(TestRetrievalServiceError)
+    }
+    
     enum State {
         case loading
         case success([TestCardViewModel], index: Int)
-        case failed(TestRetrievalServiceError)
+        case failed(Error)
+        
+        var error: Error? {
+            if case .failed(let error) = self {
+                return error
+            }
+            return nil
+        }
     }
     
     let trashBag = TrashBag()
@@ -28,6 +41,7 @@ class TestViewModelImpl {
     let isSelectionValid: Conveyor<Bool, SchedulingMain, HotnessHot>
     let isLoading: Conveyor<Bool, SchedulingMain, HotnessHot>
     let nextQuestion: Silo<Void, SchedulingMain>
+    let unitySingular: Conveyor<UnitySingular, SchedulingMain, HotnessCold>
     
     init(context: TestRetrievalServiceContext) {
         let actionMultiplexer = Multiplexer<Void, SchedulingMain>()
@@ -67,7 +81,7 @@ class TestViewModelImpl {
                 case .success(let test):
                     return .success(test, index: 0)
                 case .failure(let error):
-                    return .failed(error)
+                    return .failed(.testRetrieval(error))
                 }
             }
             .run(on: scheduling)
@@ -82,8 +96,8 @@ class TestViewModelImpl {
                     return questions[index]
                 case .loading:
                     return TestCardViewModelLoadingStub()
-                case .failed(let error):
-                    return TestCardViewModelLoadingStub()
+                case .failed:
+                    return TestCardViewModelErrorStub()
                 }
             }
         
@@ -103,7 +117,7 @@ class TestViewModelImpl {
                     return isLast
                         ? "Finish Testing"
                         : "Next Question"
-                case .failed(let error):
+                case .failed:
                     return "Error :("
                 case .loading:
                     return "Loading"
@@ -119,23 +133,40 @@ class TestViewModelImpl {
         
         actionMultiplexer
             .withLatest(from: state) { $1 }
-            .map { state -> State in
+            .map { state -> State? in
                 switch state {
                 case .success(let questions, let index):
                     let newIndex = index + 1
                     if questions.count > newIndex {
                         return .success(questions, index: newIndex)
                     }
-                    return .success(questions, index: index)
+                    return nil
                 case .failed, .loading:
-                    return state
+                    return nil
                 }
             }
+            .filterNil()
             .run(silo: state)
             .disposed(by: trashBag)
+        
+        unitySingular = state
+            .map { state -> UnitySingular? in
+                state.error
+            }
+            .filterNil()
+            .assumeIsCold()
     }
 }
 
 extension TestViewModelImpl: TestViewModel {
     
+}
+
+extension TestViewModelImpl.Error: UnitySingular {
+    var unitySingular: EmissionSingular {
+        switch self {
+        case .testRetrieval(let error):
+            return error.unitySingular
+        }
+    }
 }

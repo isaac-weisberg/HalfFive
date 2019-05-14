@@ -7,9 +7,20 @@ protocol TestRetrievalService {
     func downloadGithubTest() -> Conveyor<DownloadResult, SchedulingUnknown, HotnessHot>
 }
 
-enum TestRetrievalServiceError {
+enum TestRetrievalServiceError: UnitySingular {
     case download(FileDownloaderServiceError)
     case parsing(Error)
+    
+    var unitySingular: EmissionSingular {
+        let description: String
+        switch self {
+        case .download:
+            description = "Download failure"
+        case .parsing:
+            description = "Parsing failure"
+        }
+        return EmissionSingularCommon(description: description)
+    }
 }
 
 class TestRetrievalServiceImpl: TestRetrievalService {

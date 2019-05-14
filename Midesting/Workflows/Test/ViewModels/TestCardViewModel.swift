@@ -11,9 +11,19 @@ protocol TestCardViewModel {
 }
 
 class TestCardViewModelLoadingStub: TestCardViewModel {
-    let progressLabel: String = "Loading..."
+    let progressLabel: String = ""
     
     let questionTitle: String = "Loading..."
+    
+    let isSelectionValid = Conveyors.just(false).assumeFiresOnMain()
+    
+    let answerVms: [AnswerTextualViewModel] = []
+}
+
+class TestCardViewModelErrorStub: TestCardViewModel {
+    let progressLabel: String = ""
+    
+    let questionTitle: String = "Error"
     
     let isSelectionValid = Conveyors.just(false).assumeFiresOnMain()
     

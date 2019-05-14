@@ -45,6 +45,14 @@ class TestViewController: UIViewController {
             }
             .disposed(by: trashBag)
         
+        viewModel.unitySingular
+            .map { UIAlertController.from(unity: $0.unitySingular) }
+            .flatMapLatest {[unowned self] presentOn in
+                presentOn(self)
+            }
+            .run { _ in }
+            .disposed(by: trashBag)
+        
         viewModel.nextQuestion.fire(event: ())
     }
     
