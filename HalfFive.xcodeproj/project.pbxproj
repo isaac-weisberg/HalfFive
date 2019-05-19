@@ -88,6 +88,7 @@
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
 		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
+		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
 		FACD75EE2289565300894BC1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD75ED2289565300894BC1 /* LoadingView.swift */; };
 		FAD0962F228AB172007130F3 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0962E228AB172007130F3 /* Unity.swift */; };
@@ -196,6 +197,8 @@
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
 		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
+		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACD75EB2289553800894BC1 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		FACD75ED2289565300894BC1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FAD0962E228AB172007130F3 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
@@ -234,6 +237,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2F812291746100F2788D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +424,7 @@
 				5C78D8B4222A72A600ACC9A7 /* Midesting */,
 				D304ED5822608A9500639991 /* HalfFiveTests */,
 				D37CC9302262FC940041F0C8 /* Extras */,
+				FABA2F852291746100F2788D /* HalfFiveTesting */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -425,6 +437,7 @@
 				5C78D8B3222A72A600ACC9A7 /* Midesting.app */,
 				5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */,
 				D304ED5722608A9500639991 /* HalfFiveTests.xctest */,
+				FABA2F842291746100F2788D /* HalfFiveTesting.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,6 +578,14 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		FABA2F852291746100F2788D /* HalfFiveTesting */ = {
+			isa = PBXGroup;
+			children = (
+				FABA2F872291746100F2788D /* Info.plist */,
+			);
+			path = HalfFiveTesting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -576,6 +597,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5C9AB4032233F72E00D9FCD0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2F7F2291746100F2788D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -657,6 +685,24 @@
 			productReference = D304ED5722608A9500639991 /* HalfFiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FABA2F832291746100F2788D /* HalfFiveTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABA2F8B2291746100F2788D /* Build configuration list for PBXNativeTarget "HalfFiveTesting" */;
+			buildPhases = (
+				FABA2F7F2291746100F2788D /* Headers */,
+				FABA2F802291746100F2788D /* Sources */,
+				FABA2F812291746100F2788D /* Frameworks */,
+				FABA2F822291746100F2788D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HalfFiveTesting;
+			productName = HalfFiveTesting;
+			productReference = FABA2F842291746100F2788D /* HalfFiveTesting.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -681,6 +727,9 @@
 					D304ED5622608A9500639991 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					FABA2F832291746100F2788D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 5C83B114222583CB00311D29 /* Build configuration list for PBXProject "HalfFive" */;
@@ -700,6 +749,7 @@
 				5C78D8B2222A72A600ACC9A7 /* Midesting */,
 				5C9AB4072233F72E00D9FCD0 /* HalfFiveDataSource */,
 				D304ED5622608A9500639991 /* HalfFiveTests */,
+				FABA2F832291746100F2788D /* HalfFiveTesting */,
 			);
 		};
 /* End PBXProject section */
@@ -737,6 +787,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D304ED5522608A9500639991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2F822291746100F2788D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -867,6 +924,13 @@
 				5C5AFF87226373F900DD4557 /* FlatMapLatestTests.swift in Sources */,
 				D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */,
 				5C7962AF2264C067009FA515 /* ZipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA2F802291746100F2788D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1268,58 @@
 			};
 			name = Release;
 		};
+		FABA2F892291746100F2788D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HalfFiveTesting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFiveTesting";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABA2F8A2291746100F2788D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HalfFiveTesting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.HalfFiveTesting";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1248,6 +1364,15 @@
 			buildConfigurations = (
 				D304ED5F22608A9500639991 /* Debug */,
 				D304ED6022608A9500639991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABA2F8B2291746100F2788D /* Build configuration list for PBXNativeTarget "HalfFiveTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABA2F892291746100F2788D /* Debug */,
+				FABA2F8A2291746100F2788D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
