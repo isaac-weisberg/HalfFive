@@ -88,6 +88,8 @@
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
 		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
+		FA66F33E22969C1A000C3D9F /* Conveyor+hotEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */; };
+		FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */; };
 		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FABA2F8E2291756F00F2788D /* Conveyor+proveHotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
@@ -198,6 +200,8 @@
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
 		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
+		FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+hotEvents.swift"; sourceTree = "<group>"; };
+		FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+toBlocking.swift"; sourceTree = "<group>"; };
 		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+proveHotness.swift"; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 			children = (
 				FABA2F872291746100F2788D /* Info.plist */,
 				FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */,
+				FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */,
+				FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */,
 			);
 			path = HalfFiveTesting;
 			sourceTree = "<group>";
@@ -936,6 +942,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA2F8E2291756F00F2788D /* Conveyor+proveHotness.swift in Sources */,
+				FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */,
+				FA66F33E22969C1A000C3D9F /* Conveyor+hotEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

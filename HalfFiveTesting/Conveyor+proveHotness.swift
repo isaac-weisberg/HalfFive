@@ -1,22 +1,22 @@
 import HalfFive
 
-private extension ConveyorType {
+public extension Blocking {
     func isHot() -> Bool {
         var hot = false
-        _ = run { event in
+        _ = base.run { event in
             hot = true
         }
         return hot
     }
 }
 
-public extension ConveyorType where Hotness == HotnessHot {
+public extension Blocking where Base.Hotness == HotnessHot {
     func proveHotness() -> Bool {
         return isHot()
     }
 }
 
-public extension ConveyorType where Hotness == HotnessCold {
+public extension Blocking where Base.Hotness == HotnessCold {
     func proveHotness() -> Bool {
         return !isHot()
     }
