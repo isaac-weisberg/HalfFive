@@ -9,6 +9,15 @@ class CreationalTests: XCTestCase {
         XCTAssertEqual(blocking.hotEvents(), events, "Should have well defined event sequence", file: file, line: line)
     }
     
+    func testFromOperator() {
+        let values = [3, 52, 123]
+        let conv = Conveyors.from(array: values)
+        
+        let blocking = conv.toBlocking()
+        
+        blockingTest(blocking, events: values)
+    }
+    
     func testJustOperator() {
         let value = 3
         let conv = Conveyors.just(value)
