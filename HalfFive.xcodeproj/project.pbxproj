@@ -90,6 +90,8 @@
 		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
 		FA66F33E22969C1A000C3D9F /* Conveyor+hotEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */; };
 		FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */; };
+		FA66F34222969DAA000C3D9F /* CreationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F34122969DAA000C3D9F /* CreationalTests.swift */; };
+		FA66F34422969E53000C3D9F /* HalfFiveTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA2F842291746100F2788D /* HalfFiveTesting.framework */; };
 		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FABA2F8E2291756F00F2788D /* Conveyor+proveHotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
@@ -202,6 +204,7 @@
 		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
 		FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+hotEvents.swift"; sourceTree = "<group>"; };
 		FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+toBlocking.swift"; sourceTree = "<group>"; };
+		FA66F34122969DAA000C3D9F /* CreationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalTests.swift; sourceTree = "<group>"; };
 		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+proveHotness.swift"; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA66F34422969E53000C3D9F /* HalfFiveTesting.framework in Frameworks */,
 				D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +568,7 @@
 				D304ED6222608AAD00639991 /* HotConveyorTest.swift */,
 				5C5AFF86226373F900DD4557 /* FlatMapLatestTests.swift */,
 				5C7962AE2264C067009FA515 /* ZipTests.swift */,
+				FA66F34122969DAA000C3D9F /* CreationalTests.swift */,
 			);
 			path = HalfFiveTests;
 			sourceTree = "<group>";
@@ -932,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5AFF87226373F900DD4557 /* FlatMapLatestTests.swift in Sources */,
+				FA66F34222969DAA000C3D9F /* CreationalTests.swift in Sources */,
 				D304ED6322608AAD00639991 /* HotConveyorTest.swift in Sources */,
 				5C7962AF2264C067009FA515 /* ZipTests.swift in Sources */,
 			);
