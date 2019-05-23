@@ -36,4 +36,18 @@ class CreationalTests: XCTestCase {
         
         XCTAssertEqual(blocking.hotEvents(), events, "Should have well defined event sequence")
     }
+    
+    func testSyncOperator() {
+        let events = [52, 1, 12]
+        let moreEvents = [0x0303, 1]
+        let conv = Conveyors.sync { () -> Conveyor<Int, SchedulingUnknown, HotnessHot> in
+            let evs = events + moreEvents
+            return Conveyors.from(array: evs)
+        }
+        
+        let blocking = conv.toBlocking()
+        let evs = events + moreEvents
+        
+        blockingTest(blocking, events: evs)
+    }
 }
