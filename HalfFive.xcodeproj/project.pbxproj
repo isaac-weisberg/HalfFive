@@ -92,6 +92,7 @@
 		FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */; };
 		FA66F34222969DAA000C3D9F /* CreationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F34122969DAA000C3D9F /* CreationalTests.swift */; };
 		FA66F34422969E53000C3D9F /* HalfFiveTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA2F842291746100F2788D /* HalfFiveTesting.framework */; };
+		FA66F3462296A1B3000C3D9F /* Conveyors+empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F3452296A1B3000C3D9F /* Conveyors+empty.swift */; };
 		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FABA2F8E2291756F00F2788D /* Conveyor+proveHotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
@@ -205,6 +206,7 @@
 		FA66F33D22969C1A000C3D9F /* Conveyor+hotEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+hotEvents.swift"; sourceTree = "<group>"; };
 		FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+toBlocking.swift"; sourceTree = "<group>"; };
 		FA66F34122969DAA000C3D9F /* CreationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalTests.swift; sourceTree = "<group>"; };
+		FA66F3452296A1B3000C3D9F /* Conveyors+empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyors+empty.swift"; sourceTree = "<group>"; };
 		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABA2F8D2291756F00F2788D /* Conveyor+proveHotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+proveHotness.swift"; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 				D304ED6422608E6200639991 /* Conveyors+just.swift */,
 				5C78D8AD222A547E00ACC9A7 /* Conveyors+combineLatest.swift */,
 				5CD54D40222BB12900B54665 /* Conveyors+zip.swift */,
+				FA66F3452296A1B3000C3D9F /* Conveyors+empty.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 			files = (
 				5C84AF71225F896D007E922D /* Conveyors.swift in Sources */,
 				5C9AB4162233FD3F00D9FCD0 /* Conveyor+do.swift in Sources */,
+				FA66F3462296A1B3000C3D9F /* Conveyors+empty.swift in Sources */,
 				5CD54D49222BD0F900B54665 /* Conveyor+startWith.swift in Sources */,
 				5C83B14622259A8200311D29 /* TrashAbstract.swift in Sources */,
 				5CD54D41222BB12900B54665 /* Conveyors+zip.swift in Sources */,

@@ -17,4 +17,14 @@ class CreationalTests: XCTestCase {
         
         blockingTest(blocking, events: [ value ])
     }
+    
+    func testEmptyOperator() {
+        typealias Event = Int
+        
+        let conv: Conveyor<Event, SchedulingUnknown, HotnessHot> = Conveyors.empty()
+        let blocking = conv.toBlocking()
+        let events: [Event] = []
+        
+        XCTAssertEqual(blocking.hotEvents(), events, "Should have well defined event sequence")
+    }
 }
