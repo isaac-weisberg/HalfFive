@@ -1,6 +1,6 @@
 public extension Conveyors {
     static func empty() -> Conveyor<Event, SchedulingUnknown, HotnessHot> {
-        return Conveyor { _ in
+        return .unsafe { _ in
             TrashVoid()
         }
     }

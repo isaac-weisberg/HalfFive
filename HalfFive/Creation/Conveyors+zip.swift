@@ -5,7 +5,7 @@ public extension Conveyors {
     }
     
     static func zip<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
-        return .init { handler in
+        return .unsafe { handler in
             let trash = ZipTrash<L.Event, R.Event>()
             weak var weakTrash = trash
             

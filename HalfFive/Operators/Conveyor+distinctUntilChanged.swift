@@ -1,7 +1,7 @@
 public extension ConveyorType {
     func distinctUntilChanged(_ areEqual: @escaping (Event, Event) -> Bool) -> Conveyor<Event, Scheduler, Hotness> {
         let run = self.run(handler:)
-        return Conveyor { handle in
+        return .unsafe { handle in
             let trash = DistinctUntilTrash<Event>()
             
             trash.trash = run { event in

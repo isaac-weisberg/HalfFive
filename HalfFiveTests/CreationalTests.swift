@@ -50,4 +50,23 @@ class CreationalTests: XCTestCase {
         
         blockingTest(blocking, events: evs)
     }
+    
+    func testAsyncOperator() {
+        let events: [Void] = [()]
+        
+        let conv = Conveyors<Void>.async { handler in
+            var disposed = false
+            HalfFiveTests.wait(ticks: 50) {
+                if disposed {
+                    return
+                }
+                events.forEach { ev in
+                    handler(ev)
+                }
+            }
+            return TrashAbstract { disposed = true }
+        }
+        
+        let blocking = conv.toBlocking()
+    }
 }

@@ -1,7 +1,7 @@
 public extension ConveyorType {
     func withLatest<RC: ConveyorType, NewEvent>(from conveyor: RC, using predicate: @escaping (Event, RC.Event) -> NewEvent) -> Conveyor<NewEvent, Scheduler, Hotness> {
         let run = self.run(handler:)
-        return .init { handler in
+        return .unsafe { handler in
             var latest = LatestEvent<RC.Event>.uninit
             let firstTrash = run { event in
                 guard case .some(let latest) = latest else {

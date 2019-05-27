@@ -12,7 +12,7 @@ public extension ConveyorType {
 private extension ConveyorType {
     func delayWithoutOrdering<Scheduler: DeterminedScheduling>(_ time: DispatchTime, on scheduler: Scheduler) -> Conveyor<Event, Scheduler, HotnessCold> {
         let run = self.run(handler:)
-        return Conveyor { handler in
+        return .unsafe { handler in
             weak var weakTrash: Trash?
             let trash = run { event in
                 scheduler.queue.asyncAfter(deadline: time) {
@@ -29,7 +29,7 @@ private extension ConveyorType {
     
     func delayWithOrdering<Scheduler: DeterminedScheduling>(_ time: DispatchTime, on scheduler: Scheduler) -> Conveyor<Event, Scheduler, HotnessCold> {
         let run = enumerate().run(handler:)
-        return Conveyor { handler in
+        return .unsafe { handler in
             weak var weakTrash: TrashWithOrdering<Event>?
             let superTrash = run { event in
                 guard let trash = weakTrash else {

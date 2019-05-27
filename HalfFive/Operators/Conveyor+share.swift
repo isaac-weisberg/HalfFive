@@ -3,7 +3,7 @@ public extension ConveyorType {
         let run = self.run(handler:)
         var subscribers = [(Event) -> Void]()
         var trash: Trash?
-        return Conveyor { handler in
+        return .unsafe { handler in
             subscribers.append(handler)
             if trash == nil {
                 trash = run { event in

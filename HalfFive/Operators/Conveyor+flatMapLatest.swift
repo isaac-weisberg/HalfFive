@@ -1,7 +1,7 @@
 public extension ConveyorType {
     internal func flatMapLatestCold<NewConveyor: ConveyorType>(_ predicate: @escaping (Event) -> NewConveyor) -> Conveyor<NewConveyor.Event, NewConveyor.Scheduler, HotnessCold> {
         let run = self.run(handler:)
-        return .init { handler in
+        return .unsafe { handler in
             let composite = TrashCompositeTwo(primary: nil, secondary: nil)
             composite.primary = run { event in
                 composite.secondary = nil
