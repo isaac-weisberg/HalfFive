@@ -1,10 +1,10 @@
 public extension Conveyors {
-    static func zip<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessHot> where L.Scheduler == R.Scheduler, L.Hotness == HotnessHot, R.Hotness == HotnessHot {
+    static func zip<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessHot> where L.Scheduler == R.Scheduler, L.Hotness == HotnessHot, R.Hotness == HotnessHot {
         return zip(lhs, rhs, combiner: combiner)
             .convertToHot()
     }
     
-    static func zip<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
+    static func zip<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
         return .init { handler in
             let trash = ZipTrash<L.Event, R.Event>()
             weak var weakTrash = trash

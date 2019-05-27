@@ -1,3 +1,3 @@
-public struct Conveyors {
+public struct Conveyors<Event> {
     
 }

@@ -1,10 +1,10 @@
 public extension Conveyors {
-    static func combineLatest<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessHot> where L.Scheduler == R.Scheduler, L.Hotness == HotnessHot, R.Hotness == HotnessHot {
+    static func combineLatest<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessHot> where L.Scheduler == R.Scheduler, L.Hotness == HotnessHot, R.Hotness == HotnessHot {
         return combineLatest(lhs, rhs, combiner: combiner)
             .convertToHot()
     }
     
-    static func combineLatest<L: ConveyorType, R: ConveyorType, Event>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
+    static func combineLatest<L: ConveyorType, R: ConveyorType>(_ lhs: L, _ rhs: R, combiner: @escaping (L.Event, R.Event) -> Event) -> Conveyor<Event, L.Scheduler, HotnessCold> where L.Scheduler == R.Scheduler {
         return .init { handler in
             let trash = CombineLatestTrash<L.Event, R.Event>(primary: nil, secondary: nil)
             weak var weakTrash = trash
