@@ -52,7 +52,7 @@ class CreationalTests: XCTestCase {
     }
     
     func testAsyncOperator() {
-        let exp = expectation(description: "Should not fail")
+        let exp = expectation(description: "Should run at some point")
         let disposeBag = TrashBag()
         let expectedEvents: [Int] = [3, 5, 1, 4]
         
