@@ -52,15 +52,17 @@ class CreationalTests: XCTestCase {
     }
     
     func testAsyncOperator() {
-        let events: [Void] = [()]
+        let exp = expectation(description: "Should not fail")
+        let disposeBag = TrashBag()
+        let expectedEvents: [Int] = [3, 5, 1, 4]
         
-        let conv = Conveyors<Void>.async { handler in
+        let conv = Conveyors<Int>.async { handler in
             var disposed = false
-            HalfFiveTests.wait(ticks: 50) {
-                if disposed {
-                    return
-                }
-                events.forEach { ev in
+            expectedEvents.forEach { ev in
+                HalfFiveTests.wait(ticks: 2) {
+                    if disposed {
+                        return
+                    }
                     handler(ev)
                 }
             }
@@ -68,5 +70,15 @@ class CreationalTests: XCTestCase {
         }
         
         let blocking = conv.toBlocking()
+        
+        blocking
+            .allEvents(deadline: .now() + 1, scheduler: SchedulingMain.instance)
+            .run { events in
+                XCTAssertEqual(events, expectedEvents, "Should produce same amount of events")
+                exp.fulfill()
+            }
+            .disposed(by: disposeBag)
+        
+        wait(for: [exp], timeout: 2)
     }
 }
