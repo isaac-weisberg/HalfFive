@@ -104,6 +104,11 @@
 		FAD09637228AC176007130F3 /* Conveyor+filterNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
+		FAFBC337235118D900839B8D /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC336235118D900839B8D /* Trash.swift */; };
+		FAFBC339235118F600839B8D /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC338235118F600839B8D /* ObservableType.swift */; };
+		FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33A235119DE00839B8D /* ObserverType.swift */; };
+		FAFBC33D23511ABF00839B8D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33C23511ABF00839B8D /* Observable.swift */; };
+		FAFBC33F23511B9600839B8D /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33E23511B9600839B8D /* Observer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +226,13 @@
 		FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filterNil.swift"; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
+		FAFBC32D2351186500839B8D /* FullFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFBC3302351186500839B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFBC336235118D900839B8D /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
+		FAFBC338235118F600839B8D /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		FAFBC33A235119DE00839B8D /* ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverType.swift; sourceTree = "<group>"; };
+		FAFBC33C23511ABF00839B8D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FAFBC33E23511B9600839B8D /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +273,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFBC32A2351186500839B8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +460,7 @@
 				D304ED5822608A9500639991 /* HalfFiveTests */,
 				D37CC9302262FC940041F0C8 /* Extras */,
 				FABA2F852291746100F2788D /* HalfFiveTesting */,
+				FAFBC32E2351186500839B8D /* FullFive */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -454,6 +474,7 @@
 				5C9AB4082233F72E00D9FCD0 /* HalfFiveDataSource.framework */,
 				D304ED5722608A9500639991 /* HalfFiveTests.xctest */,
 				FABA2F842291746100F2788D /* HalfFiveTesting.framework */,
+				FAFBC32D2351186500839B8D /* FullFive.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -609,6 +630,27 @@
 			path = HalfFiveTesting;
 			sourceTree = "<group>";
 		};
+		FAFBC32E2351186500839B8D /* FullFive */ = {
+			isa = PBXGroup;
+			children = (
+				FAFBC335235118B300839B8D /* Primitives */,
+				FAFBC3302351186500839B8D /* Info.plist */,
+			);
+			path = FullFive;
+			sourceTree = "<group>";
+		};
+		FAFBC335235118B300839B8D /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				FAFBC336235118D900839B8D /* Trash.swift */,
+				FAFBC338235118F600839B8D /* ObservableType.swift */,
+				FAFBC33A235119DE00839B8D /* ObserverType.swift */,
+				FAFBC33C23511ABF00839B8D /* Observable.swift */,
+				FAFBC33E23511B9600839B8D /* Observer.swift */,
+			);
+			path = Primitives;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -627,6 +669,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABA2F7F2291746100F2788D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFBC3282351186500839B8D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -726,6 +775,24 @@
 			productReference = FABA2F842291746100F2788D /* HalfFiveTesting.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FAFBC32C2351186500839B8D /* FullFive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFBC3342351186500839B8D /* Build configuration list for PBXNativeTarget "FullFive" */;
+			buildPhases = (
+				FAFBC3282351186500839B8D /* Headers */,
+				FAFBC3292351186500839B8D /* Sources */,
+				FAFBC32A2351186500839B8D /* Frameworks */,
+				FAFBC32B2351186500839B8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FullFive;
+			productName = FullFive;
+			productReference = FAFBC32D2351186500839B8D /* FullFive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -754,6 +821,10 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
+					FAFBC32C2351186500839B8D = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
 				};
 			};
 			buildConfigurationList = 5C83B114222583CB00311D29 /* Build configuration list for PBXProject "HalfFive" */;
@@ -774,6 +845,7 @@
 				5C9AB4072233F72E00D9FCD0 /* HalfFiveDataSource */,
 				D304ED5622608A9500639991 /* HalfFiveTests */,
 				FABA2F832291746100F2788D /* HalfFiveTesting */,
+				FAFBC32C2351186500839B8D /* FullFive */,
 			);
 		};
 /* End PBXProject section */
@@ -818,6 +890,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABA2F822291746100F2788D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFBC32B2351186500839B8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -962,6 +1041,18 @@
 				FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */,
 				FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */,
 				FA66F33E22969C1A000C3D9F /* Blocking+hotEvents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFBC3292351186500839B8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFBC33D23511ABF00839B8D /* Observable.swift in Sources */,
+				FAFBC33F23511B9600839B8D /* Observer.swift in Sources */,
+				FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */,
+				FAFBC339235118F600839B8D /* ObservableType.swift in Sources */,
+				FAFBC337235118D900839B8D /* Trash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,6 +1445,59 @@
 			};
 			name = Release;
 		};
+		FAFBC3322351186500839B8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FullFive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.FullFive";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAFBC3332351186500839B8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FullFive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.FullFive";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1407,6 +1551,15 @@
 			buildConfigurations = (
 				FABA2F892291746100F2788D /* Debug */,
 				FABA2F8A2291746100F2788D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFBC3342351186500839B8D /* Build configuration list for PBXNativeTarget "FullFive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFBC3322351186500839B8D /* Debug */,
+				FAFBC3332351186500839B8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
