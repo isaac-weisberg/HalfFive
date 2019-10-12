@@ -3,7 +3,7 @@ public extension Observable {
         return Self.unsafe { handler in
             handler(event)
 
-            return Trash.void()
+            return Disposables.create()
         }
     }
 }

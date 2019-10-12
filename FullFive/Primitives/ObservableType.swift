@@ -1,11 +1,11 @@
 public protocol ObservableType {
     associatedtype Event
 
-    func subscribe(_ onNext: @escaping (Event) -> Void) -> TrashType
+    func subscribe(_ onNext: @escaping (Event) -> Void) -> Disposable
 }
 
 public extension ObservableType {
-    func subscribe<Observer: ObserverType>(to observer: Observer) -> TrashType where Observer.Event == Event {
+    func subscribe<Observer: ObserverType>(to observer: Observer) -> Disposable where Observer.Event == Event {
         return subscribe(observer.onNext)
     }
 }

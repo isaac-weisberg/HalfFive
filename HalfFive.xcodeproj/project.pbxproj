@@ -96,7 +96,7 @@
 		FAAE99692351CF7400106313 /* Observable+create.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE99682351CF7400106313 /* Observable+create.swift */; };
 		FAAE996B2351CFCC00106313 /* Observable+deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE996A2351CFCC00106313 /* Observable+deferred.swift */; };
 		FAAE996D2351D21300106313 /* Observable+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE996C2351D21300106313 /* Observable+just.swift */; };
-		FAAE996F2351D27A00106313 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE996E2351D27A00106313 /* Trash.swift */; };
+		FAAE996F2351D27A00106313 /* DisposableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE996E2351D27A00106313 /* DisposableVoid.swift */; };
 		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FABA2F8E2291756F00F2788D /* Blocking+proveHotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2F8D2291756F00F2788D /* Blocking+proveHotness.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
@@ -106,9 +106,13 @@
 		FAD09633228AB45C007130F3 /* UIAlertController+fromUnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09632228AB45C007130F3 /* UIAlertController+fromUnity.swift */; };
 		FAD09635228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09634228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift */; };
 		FAD09637228AC176007130F3 /* Conveyor+filterNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */; };
+		FADB49452352543900B32C8E /* Observable+from.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB49442352543900B32C8E /* Observable+from.swift */; };
+		FADB4948235254EE00B32C8E /* Observable+subscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB4947235254EE00B32C8E /* Observable+subscribeOn.swift */; };
+		FADB494A2352568D00B32C8E /* DisposableAnonymous.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB49492352568D00B32C8E /* DisposableAnonymous.swift */; };
+		FADB494C2352593A00B32C8E /* Observable+observeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB494B2352593A00B32C8E /* Observable+observeOn.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
-		FAFBC337235118D900839B8D /* TrashType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC336235118D900839B8D /* TrashType.swift */; };
+		FAFBC337235118D900839B8D /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC336235118D900839B8D /* Disposable.swift */; };
 		FAFBC339235118F600839B8D /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC338235118F600839B8D /* ObservableType.swift */; };
 		FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33A235119DE00839B8D /* ObserverType.swift */; };
 		FAFBC33D23511ABF00839B8D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33C23511ABF00839B8D /* Observable.swift */; };
@@ -221,7 +225,7 @@
 		FAAE99682351CF7400106313 /* Observable+create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+create.swift"; sourceTree = "<group>"; };
 		FAAE996A2351CFCC00106313 /* Observable+deferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+deferred.swift"; sourceTree = "<group>"; };
 		FAAE996C2351D21300106313 /* Observable+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+just.swift"; sourceTree = "<group>"; };
-		FAAE996E2351D27A00106313 /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
+		FAAE996E2351D27A00106313 /* DisposableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableVoid.swift; sourceTree = "<group>"; };
 		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABA2F8D2291756F00F2788D /* Blocking+proveHotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+proveHotness.swift"; sourceTree = "<group>"; };
@@ -232,11 +236,15 @@
 		FAD09632228AB45C007130F3 /* UIAlertController+fromUnity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+fromUnity.swift"; sourceTree = "<group>"; };
 		FAD09634228ABCDD007130F3 /* Conveyor+distinctUntilChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+distinctUntilChanged.swift"; sourceTree = "<group>"; };
 		FAD09636228AC176007130F3 /* Conveyor+filterNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filterNil.swift"; sourceTree = "<group>"; };
+		FADB49442352543900B32C8E /* Observable+from.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+from.swift"; sourceTree = "<group>"; };
+		FADB4947235254EE00B32C8E /* Observable+subscribeOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+subscribeOn.swift"; sourceTree = "<group>"; };
+		FADB49492352568D00B32C8E /* DisposableAnonymous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableAnonymous.swift; sourceTree = "<group>"; };
+		FADB494B2352593A00B32C8E /* Observable+observeOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+observeOn.swift"; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
 		FAFBC32D2351186500839B8D /* FullFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFBC3302351186500839B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAFBC336235118D900839B8D /* TrashType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashType.swift; sourceTree = "<group>"; };
+		FAFBC336235118D900839B8D /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		FAFBC338235118F600839B8D /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		FAFBC33A235119DE00839B8D /* ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverType.swift; sourceTree = "<group>"; };
 		FAFBC33C23511ABF00839B8D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -631,7 +639,8 @@
 			children = (
 				FAFBC33C23511ABF00839B8D /* Observable.swift */,
 				FAFBC33E23511B9600839B8D /* Observer.swift */,
-				FAAE996E2351D27A00106313 /* Trash.swift */,
+				FAAE996E2351D27A00106313 /* DisposableVoid.swift */,
+				FADB49492352568D00B32C8E /* DisposableAnonymous.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -639,6 +648,7 @@
 		FAAE99662351CF1C00106313 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
+				FADB49462352549500B32C8E /* Scheduling */,
 				FAAE99672351CF3600106313 /* Creation */,
 			);
 			path = Operators;
@@ -650,6 +660,7 @@
 				FAAE99682351CF7400106313 /* Observable+create.swift */,
 				FAAE996A2351CFCC00106313 /* Observable+deferred.swift */,
 				FAAE996C2351D21300106313 /* Observable+just.swift */,
+				FADB49442352543900B32C8E /* Observable+from.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -666,6 +677,15 @@
 			path = HalfFiveTesting;
 			sourceTree = "<group>";
 		};
+		FADB49462352549500B32C8E /* Scheduling */ = {
+			isa = PBXGroup;
+			children = (
+				FADB4947235254EE00B32C8E /* Observable+subscribeOn.swift */,
+				FADB494B2352593A00B32C8E /* Observable+observeOn.swift */,
+			);
+			path = Scheduling;
+			sourceTree = "<group>";
+		};
 		FAFBC32E2351186500839B8D /* FullFive */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,7 +700,7 @@
 		FAFBC335235118B300839B8D /* Primitives */ = {
 			isa = PBXGroup;
 			children = (
-				FAFBC336235118D900839B8D /* TrashType.swift */,
+				FAFBC336235118D900839B8D /* Disposable.swift */,
 				FAFBC338235118F600839B8D /* ObservableType.swift */,
 				FAFBC33A235119DE00839B8D /* ObserverType.swift */,
 			);
@@ -1084,15 +1104,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAE996F2351D27A00106313 /* Trash.swift in Sources */,
+				FADB494C2352593A00B32C8E /* Observable+observeOn.swift in Sources */,
+				FAAE996F2351D27A00106313 /* DisposableVoid.swift in Sources */,
 				FAFBC33D23511ABF00839B8D /* Observable.swift in Sources */,
 				FAFBC33F23511B9600839B8D /* Observer.swift in Sources */,
 				FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */,
+				FADB4948235254EE00B32C8E /* Observable+subscribeOn.swift in Sources */,
 				FAFBC339235118F600839B8D /* ObservableType.swift in Sources */,
 				FAAE99692351CF7400106313 /* Observable+create.swift in Sources */,
+				FADB49452352543900B32C8E /* Observable+from.swift in Sources */,
 				FAAE996B2351CFCC00106313 /* Observable+deferred.swift in Sources */,
 				FAAE996D2351D21300106313 /* Observable+just.swift in Sources */,
-				FAFBC337235118D900839B8D /* TrashType.swift in Sources */,
+				FADB494A2352568D00B32C8E /* DisposableAnonymous.swift in Sources */,
+				FAFBC337235118D900839B8D /* Disposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
