@@ -114,6 +114,7 @@
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
 		FAF03455236DC66E00E2424E /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03454236DC66E00E2424E /* Single.swift */; };
 		FAF03457236DC69D00E2424E /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03456236DC69D00E2424E /* Disposable.swift */; };
+		FAF0345A236DCAB800E2424E /* Single+flatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03459236DCAB800E2424E /* Single+flatMap.swift */; };
 		FAFBC337235118D900839B8D /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC336235118D900839B8D /* Disposable.swift */; };
 		FAFBC339235118F600839B8D /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC338235118F600839B8D /* ObservableType.swift */; };
 		FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33A235119DE00839B8D /* ObserverType.swift */; };
@@ -248,6 +249,7 @@
 		FAF0344E236DC65900E2424E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF03454236DC66E00E2424E /* Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
 		FAF03456236DC69D00E2424E /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		FAF03459236DCAB800E2424E /* Single+flatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+flatMap.swift"; sourceTree = "<group>"; };
 		FAFBC32D2351186500839B8D /* FullFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFBC3302351186500839B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAFBC336235118D900839B8D /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 		FAF0344C236DC65900E2424E /* SingleWinkle */ = {
 			isa = PBXGroup;
 			children = (
+				FAF03458236DCAAB00E2424E /* Operators */,
 				FAF03453236DC66200E2424E /* Primitives */,
 				FAF0344E236DC65900E2424E /* Info.plist */,
 			);
@@ -717,6 +720,14 @@
 				FAF03456236DC69D00E2424E /* Disposable.swift */,
 			);
 			path = Primitives;
+			sourceTree = "<group>";
+		};
+		FAF03458236DCAAB00E2424E /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				FAF03459236DCAB800E2424E /* Single+flatMap.swift */,
+			);
+			path = Operators;
 			sourceTree = "<group>";
 		};
 		FAFBC32E2351186500839B8D /* FullFive */ = {
@@ -1176,6 +1187,7 @@
 			files = (
 				FAF03455236DC66E00E2424E /* Single.swift in Sources */,
 				FAF03457236DC69D00E2424E /* Disposable.swift in Sources */,
+				FAF0345A236DCAB800E2424E /* Single+flatMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
