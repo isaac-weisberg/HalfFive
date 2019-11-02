@@ -112,6 +112,8 @@
 		FADB494C2352593A00B32C8E /* Observable+observeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB494B2352593A00B32C8E /* Observable+observeOn.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
+		FAF03455236DC66E00E2424E /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03454236DC66E00E2424E /* Single.swift */; };
+		FAF03457236DC69D00E2424E /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03456236DC69D00E2424E /* Disposable.swift */; };
 		FAFBC337235118D900839B8D /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC336235118D900839B8D /* Disposable.swift */; };
 		FAFBC339235118F600839B8D /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC338235118F600839B8D /* ObservableType.swift */; };
 		FAFBC33B235119DE00839B8D /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBC33A235119DE00839B8D /* ObserverType.swift */; };
@@ -242,6 +244,10 @@
 		FADB494B2352593A00B32C8E /* Observable+observeOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+observeOn.swift"; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
+		FAF0344B236DC65900E2424E /* SingleWinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SingleWinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF0344E236DC65900E2424E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAF03454236DC66E00E2424E /* Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
+		FAF03456236DC69D00E2424E /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		FAFBC32D2351186500839B8D /* FullFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFBC3302351186500839B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAFBC336235118D900839B8D /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -289,6 +295,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF03448236DC65900E2424E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +490,7 @@
 				D37CC9302262FC940041F0C8 /* Extras */,
 				FABA2F852291746100F2788D /* HalfFiveTesting */,
 				FAFBC32E2351186500839B8D /* FullFive */,
+				FAF0344C236DC65900E2424E /* SingleWinkle */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -491,6 +505,7 @@
 				D304ED5722608A9500639991 /* HalfFiveTests.xctest */,
 				FABA2F842291746100F2788D /* HalfFiveTesting.framework */,
 				FAFBC32D2351186500839B8D /* FullFive.framework */,
+				FAF0344B236DC65900E2424E /* SingleWinkle.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -686,6 +701,24 @@
 			path = Scheduling;
 			sourceTree = "<group>";
 		};
+		FAF0344C236DC65900E2424E /* SingleWinkle */ = {
+			isa = PBXGroup;
+			children = (
+				FAF03453236DC66200E2424E /* Primitives */,
+				FAF0344E236DC65900E2424E /* Info.plist */,
+			);
+			path = SingleWinkle;
+			sourceTree = "<group>";
+		};
+		FAF03453236DC66200E2424E /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				FAF03454236DC66E00E2424E /* Single.swift */,
+				FAF03456236DC69D00E2424E /* Disposable.swift */,
+			);
+			path = Primitives;
+			sourceTree = "<group>";
+		};
 		FAFBC32E2351186500839B8D /* FullFive */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +758,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABA2F7F2291746100F2788D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF03446236DC65900E2424E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -831,6 +871,24 @@
 			productReference = FABA2F842291746100F2788D /* HalfFiveTesting.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FAF0344A236DC65900E2424E /* SingleWinkle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF03450236DC65900E2424E /* Build configuration list for PBXNativeTarget "SingleWinkle" */;
+			buildPhases = (
+				FAF03446236DC65900E2424E /* Headers */,
+				FAF03447236DC65900E2424E /* Sources */,
+				FAF03448236DC65900E2424E /* Frameworks */,
+				FAF03449236DC65900E2424E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SingleWinkle;
+			productName = SingleWinkle;
+			productReference = FAF0344B236DC65900E2424E /* SingleWinkle.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FAFBC32C2351186500839B8D /* FullFive */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAFBC3342351186500839B8D /* Build configuration list for PBXNativeTarget "FullFive" */;
@@ -877,6 +935,10 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
+					FAF0344A236DC65900E2424E = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
 					FAFBC32C2351186500839B8D = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -902,6 +964,7 @@
 				D304ED5622608A9500639991 /* HalfFiveTests */,
 				FABA2F832291746100F2788D /* HalfFiveTesting */,
 				FAFBC32C2351186500839B8D /* FullFive */,
+				FAF0344A236DC65900E2424E /* SingleWinkle */,
 			);
 		};
 /* End PBXProject section */
@@ -946,6 +1009,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FABA2F822291746100F2788D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF03449236DC65900E2424E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1097,6 +1167,15 @@
 				FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */,
 				FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */,
 				FA66F33E22969C1A000C3D9F /* Blocking+hotEvents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF03447236DC65900E2424E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF03455236DC66E00E2424E /* Single.swift in Sources */,
+				FAF03457236DC69D00E2424E /* Disposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1509,6 +1588,59 @@
 			};
 			name = Release;
 		};
+		FAF03451236DC65900E2424E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SingleWinkle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.SingleWinkle";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAF03452236DC65900E2424E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SingleWinkle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.SingleWinkle";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FAFBC3322351186500839B8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1615,6 +1747,15 @@
 			buildConfigurations = (
 				FABA2F892291746100F2788D /* Debug */,
 				FABA2F8A2291746100F2788D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF03450236DC65900E2424E /* Build configuration list for PBXNativeTarget "SingleWinkle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF03451236DC65900E2424E /* Debug */,
+				FAF03452236DC65900E2424E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
