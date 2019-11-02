@@ -14,7 +14,9 @@ enum DownloadJsonError {
     case parsing(Swift.Error)
 }
 
-func downloadJson<Target: Decodable>(from url: URL) -> Single<Target, DownloadJsonError> {
+func downloadJson<Target: Decodable>(from url: URL)
+        -> Single<Target, DownloadJsonError> {
+            
     return download(from: url)
         .mapError { error in
             DownloadJsonError.download(error)
