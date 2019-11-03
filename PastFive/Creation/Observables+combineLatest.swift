@@ -10,9 +10,9 @@ public extension Observables {
         _ second: Second,
         _ transform: @escaping (First.Event, Second.Event) -> Event
     )
-    -> Observable<Event, First.Scheduling>
-        where First.Scheduling == Second.Scheduling,
-        First.Scheduling.EquityProof == Second.Scheduling.EquityProof {
+    -> Observable<Event, First.Scheduler>
+        where First.Scheduler == Second.Scheduler,
+        First.Scheduler.EquityProof == Second.Scheduler.EquityProof {
 
         return Observable.unchecked { handler in
             let disposable = CombinedDisposable<First.Event, Second.Event>()

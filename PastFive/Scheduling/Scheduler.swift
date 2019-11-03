@@ -4,8 +4,12 @@ public protocol SchedulerType {
 
 }
 
-public struct AnonymousScheduler: SchedulerType {
-    init() { }
+public struct AllSyncScheduler: SchedulerType, EquitableType {
+    public enum EquityProof { }
+}
+
+public struct RandomScheduler: SchedulerType {
+    
 }
 
 public protocol KnownSchdulerType: SchedulerType {
@@ -14,8 +18,4 @@ public protocol KnownSchdulerType: SchedulerType {
 
 public protocol SerialSchedulerType: KnownSchdulerType {
     
-}
-
-public protocol EquitableSchedulerType: KnownSchdulerType {
-    associatedtype EquityProof
 }

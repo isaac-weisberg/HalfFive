@@ -1,6 +1,6 @@
 import Dispatch
 
-struct EquitableScheduler<Implementation: KnownSchdulerType, EquityProof>: EquitableSchedulerType {
+struct EquitableScheduler<Implementation: KnownSchdulerType, EquityProof>: KnownSchdulerType, EquitableType {
     let implementation: Implementation
 
     var queue: DispatchQueue {
@@ -10,6 +10,10 @@ struct EquitableScheduler<Implementation: KnownSchdulerType, EquityProof>: Equit
     init(implementation: Implementation, equityProof: EquityProof.Type) {
         self.implementation = implementation
     }
+}
+
+extension EquitableScheduler: SerialSchedulerType where Implementation: SerialSchedulerType {
+    
 }
 
 extension KnownSchdulerType {

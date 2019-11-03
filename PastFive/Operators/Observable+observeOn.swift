@@ -1,6 +1,6 @@
 public extension ObservableType {
     func observeOn<Scheduler: KnownSchdulerType>(_ scheduler: Scheduler)
-        -> Observable<Event, AsyncRunner<Scheduler>> {
+        -> Observable<Event, Scheduler> {
 
         return Observable.unchecked { [subscribe] handler in
             let disposable = DropInDisposable()

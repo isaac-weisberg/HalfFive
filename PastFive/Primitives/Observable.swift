@@ -1,4 +1,4 @@
-public struct Observable<Event, Scheduling: SchedulingType>: ObservableType {
+public struct Observable<Event, Scheduler: SchedulerType>: ObservableType {
     static func unchecked(_ factory: @escaping (@escaping (Event) -> Void) -> Disposable) -> Observable {
         return Observable(factory)
     }
@@ -14,6 +14,6 @@ public struct Observable<Event, Scheduling: SchedulingType>: ObservableType {
     }
 }
 
-extension Observable: EquitablyScheduledObservableType where Scheduling: EquitableSchedulingType {
+extension Observable: EquitablyScheduledObservableType where Scheduler: EquitableType {
 
 }
