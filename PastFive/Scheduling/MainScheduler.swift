@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct MainScheduler: EquitableSchedulerType {
+public struct MainScheduler: SerialSchedulerType, EquitableSchedulerType {
     public enum EquityProof { }
 
     let nestedScheduler = SerialDispatchQScheduler(serialQueue: .main)
