@@ -3,7 +3,7 @@ func usage() {
 
     let foo = Observables.just(())
     let bar = Observables.just(())
-        .observeOn(DispatchQueueScheduler<EquityProof>(queue: .global()))
+        .observeOn(DispatchQueueScheduler(queue: .global()))
     let baz = Observables.just(())
         .observeOn(MainScheduler())
 

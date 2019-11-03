@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct DispatchQueueScheduler<EquityProof>: KnownSchdulerType {
+public struct DispatchQueueScheduler: KnownSchdulerType {
     public let queue: DispatchQueue
 
     public init(queue: DispatchQueue) {

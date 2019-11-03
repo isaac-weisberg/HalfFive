@@ -1,9 +1,9 @@
 import Dispatch
 
-public struct MainScheduler: KnownSchdulerType {
+public struct MainScheduler: EquatableSchedulerType {
     public enum EquityProof { }
 
-    let nestedScheduler = SerialDispatchQScheduler<EquityProof>(serialQueue: .main)
+    let nestedScheduler = SerialDispatchQScheduler(serialQueue: .main)
 
     public var queue: DispatchQueue {
         return nestedScheduler.queue

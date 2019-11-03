@@ -130,6 +130,7 @@
 		FAE6FB8C236F24160014807B /* Observables+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB8B236F24160014807B /* Observables+combineLatest.swift */; };
 		FAE6FB8E236F2B7C0014807B /* SerialDispatchQScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB8D236F2B7C0014807B /* SerialDispatchQScheduler.swift */; };
 		FAE6FB90236F2C910014807B /* MainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB8F236F2C910014807B /* MainScheduler.swift */; };
+		FAE6FB92236F30ED0014807B /* EquitableScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB91236F30ED0014807B /* EquitableScheduler.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
 		FAF03455236DC66E00E2424E /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03454236DC66E00E2424E /* Single.swift */; };
@@ -307,6 +308,7 @@
 		FAE6FB8B236F24160014807B /* Observables+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+combineLatest.swift"; sourceTree = "<group>"; };
 		FAE6FB8D236F2B7C0014807B /* SerialDispatchQScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialDispatchQScheduler.swift; sourceTree = "<group>"; };
 		FAE6FB8F236F2C910014807B /* MainScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduler.swift; sourceTree = "<group>"; };
+		FAE6FB91236F30ED0014807B /* EquitableScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquitableScheduler.swift; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
 		FAF0344B236DC65900E2424E /* SingleWinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SingleWinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -834,6 +836,7 @@
 				FAE6FB8F236F2C910014807B /* MainScheduler.swift */,
 				FAE6FB89236F1EBD0014807B /* DispatchQueueScheduler.swift */,
 				FAE6FB8D236F2B7C0014807B /* SerialDispatchQScheduler.swift */,
+				FAE6FB91236F30ED0014807B /* EquitableScheduler.swift */,
 			);
 			path = Scheduling;
 			sourceTree = "<group>";
@@ -1386,6 +1389,7 @@
 				FAE6FB82236F19580014807B /* SomeSyncRunner.swift in Sources */,
 				FAE6FB8E236F2B7C0014807B /* SerialDispatchQScheduler.swift in Sources */,
 				FAE6FB78236F13CD0014807B /* AllSyncRunner.swift in Sources */,
+				FAE6FB92236F30ED0014807B /* EquitableScheduler.swift in Sources */,
 				FAE6FB8C236F24160014807B /* Observables+combineLatest.swift in Sources */,
 				FAE6FB7C236F16570014807B /* AsyncRunner.swift in Sources */,
 				FAE6FB80236F17C40014807B /* Observable+observeOn.swift in Sources */,
