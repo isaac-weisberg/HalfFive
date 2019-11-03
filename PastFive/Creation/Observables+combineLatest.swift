@@ -1,8 +1,12 @@
 public extension Observables {
-    static func combineLatest<Event, First: ObservableType, Second: ObservableType>
+    static func combineLatest<
+        Event,
+        First: EquitablyScheduledObservableType,
+        Second: EquitablyScheduledObservableType
+    >
         (_ first: First, second: Second, _ transform: @escaping (First.Event, Second.Event) -> Event)
-        -> Observable<Event, AsyncRunner<MainScheduler>>
-        where First.Scheduling == AsyncRunner<MainScheduler>, First.Scheduling == Second.Scheduling {
+        -> Observable<Event, First.Scheduling>
+        where First.Scheduling == Second.Scheduling {
 
         return Observable.unchecked { handler in
             let disposable = CombinedDisposable<First.Event, Second.Event>()
