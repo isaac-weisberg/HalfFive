@@ -127,6 +127,7 @@
 		FAE6FB86236F1B510014807B /* Observables+create.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB85236F1B510014807B /* Observables+create.swift */; };
 		FAE6FB88236F1E470014807B /* Usage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB87236F1E470014807B /* Usage.swift */; };
 		FAE6FB8A236F1EBD0014807B /* DispatchQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB89236F1EBD0014807B /* DispatchQueueScheduler.swift */; };
+		FAE6FB8C236F24160014807B /* Observables+combineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB8B236F24160014807B /* Observables+combineLatest.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
 		FAF03455236DC66E00E2424E /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03454236DC66E00E2424E /* Single.swift */; };
@@ -301,6 +302,7 @@
 		FAE6FB85236F1B510014807B /* Observables+create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+create.swift"; sourceTree = "<group>"; };
 		FAE6FB87236F1E470014807B /* Usage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usage.swift; sourceTree = "<group>"; };
 		FAE6FB89236F1EBD0014807B /* DispatchQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueScheduler.swift; sourceTree = "<group>"; };
+		FAE6FB8B236F24160014807B /* Observables+combineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+combineLatest.swift"; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
 		FAF0344B236DC65900E2424E /* SingleWinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SingleWinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -809,9 +811,10 @@
 		FAE6FB73236F135D0014807B /* Creation */ = {
 			isa = PBXGroup;
 			children = (
-				FAE6FB74236F13680014807B /* Observables+just.swift */,
 				FAE6FB83236F1A310014807B /* Observables.swift */,
+				FAE6FB74236F13680014807B /* Observables+just.swift */,
 				FAE6FB85236F1B510014807B /* Observables+create.swift */,
+				FAE6FB8B236F24160014807B /* Observables+combineLatest.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -1376,6 +1379,7 @@
 				FAE6FB6E236F0BA80014807B /* ObservableType+map.swift in Sources */,
 				FAE6FB82236F19580014807B /* SomeSyncRunner.swift in Sources */,
 				FAE6FB78236F13CD0014807B /* AllSyncRunner.swift in Sources */,
+				FAE6FB8C236F24160014807B /* Observables+combineLatest.swift in Sources */,
 				FAE6FB7C236F16570014807B /* AsyncRunner.swift in Sources */,
 				FAE6FB80236F17C40014807B /* Observable+observeOn.swift in Sources */,
 				FAE6FB84236F1A310014807B /* Observables.swift in Sources */,
