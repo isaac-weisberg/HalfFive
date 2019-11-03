@@ -116,13 +116,15 @@
 		FAE6FB69236F0A3A0014807B /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB68236F0A3A0014807B /* ObservableType.swift */; };
 		FAE6FB6E236F0BA80014807B /* ObservableType+map.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB6D236F0BA80014807B /* ObservableType+map.swift */; };
 		FAE6FB72236F10F10014807B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB71236F10F10014807B /* Observable.swift */; };
-		FAE6FB75236F13680014807B /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB74236F13680014807B /* Just.swift */; };
+		FAE6FB75236F13680014807B /* Observables+just.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB74236F13680014807B /* Observables+just.swift */; };
 		FAE6FB78236F13CD0014807B /* AllSyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB77236F13CD0014807B /* AllSyncRunner.swift */; };
 		FAE6FB7A236F13E00014807B /* Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB79236F13E00014807B /* Scheduling.swift */; };
 		FAE6FB7C236F16570014807B /* AsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB7B236F16570014807B /* AsyncRunner.swift */; };
 		FAE6FB7E236F16950014807B /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB7D236F16950014807B /* Scheduler.swift */; };
 		FAE6FB80236F17C40014807B /* Observable+observeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB7F236F17C40014807B /* Observable+observeOn.swift */; };
 		FAE6FB82236F19580014807B /* SomeSyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB81236F19580014807B /* SomeSyncRunner.swift */; };
+		FAE6FB84236F1A310014807B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB83236F1A310014807B /* Observables.swift */; };
+		FAE6FB86236F1B510014807B /* Observables+create.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB85236F1B510014807B /* Observables+create.swift */; };
 		FAE83D6A229C000100428370 /* TickWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D69229C000100428370 /* TickWait.swift */; };
 		FAE83D6C229C01F100428370 /* Blocking+allEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */; };
 		FAF03455236DC66E00E2424E /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF03454236DC66E00E2424E /* Single.swift */; };
@@ -286,13 +288,15 @@
 		FAE6FB68236F0A3A0014807B /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		FAE6FB6D236F0BA80014807B /* ObservableType+map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+map.swift"; sourceTree = "<group>"; };
 		FAE6FB71236F10F10014807B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		FAE6FB74236F13680014807B /* Just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
+		FAE6FB74236F13680014807B /* Observables+just.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+just.swift"; sourceTree = "<group>"; };
 		FAE6FB77236F13CD0014807B /* AllSyncRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSyncRunner.swift; sourceTree = "<group>"; };
 		FAE6FB79236F13E00014807B /* Scheduling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduling.swift; sourceTree = "<group>"; };
 		FAE6FB7B236F16570014807B /* AsyncRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRunner.swift; sourceTree = "<group>"; };
 		FAE6FB7D236F16950014807B /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		FAE6FB7F236F17C40014807B /* Observable+observeOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+observeOn.swift"; sourceTree = "<group>"; };
 		FAE6FB81236F19580014807B /* SomeSyncRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeSyncRunner.swift; sourceTree = "<group>"; };
+		FAE6FB83236F1A310014807B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
+		FAE6FB85236F1B510014807B /* Observables+create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observables+create.swift"; sourceTree = "<group>"; };
 		FAE83D69229C000100428370 /* TickWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickWait.swift; sourceTree = "<group>"; };
 		FAE83D6B229C01F100428370 /* Blocking+allEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+allEvents.swift"; sourceTree = "<group>"; };
 		FAF0344B236DC65900E2424E /* SingleWinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SingleWinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -800,7 +804,9 @@
 		FAE6FB73236F135D0014807B /* Creation */ = {
 			isa = PBXGroup;
 			children = (
-				FAE6FB74236F13680014807B /* Just.swift */,
+				FAE6FB74236F13680014807B /* Observables+just.swift */,
+				FAE6FB83236F1A310014807B /* Observables.swift */,
+				FAE6FB85236F1B510014807B /* Observables+create.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -1365,8 +1371,10 @@
 				FAE6FB78236F13CD0014807B /* AllSyncRunner.swift in Sources */,
 				FAE6FB7C236F16570014807B /* AsyncRunner.swift in Sources */,
 				FAE6FB80236F17C40014807B /* Observable+observeOn.swift in Sources */,
+				FAE6FB84236F1A310014807B /* Observables.swift in Sources */,
 				FAE6FB7A236F13E00014807B /* Scheduling.swift in Sources */,
-				FAE6FB75236F13680014807B /* Just.swift in Sources */,
+				FAE6FB86236F1B510014807B /* Observables+create.swift in Sources */,
+				FAE6FB75236F13680014807B /* Observables+just.swift in Sources */,
 				FAE6FB67236F09BB0014807B /* Disposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
