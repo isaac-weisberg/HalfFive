@@ -13,3 +13,7 @@ public struct Observable<Event, Scheduling: SchedulingType>: ObservableType {
         return factory(handler)
     }
 }
+
+extension Observable: EquitablyScheduledObservableType where Scheduling: EquitableSchedulingType {
+
+}

@@ -5,6 +5,6 @@ public protocol ObservableType {
     func subscribe(_ handler: @escaping (Event) -> Void) -> Disposable
 }
 
-public protocol EquitablyScheduledObservableType: ObservableType where Scheduling: EquitableSchedulerType {
+public protocol EquitablyScheduledObservableType: ObservableType where Scheduling: EquitableSchedulingType {
 
 }
