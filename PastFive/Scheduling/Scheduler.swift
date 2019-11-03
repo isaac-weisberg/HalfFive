@@ -9,5 +9,7 @@ public struct AnonymousScheduler: SchedulerType {
 }
 
 public protocol KnownSchdulerType: SchedulerType {
+    associatedtype EquityProof
+
     var queue: DispatchQueue { get }
 }

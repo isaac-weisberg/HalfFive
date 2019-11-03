@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct SerialDispatchQScheduler: KnownSchdulerType {
+public struct SerialDispatchQScheduler<EquityProof>: KnownSchdulerType {
     public let queue: DispatchQueue
 
     public init(qos: DispatchQoS = .default, label: String = "net.caroline-weisberg.sdqs") {

@@ -1,7 +1,9 @@
 func usage() {
+    enum EquityProof { }
+
     let foo = Observables.just(())
     let bar = Observables.just(())
-        .observeOn(DispatchQueueScheduler(queue: .global()))
+        .observeOn(DispatchQueueScheduler<EquityProof>(queue: .global()))
     let baz = Observables.just(())
         .observeOn(MainScheduler())
 
