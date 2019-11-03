@@ -1,6 +1,6 @@
 import Dispatch
 
-struct EquitableScheduler<Implementation: KnownSchdulerType, EquityProof>: EquatableSchedulerType {
+struct EquitableScheduler<Implementation: KnownSchdulerType, EquityProof>: EquitableSchedulerType {
     let implementation: Implementation
 
     var queue: DispatchQueue {

@@ -12,6 +12,6 @@ public protocol KnownSchdulerType: SchedulerType {
     var queue: DispatchQueue { get }
 }
 
-public protocol EquatableSchedulerType: KnownSchdulerType {
+public protocol EquitableSchedulerType: KnownSchdulerType {
     associatedtype EquityProof
 }
