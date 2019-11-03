@@ -12,8 +12,9 @@ public extension Observables {
     )
     -> Observable<Event, First.Scheduling>
         where First.Scheduling == Second.Scheduling,
-        First: SerialSchedulerType, Second: SerialSchedulerType,
-        First.Scheduling.EquityProof == Second.Scheduling.EquityProof {
+        First.Scheduling.EquityProof == Second.Scheduling.EquityProof,
+        First: SerialSchedulerType,
+        Second: SerialSchedulerType {
 
         return Observable.unchecked { handler in
             let disposable = CombinedDisposable<First.Event, Second.Event>()
