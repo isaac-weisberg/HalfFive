@@ -88,6 +88,7 @@
 		D37CC92F2262F8990041F0C8 /* TestGithubRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */; };
 		D37CC9322262FCB70041F0C8 /* testYouWillSeeOnGithub.json in Resources */ = {isa = PBXBuildFile; fileRef = D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */; };
 		D37CC9342263064B0041F0C8 /* Conveyor+filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */; };
+		FA5383ED237010C300C0C89B /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5383EC237010C300C0C89B /* Mutex.swift */; };
 		FA66F33E22969C1A000C3D9F /* Blocking+hotEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33D22969C1A000C3D9F /* Blocking+hotEvents.swift */; };
 		FA66F34022969CB6000C3D9F /* Conveyor+toBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */; };
 		FA66F34222969DAA000C3D9F /* CreationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F34122969DAA000C3D9F /* CreationalTests.swift */; };
@@ -263,6 +264,7 @@
 		D37CC92E2262F8990041F0C8 /* TestGithubRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGithubRemoteDTO.swift; sourceTree = "<group>"; };
 		D37CC9312262FCB70041F0C8 /* testYouWillSeeOnGithub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testYouWillSeeOnGithub.json; sourceTree = "<group>"; };
 		D37CC9332263064B0041F0C8 /* Conveyor+filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+filter.swift"; sourceTree = "<group>"; };
+		FA5383EC237010C300C0C89B /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
 		FA66F33D22969C1A000C3D9F /* Blocking+hotEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+hotEvents.swift"; sourceTree = "<group>"; };
 		FA66F33F22969CB6000C3D9F /* Conveyor+toBlocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conveyor+toBlocking.swift"; sourceTree = "<group>"; };
 		FA66F34122969DAA000C3D9F /* CreationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationalTests.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 				FAE6FB8F236F2C910014807B /* MainScheduler.swift */,
 				FAE6FB89236F1EBD0014807B /* DispatchQueueScheduler.swift */,
 				FAE6FB8D236F2B7C0014807B /* SerialDispatchQScheduler.swift */,
+				FA5383EC237010C300C0C89B /* Mutex.swift */,
 			);
 			path = Scheduling;
 			sourceTree = "<group>";
@@ -1373,6 +1376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE63D54236F668900E93ED9 /* EquitableType.swift in Sources */,
+				FA5383ED237010C300C0C89B /* Mutex.swift in Sources */,
 				FAE6FB7E236F16950014807B /* Scheduler.swift in Sources */,
 				FAE6FB72236F10F10014807B /* Observable.swift in Sources */,
 				FAE6FB69236F0A3A0014807B /* ObservableType.swift in Sources */,

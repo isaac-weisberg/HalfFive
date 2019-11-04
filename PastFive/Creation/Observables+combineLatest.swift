@@ -37,8 +37,10 @@ public extension Observables {
                 guard let disposable = disposable else {
                     return
                 }
-                disposable.state.first = event
-                disposable.state.getEventsIfTheyAreThere { first, second in
+                disposable.state.mutate { state in
+                    state.first = event
+                }
+                disposable.state.read().getEventsIfTheyAreThere { first, second in
                     let newEvent = transform(first, second)
                     handler(newEvent)
                 }
@@ -48,8 +50,10 @@ public extension Observables {
                 guard let disposable = disposable else {
                     return
                 }
-                disposable.state.second = event
-                disposable.state.getEventsIfTheyAreThere { first, second in
+                disposable.state.mutate { state in
+                    state.second = event
+                }
+                disposable.state.read().getEventsIfTheyAreThere { first, second in
                     let newEvent = transform(first, second)
                     handler(newEvent)
                 }
@@ -63,7 +67,7 @@ public extension Observables {
 private class CombinedDisposable<First, Second>: Disposable {
     var first: Disposable?
     var second: Disposable?
-    var state = CombinedState<First, Second>()
+    var state = MutexUnsafe(value: CombinedState<First, Second>())
 }
 
 private struct CombinedState<First, Second> {
