@@ -1,12 +1,15 @@
 public struct Observable<Event, Scheduler: SchedulerType>: ObservableType {
-    static func unchecked(_ factory: @escaping (@escaping (Event) -> Void) -> Disposable) -> Observable {
-        return Observable(factory)
+    static func unchecked(scheduler: Scheduler, _ factory: @escaping (@escaping (Event) -> Void) -> Disposable) -> Observable {
+        return Observable(scheduler: scheduler, factory)
     }
 
     let factory: (@escaping (Event) -> Void) -> Disposable
 
-    private init(_ factory: @escaping (@escaping (Event) -> Void) -> Disposable) {
+    public let scheduler: Scheduler
+
+    private init(scheduler: Scheduler, _ factory: @escaping (@escaping (Event) -> Void) -> Disposable) {
         self.factory = factory
+        self.scheduler = scheduler
     }
 
     public func subscribe(_ handler: @escaping (Event) -> Void) -> Disposable {

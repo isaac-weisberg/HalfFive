@@ -2,7 +2,7 @@ public extension ObservableType {
     func observeOn<Scheduler: KnownSchdulerType>(_ scheduler: Scheduler)
         -> Observable<Event, Scheduler> {
 
-        return Observable.unchecked { [subscribe] handler in
+        return Observable.unchecked(scheduler: scheduler) { [subscribe] handler in
             let disposable = DropInDisposable()
 
             disposable.nested = subscribe { event in

@@ -14,7 +14,7 @@ public extension Observables {
         where First.Scheduler == Second.Scheduler,
         First.Scheduler.EquityProof == Second.Scheduler.EquityProof {
 
-        return Observable.unchecked { handler in
+            return Observable.unchecked(scheduler: first.scheduler) { handler in
             let disposable = CombinedDisposable<First.Event, Second.Event>()
 
             disposable.first = first.subscribe { [weak disposable] event in
