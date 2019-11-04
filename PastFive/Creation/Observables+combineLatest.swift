@@ -21,6 +21,10 @@ public extension Observables {
                         > The equity was proven statically
                         > but you've used different scheduler
                         > instances anyway, dumbass
+                        >
+                        > Either remove the equity or
+                        > Use only the same scheduler instance
+                        > for both observables
                     """
                 )
             }
