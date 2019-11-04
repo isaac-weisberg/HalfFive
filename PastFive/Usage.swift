@@ -16,7 +16,7 @@ func a() {
     let first = Observables.just(())
     let second = Observables.just(())
 
-    // will compile because both are sync
+    // will use the super-prime because both are sync
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -26,7 +26,7 @@ func b() {
     let second = Observables.just(())
         .observeOn(MainScheduler())
 
-    // will compile because both are equivalent in terms of EquityProofs
+    // will use the super-prime because both are equivalent in terms of EquityProofs
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -36,9 +36,9 @@ func c() {
     let second = Observables.just(())
         .observeOn(SerialDispatchQScheduler())
 
-    // won't compile because although schedulers are
+    // won't use the super-prime because although schedulers are
     // type equivalent, their equity is unproven
-//    _ = Observables.combineLatest(first, second) { _, _ in () }
+    _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
 func d() {
@@ -49,9 +49,9 @@ func d() {
     let second = Observables.just(())
         .observeOn(scheduler)
 
-    // won't compile because their equity
+    // won't use the super-prime because their equity
     // is not proven statically
-//    _ = Observables.combineLatest(first, second) { _, _ in () }
+    _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
 func e() {
@@ -64,7 +64,7 @@ func e() {
     let second = Observables.just(())
         .observeOn(scheduler)
 
-    // will compile because the equity is proven statically
+    // will use the super-prime because the equity is proven statically
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -79,11 +79,27 @@ func f() {
     let second = Observables.just(())
         .observeOn(anotherScheduler)
 
-    // UNFORTUNATELY, will compile despite the fact that
+    // UNFORTUNATELY, will use the super-prime
+    // despite the fact that
     // these are unrelated dispatch queues
     // BUT it will fatalError out without subscribing
     // to the inner observables with a message
     // indicating that you have accidentally used
     // same-type different-instances
+    _ = Observables.combineLatest(first, second) { _, _ in () }
+}
+
+func g() {
+    enum OneProof { }
+    enum AnotherProof { }
+
+    let scheduler = SerialDispatchQScheduler()
+
+    let first = Observables.just(())
+        .observeOn(scheduler.equitable(by: OneProof.self))
+    let second = Observables.just(())
+        .observeOn(scheduler.equitable(by: AnotherProof.self))
+
+    // won't use the superprime because the EquityProofs are different
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }

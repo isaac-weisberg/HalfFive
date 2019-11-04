@@ -6,12 +6,14 @@ protocol MutexType {
     func read() -> Value
 
     func mutate(_ actions: (inout Value) -> Void)
+
+    init(value: Value)
 }
 
 class MutexUnsafe<Value>: MutexType {
     var value: Value
 
-    init(value: Value) {
+    required init(value: Value) {
         self.value = value
     }
 
@@ -27,7 +29,7 @@ class MutexUnsafe<Value>: MutexType {
 class Mutex<Value>: MutexType {
     var value: Value
 
-    init(value: Value) {
+    required init(value: Value) {
         self.value = value
     }
 
