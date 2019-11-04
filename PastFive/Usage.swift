@@ -18,7 +18,7 @@ func a() {
     let first = Observables.just(())
     let second = Observables.just(())
 
-    // will use the super-prime because both are sync
+    // will use the super-prime implementation because both are sync
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -28,7 +28,7 @@ func b() {
     let second = Observables.just(())
         .observeOn(MainScheduler())
 
-    // will use the super-prime because both are equivalent in terms of EquityProofs
+    // will use the super-prime implementation because both are equivalent in terms of EquityProofs
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -38,7 +38,7 @@ func c() {
     let second = Observables.just(())
         .observeOn(SerialDispatchQScheduler())
 
-    // won't use the super-prime because although schedulers are
+    // won't use the super-prime implementation because although schedulers are
     // type equivalent, their equity is unproven
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
@@ -52,7 +52,7 @@ func c2() {
     let second = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: queue))
 
-    // won't use the super-prime because although schedulers are
+    // won't use the super-prime implementation because although schedulers are
     // type equivalent and are equal dynamically,
     // their equity is unproven
     _ = Observables.combineLatest(first, second) { _, _ in () }
@@ -66,7 +66,7 @@ func d() {
     let second = Observables.just(())
         .observeOn(scheduler)
 
-    // won't use the super-prime because their equity
+    // won't use the super-prime implementation because their equity
     // is not proven statically
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
@@ -81,7 +81,7 @@ func e() {
     let second = Observables.just(())
         .observeOn(scheduler)
 
-    // will use the super-prime because the equity is proven statically
+    // will use the super-prime implementation because the equity is proven statically
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -96,7 +96,7 @@ func f() {
     let second = Observables.just(())
         .observeOn(anotherScheduler)
 
-    // UNFORTUNATELY, will use the super-prime
+    // UNFORTUNATELY, will use the super-prime implementation
     // despite the fact that
     // these are unrelated dispatch queues
     // BUT it will fatalError out without subscribing
