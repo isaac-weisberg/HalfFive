@@ -74,7 +74,7 @@ func d() {
 func e() {
     enum EquityProof { }
 
-    let scheduler = SerialDispatchQScheduler().equitable(by: EquityProof.self)
+    let scheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
 
     let first = Observables.just(())
         .observeOn(scheduler)
@@ -88,8 +88,8 @@ func e() {
 func f() {
     enum EquityProof { }
 
-    let firstScheduler = SerialDispatchQScheduler().equitable(by: EquityProof.self)
-    let anotherScheduler = SerialDispatchQScheduler().equitable(by: EquityProof.self)
+    let firstScheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
+    let anotherScheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
 
     let first = Observables.just(())
         .observeOn(firstScheduler)
@@ -113,9 +113,9 @@ func g() {
     let scheduler = SerialDispatchQScheduler()
 
     let first = Observables.just(())
-        .observeOn(scheduler.equitable(by: OneProof.self))
+        .observeOn(Equitable(scheduler, OneProof.self))
     let second = Observables.just(())
-        .observeOn(scheduler.equitable(by: AnotherProof.self))
+        .observeOn(Equitable(scheduler, AnotherProof.self))
 
     // won't use the superprime because the EquityProofs are different
     _ = Observables.combineLatest(first, second) { _, _ in () }

@@ -25,3 +25,9 @@ public protocol KnownSchdulerType: SchedulerType {
 public protocol SerialSchedulerType: KnownSchdulerType {
     
 }
+
+extension SchedulerType where Self: KnownSchdulerType {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.queue === rhs.queue
+    }
+}

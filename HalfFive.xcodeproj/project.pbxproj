@@ -112,7 +112,7 @@
 		FADB494A2352568D00B32C8E /* DisposableAnonymous.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB49492352568D00B32C8E /* DisposableAnonymous.swift */; };
 		FADB494C2352593A00B32C8E /* Observable+observeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB494B2352593A00B32C8E /* Observable+observeOn.swift */; };
 		FAE63D54236F668900E93ED9 /* EquitableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE63D53236F668900E93ED9 /* EquitableType.swift */; };
-		FAE63D56236F6E0600E93ED9 /* EquitableScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE63D55236F6E0600E93ED9 /* EquitableScheduler.swift */; };
+		FAE63D56236F6E0600E93ED9 /* Equitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE63D55236F6E0600E93ED9 /* Equitable.swift */; };
 		FAE6FB5F236F09A60014807B /* PastFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE6FB58236F09A60014807B /* PastFive.framework */; };
 		FAE6FB60236F09A60014807B /* PastFive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAE6FB58236F09A60014807B /* PastFive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FAE6FB67236F09BB0014807B /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6FB66236F09BB0014807B /* Disposable.swift */; };
@@ -288,7 +288,7 @@
 		FADB49492352568D00B32C8E /* DisposableAnonymous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableAnonymous.swift; sourceTree = "<group>"; };
 		FADB494B2352593A00B32C8E /* Observable+observeOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+observeOn.swift"; sourceTree = "<group>"; };
 		FAE63D53236F668900E93ED9 /* EquitableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquitableType.swift; sourceTree = "<group>"; };
-		FAE63D55236F6E0600E93ED9 /* EquitableScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquitableScheduler.swift; sourceTree = "<group>"; };
+		FAE63D55236F6E0600E93ED9 /* Equitable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equitable.swift; sourceTree = "<group>"; };
 		FAE6FB58236F09A60014807B /* PastFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PastFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE6FB5B236F09A60014807B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE6FB66236F09BB0014807B /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -824,7 +824,7 @@
 		FAE6FB76236F13A00014807B /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
-				FAE63D55236F6E0600E93ED9 /* EquitableScheduler.swift */,
+				FAE63D55236F6E0600E93ED9 /* Equitable.swift */,
 				FAE63D53236F668900E93ED9 /* EquitableType.swift */,
 				FAE6FB7D236F16950014807B /* Scheduler.swift */,
 				FAE6FB8F236F2C910014807B /* MainScheduler.swift */,
@@ -1390,7 +1390,7 @@
 				FAE6FB88236F1E470014807B /* Usage.swift in Sources */,
 				FAE6FB75236F13680014807B /* Observables+just.swift in Sources */,
 				FAE6FB90236F2C910014807B /* MainScheduler.swift in Sources */,
-				FAE63D56236F6E0600E93ED9 /* EquitableScheduler.swift in Sources */,
+				FAE63D56236F6E0600E93ED9 /* Equitable.swift in Sources */,
 				FAE6FB67236F09BB0014807B /* Disposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
