@@ -1,3 +1,5 @@
+import Dispatch
+
 func usage() {
     enum EquityProof { }
 
@@ -38,6 +40,21 @@ func c() {
 
     // won't use the super-prime because although schedulers are
     // type equivalent, their equity is unproven
+    _ = Observables.combineLatest(first, second) { _, _ in () }
+}
+
+
+func c2() {
+    let queue = DispatchQueue(label: "", attributes: .concurrent)
+
+    let first = Observables.just(())
+        .observeOn(DispatchQueueScheduler(queue: queue))
+    let second = Observables.just(())
+        .observeOn(DispatchQueueScheduler(queue: queue))
+
+    // won't use the super-prime because although schedulers are
+    // type equivalent and are equal dynamically,
+    // their equity is unproven
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
