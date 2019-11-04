@@ -81,5 +81,9 @@ func f() {
 
     // UNFORTUNATELY, will compile despite the fact that
     // these are unrelated dispatch queues
+    // BUT it will fatalError out without subscribing
+    // to the inner observables with a message
+    // indicating that you have accidentally used
+    // same-type different-instances
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }

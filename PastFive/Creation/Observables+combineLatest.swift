@@ -14,6 +14,18 @@ public extension Observables {
         where First.Scheduler == Second.Scheduler,
         First.Scheduler.EquityProof == Second.Scheduler.EquityProof {
 
+            #if !DISABLE_EQUITY_DYNAMIC_VALIDATION
+            guard first.scheduler == second.scheduler else {
+                fatalError(
+                    """
+                        > The equity was proven statically
+                        > but you've used different scheduler
+                        > instances anyway, dumbass
+                    """
+                )
+            }
+            #endif
+
             return Observable.unchecked(scheduler: first.scheduler) { handler in
             let disposable = CombinedDisposable<First.Event, Second.Event>()
 
