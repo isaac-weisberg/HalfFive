@@ -12,27 +12,27 @@ public extension Observables {
         )
         -> Observable<Event, RandomScheduler> {
 
-        return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
+            return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
     }
 
     static func combineLatest
-    <
-        Event,
-        First: ObservableType,
-        Second: ObservableType
-    >
-    (
-        _ first: First,
-        _ second: Second,
-        _ tranform: @escaping (First.Event, Second.Event) -> Event
-    )
-    -> Observable<Event, First.Scheduler>
-    where First.Scheduler == Second.Scheduler {
+        <
+            Event,
+            First: ObservableType,
+            Second: ObservableType
+        >
+        (
+            _ first: First,
+            _ second: Second,
+            _ tranform: @escaping (First.Event, Second.Event) -> Event
+        )
+        -> Observable<Event, First.Scheduler>
+        where First.Scheduler == Second.Scheduler, First.Scheduler: SynchronizedScheduler {
 
-        if first.scheduler == second.scheduler {
-            return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, tranform)
-        }
-        return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
+            if first.scheduler == second.scheduler {
+                return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, tranform)
+            }
+            return combineLatestUnsafe(first, second, first.scheduler, Mutex.self, tranform)
     }
 
 
