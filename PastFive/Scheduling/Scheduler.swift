@@ -4,7 +4,7 @@ public protocol SchedulerType: Equatable {
 
 }
 
-public struct AllSyncScheduler: SchedulerType, EquitableType, Equatable {
+public struct AllSyncScheduler: SchedulerType {
     public static func == (lhs: AllSyncScheduler, rhs: AllSyncScheduler) -> Bool {
         return true
     }
@@ -22,12 +22,12 @@ public protocol KnownSchdulerType: SchedulerType {
     var queue: DispatchQueue { get }
 }
 
-public protocol SerialSchedulerType: KnownSchdulerType {
-    
-}
-
 extension SchedulerType where Self: KnownSchdulerType {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.queue === rhs.queue
     }
+}
+
+public protocol SerialSchedulerType: KnownSchdulerType {
+    
 }

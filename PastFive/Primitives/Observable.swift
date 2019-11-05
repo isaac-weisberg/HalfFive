@@ -16,7 +16,3 @@ public struct Observable<Event, Scheduler: SchedulerType>: ObservableType {
         return factory(handler)
     }
 }
-
-extension Observable: EquitablyScheduledObservableType where Scheduler: EquitableType {
-
-}

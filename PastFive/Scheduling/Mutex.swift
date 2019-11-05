@@ -34,7 +34,7 @@ class Mutex<Value>: MutexType {
     }
 
     let queue = DispatchQueue(label: "net.caroline-weisberg.mtx",
-                              attributes: [DispatchQueue.Attributes.concurrent])
+                              attributes: [.concurrent])
 
     func read() -> Value {
         queue.sync {

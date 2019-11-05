@@ -18,34 +18,23 @@ public extension Observables {
     static func combineLatest
     <
         Event,
-        First: EquitablyScheduledObservableType,
-        Second: EquitablyScheduledObservableType
+        First: ObservableType,
+        Second: ObservableType
     >
     (
         _ first: First,
         _ second: Second,
-        _ transform: @escaping (First.Event, Second.Event) -> Event
+        _ tranform: @escaping (First.Event, Second.Event) -> Event
     )
-    -> Observable<Event, First.Scheduler> where First.Scheduler == Second.Scheduler {
+    -> Observable<Event, First.Scheduler>
+    where First.Scheduler == Second.Scheduler {
 
-        #if !DISABLE_EQUITY_DYNAMIC_VALIDATION
-        guard first.scheduler == second.scheduler else {
-            fatalError(
-                """
-                > The equity was proven statically
-                > but you've used different scheduler
-                > instances anyway, dumbass
-                >
-                > Either remove the equity or
-                > Use only the same scheduler instance
-                > for both observables
-            """
-            )
+        if first.scheduler == second.scheduler {
+            return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, tranform)
         }
-        #endif
-
-        return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, transform)
+        return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
     }
+
 
     static private func combineLatestUnsafe
     <

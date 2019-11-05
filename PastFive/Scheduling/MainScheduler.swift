@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct MainScheduler: SerialSchedulerType, EquitableType {
+public struct MainScheduler: SerialSchedulerType {
     public static func == (lhs: MainScheduler, rhs: MainScheduler) -> Bool {
         return lhs.nestedScheduler == rhs.nestedScheduler
     }
