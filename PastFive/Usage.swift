@@ -1,8 +1,6 @@
 import Dispatch
 
 func usage() {
-    enum EquityProof { }
-
     let foo = Observables.just(())
     let bar = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: .global()))
@@ -18,7 +16,9 @@ func a() {
     let first = Observables.just(())
     let second = Observables.just(())
 
-    // will use the super-prime implementation because both are sync
+    // will use the super-prime implementation
+    // because both are sync and all sync
+    // schedulers are always equal to each other
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -28,7 +28,9 @@ func b() {
     let second = Observables.just(())
         .observeOn(MainScheduler())
 
-    // will use the super-prime implementation because both are equivalent in terms of EquityProofs
+    // will use the super-prime implementation
+    // because both schedulers are equal
+    // because their dispatch queues are referrentially equal
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -38,8 +40,11 @@ func c() {
     let second = Observables.just(())
         .observeOn(SerialDispatchQScheduler())
 
-    // won't use the super-prime implementation because although schedulers are
-    // type equivalent, their equity is unproven
+    // won't use the super-prime implementation
+    // because although schedulers are
+    // type equivalent, on runtime their queues
+    // are will be different and synchronization
+    // will be required
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -52,9 +57,11 @@ func c2() {
     let second = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: queue))
 
-    // won't use the super-prime implementation because although schedulers are
-    // type equivalent and are equal dynamically,
-    // their equity is unproven
+    // won't use the super-prime implementation.
+    // Although they are type equivalent
+    // and they will be equal dynamically,
+    // the dispatch queue that they use
+    // doesn't synchronize the emissions
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -66,57 +73,21 @@ func d() {
     let second = Observables.just(())
         .observeOn(scheduler)
 
-    // won't use the super-prime implementation because their equity
-    // is not proven statically
+    // will use the super-prime implementation
+    // because of static and dynamic equality
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
 func e() {
-    enum EquityProof { }
-
-    let scheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
-
-    let first = Observables.just(())
-        .observeOn(scheduler)
-    let second = Observables.just(())
-        .observeOn(scheduler)
-
-    // will use the super-prime implementation because the equity is proven statically
-    _ = Observables.combineLatest(first, second) { _, _ in () }
-}
-
-func f() {
-    enum EquityProof { }
-
-    let firstScheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
-    let anotherScheduler = Equitable(SerialDispatchQScheduler(), EquityProof.self)
-
-    let first = Observables.just(())
-        .observeOn(firstScheduler)
-    let second = Observables.just(())
-        .observeOn(anotherScheduler)
-
-    // UNFORTUNATELY, will use the super-prime implementation
-    // despite the fact that
-    // these are unrelated dispatch queues
-    // BUT it will fatalError out without subscribing
-    // to the inner observables with a message
-    // indicating that you have accidentally used
-    // same-type different-instances
-    _ = Observables.combineLatest(first, second) { _, _ in () }
-}
-
-func g() {
-    enum OneProof { }
-    enum AnotherProof { }
-
     let scheduler = SerialDispatchQScheduler()
 
     let first = Observables.just(())
-        .observeOn(Equitable(scheduler, OneProof.self))
+        .observeOn(scheduler)
     let second = Observables.just(())
-        .observeOn(Equitable(scheduler, AnotherProof.self))
+        .observeOn(scheduler)
 
-    // won't use the superprime because the EquityProofs are different
+    // will use the super-prime implementation
+    // because the equality is proven statically
+    // and dynamically
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }

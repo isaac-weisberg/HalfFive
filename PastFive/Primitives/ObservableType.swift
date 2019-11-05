@@ -6,7 +6,3 @@ public protocol ObservableType {
 
     func subscribe(_ handler: @escaping (Event) -> Void) -> Disposable
 }
-
-public protocol EquitablyScheduledObservableType: ObservableType where Scheduler: EquitableType {
-
-}

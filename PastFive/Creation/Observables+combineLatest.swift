@@ -12,40 +12,29 @@ public extension Observables {
         )
         -> Observable<Event, RandomScheduler> {
 
-        return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
+            return combineLatestUnsafe(first, second, RandomScheduler(), Mutex.self, tranform)
     }
 
     static func combineLatest
-    <
-        Event,
-        First: EquitablyScheduledObservableType,
-        Second: EquitablyScheduledObservableType
-    >
-    (
-        _ first: First,
-        _ second: Second,
-        _ transform: @escaping (First.Event, Second.Event) -> Event
-    )
-    -> Observable<Event, First.Scheduler> where First.Scheduler == Second.Scheduler {
+        <
+            Event,
+            First: ObservableType,
+            Second: ObservableType
+        >
+        (
+            _ first: First,
+            _ second: Second,
+            _ tranform: @escaping (First.Event, Second.Event) -> Event
+        )
+        -> Observable<Event, First.Scheduler>
+        where First.Scheduler == Second.Scheduler, First.Scheduler: SynchronizedScheduler {
 
-        #if !DISABLE_EQUITY_DYNAMIC_VALIDATION
-        guard first.scheduler == second.scheduler else {
-            fatalError(
-                """
-                > The equity was proven statically
-                > but you've used different scheduler
-                > instances anyway, dumbass
-                >
-                > Either remove the equity or
-                > Use only the same scheduler instance
-                > for both observables
-            """
-            )
-        }
-        #endif
-
-        return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, transform)
+            if first.scheduler == second.scheduler {
+                return combineLatestUnsafe(first, second, first.scheduler, MutexUnsafe.self, tranform)
+            }
+            return combineLatestUnsafe(first, second, first.scheduler, Mutex.self, tranform)
     }
+
 
     static private func combineLatestUnsafe
     <
