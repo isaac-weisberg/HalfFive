@@ -1,8 +1,8 @@
 public extension Observables {
-    static func just<Event>(_ event: Event) -> Observable<Event, AllSyncScheduler> {
-        return Observable.unchecked(scheduler: AllSyncScheduler()) { handler in
+    static func just<Event>(_ event: Event) -> ScheduledObservable<Event, AllSyncScheduler> {
+        return ScheduledObservable.unchecked(scheduler: AllSyncScheduler()) { handler in
             handler(event)
-            return DiposableVoid()
+            return DisposableVoid()
         }
     }
 }

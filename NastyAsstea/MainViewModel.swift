@@ -5,13 +5,13 @@ enum MainViewModelInput {
 }
 
 protocol MainViewModelProtocol {
-    var titleText: Observable<String, MainScheduler> { get }
+    var titleText: ScheduledObservable<String, MainScheduler> { get }
 }
 
 class MainViewModel: MainViewModelProtocol {
-    let titleText: Observable<String, MainScheduler>
+    let titleText: ScheduledObservable<String, MainScheduler>
 
-    init(inputs: Observable<MainViewModelInput, MainScheduler>) {
+    init(inputs: ScheduledObservable<MainViewModelInput, MainScheduler>) {
         titleText = inputs
             .map { input in
                 [

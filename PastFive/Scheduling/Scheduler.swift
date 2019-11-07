@@ -15,5 +15,5 @@ extension SchedulerType where Self: KnownSchdulerType {
 }
 
 public protocol SynchronizedScheduler: SchedulerType {
-
+    static func instantiate() -> Self
 }

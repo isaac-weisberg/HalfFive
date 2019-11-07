@@ -1,6 +1,10 @@
 import Dispatch
 
 public struct MainScheduler: KnownSchdulerType, SynchronizedScheduler {
+    public static func instantiate() -> MainScheduler {
+        return MainScheduler()
+    }
+
     public static func == (lhs: MainScheduler, rhs: MainScheduler) -> Bool {
         return lhs.nestedScheduler == rhs.nestedScheduler
     }

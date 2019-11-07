@@ -1,7 +1,7 @@
 public extension Observables {
-    static func create<Event>(factory: @escaping (@escaping (Event) -> Void) -> Disposable)
-        -> Observable<Event, RandomScheduler> {
+    static func create<Event>(subscribe: @escaping Subscribe<Event>)
+        -> Observable<Event> {
 
-        return Observable.unchecked(scheduler: RandomScheduler(), factory)
+        return Observable(subscribe)
     }
 }

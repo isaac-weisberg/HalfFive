@@ -1,7 +1,7 @@
 import UIKit
 import PastFive
 
-class TargetActionObservable<Event, Scheduler: SchedulerType, Control: UIControl>: ObservableType {
+class TargetActionObservable<Event, Scheduler: SchedulerType, Control: UIControl>: ScheduledObservableType {
     let scheduler: Scheduler
     let control: Control
     let event: UIControl.Event

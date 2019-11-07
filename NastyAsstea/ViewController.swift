@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         button.setTitle("Reroll", for: .normal)
     }
 
-    var input: Observable<MainViewModelInput, MainScheduler> {
+    var input: ScheduledObservable<MainViewModelInput, MainScheduler> {
         return button.rx.tap
             .map { void in
                 .buttonTap

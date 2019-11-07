@@ -2,15 +2,19 @@ public protocol Disposable {
 
 }
 
-public struct DiposableVoid: Disposable {
+public struct DisposableVoid: Disposable {
 
 }
 
-public struct DisposableAnon: Disposable {
+public class DisposableAnon: Disposable {
     public let dispose: () -> Void
 
     public init(_ dispose: @escaping () -> Void) {
         self.dispose = dispose
+    }
+
+    deinit {
+        dispose()
     }
 }
 
