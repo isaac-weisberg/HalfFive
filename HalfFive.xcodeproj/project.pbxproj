@@ -100,6 +100,19 @@
 		FAAE996F2351D27A00106313 /* DisposableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE996E2351D27A00106313 /* DisposableVoid.swift */; };
 		FAB6A2C523742BFE00D3BA76 /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2C423742BFE00D3BA76 /* ObserverType.swift */; };
 		FAB6A2C723742EDA00D3BA76 /* ObservableType+assignTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2C623742EDA00D3BA76 /* ObservableType+assignTo.swift */; };
+		FAB6A2CF23744E7F00D3BA76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2CE23744E7F00D3BA76 /* AppDelegate.swift */; };
+		FAB6A2D323744E7F00D3BA76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2D223744E7F00D3BA76 /* ViewController.swift */; };
+		FAB6A2D823744E8000D3BA76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB6A2D723744E8000D3BA76 /* Assets.xcassets */; };
+		FAB6A2DB23744E8000D3BA76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB6A2D923744E8000D3BA76 /* LaunchScreen.storyboard */; };
+		FAB6A2E12374502600D3BA76 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2E02374502600D3BA76 /* MainViewModel.swift */; };
+		FAB6A2E22374503B00D3BA76 /* PastFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE6FB58236F09A60014807B /* PastFive.framework */; };
+		FAB6A2E32374503B00D3BA76 /* PastFive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAE6FB58236F09A60014807B /* PastFive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAB6A2E9237450AD00D3BA76 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2E8237450AD00D3BA76 /* Reactive.swift */; };
+		FAB6A2EB2374516E00D3BA76 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2EA2374516E00D3BA76 /* Observer.swift */; };
+		FAB6A2ED2374544900D3BA76 /* TargetActionObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2EC2374544900D3BA76 /* TargetActionObservable.swift */; };
+		FAB6A2EF237459F700D3BA76 /* UILabel+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2EE237459F700D3BA76 /* UILabel+Reactive.swift */; };
+		FAB6A2F123745A2400D3BA76 /* UIButton+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2F023745A2400D3BA76 /* UIButton+Reactive.swift */; };
+		FAB6A2F323745AA200D3BA76 /* ObservableType+eraseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6A2F223745AA200D3BA76 /* ObservableType+eraseType.swift */; };
 		FABA2F8C2291747000F2788D /* HalfFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83B11A222583CB00311D29 /* HalfFive.framework */; };
 		FABA2F8E2291756F00F2788D /* Blocking+proveHotness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA2F8D2291756F00F2788D /* Blocking+proveHotness.swift */; };
 		FACD75EC2289553800894BC1 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD75EB2289553800894BC1 /* LoadingView.xib */; };
@@ -154,6 +167,13 @@
 			remoteGlobalIDString = 5C83B119222583CB00311D29;
 			remoteInfo = HalfFive;
 		};
+		FAB6A2E42374503B00D3BA76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C83B111222583CB00311D29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE6FB57236F09A60014807B;
+			remoteInfo = PastFive;
+		};
 		FAE6FB5D236F09A60014807B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5C83B111222583CB00311D29 /* Project object */;
@@ -164,6 +184,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FAB6A2E62374503B00D3BA76 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAB6A2E32374503B00D3BA76 /* PastFive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE6FB61236F09A60014807B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +308,19 @@
 		FAAE996E2351D27A00106313 /* DisposableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableVoid.swift; sourceTree = "<group>"; };
 		FAB6A2C423742BFE00D3BA76 /* ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverType.swift; sourceTree = "<group>"; };
 		FAB6A2C623742EDA00D3BA76 /* ObservableType+assignTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+assignTo.swift"; sourceTree = "<group>"; };
+		FAB6A2CC23744E7F00D3BA76 /* NastyAsstea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NastyAsstea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB6A2CE23744E7F00D3BA76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAB6A2D223744E7F00D3BA76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAB6A2D723744E8000D3BA76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAB6A2DA23744E8000D3BA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAB6A2DC23744E8000D3BA76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB6A2E02374502600D3BA76 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FAB6A2E8237450AD00D3BA76 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		FAB6A2EA2374516E00D3BA76 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		FAB6A2EC2374544900D3BA76 /* TargetActionObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetActionObservable.swift; sourceTree = "<group>"; };
+		FAB6A2EE237459F700D3BA76 /* UILabel+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Reactive.swift"; sourceTree = "<group>"; };
+		FAB6A2F023745A2400D3BA76 /* UIButton+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Reactive.swift"; sourceTree = "<group>"; };
+		FAB6A2F223745AA200D3BA76 /* ObservableType+eraseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+eraseType.swift"; sourceTree = "<group>"; };
 		FABA2F842291746100F2788D /* HalfFiveTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalfFiveTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA2F872291746100F2788D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABA2F8D2291756F00F2788D /* Blocking+proveHotness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blocking+proveHotness.swift"; sourceTree = "<group>"; };
@@ -359,6 +403,14 @@
 			files = (
 				FA66F34422969E53000C3D9F /* HalfFiveTesting.framework in Frameworks */,
 				D304ED5C22608A9500639991 /* HalfFive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB6A2C923744E7F00D3BA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB6A2E22374503B00D3BA76 /* PastFive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +623,7 @@
 				FAFBC32E2351186500839B8D /* FullFive */,
 				FAF0344C236DC65900E2424E /* SingleWinkle */,
 				FAE6FB59236F09A60014807B /* PastFive */,
+				FAB6A2CD23744E7F00D3BA76 /* NastyAsstea */,
 				5C83B11B222583CB00311D29 /* Products */,
 				5C78D8C5222A730F00ACC9A7 /* Frameworks */,
 			);
@@ -587,6 +640,7 @@
 				FAFBC32D2351186500839B8D /* FullFive.framework */,
 				FAF0344B236DC65900E2424E /* SingleWinkle.framework */,
 				FAE6FB58236F09A60014807B /* PastFive.framework */,
+				FAB6A2CC23744E7F00D3BA76 /* NastyAsstea.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -761,6 +815,31 @@
 			path = Creation;
 			sourceTree = "<group>";
 		};
+		FAB6A2CD23744E7F00D3BA76 /* NastyAsstea */ = {
+			isa = PBXGroup;
+			children = (
+				FAB6A2E7237450A200D3BA76 /* Reactive */,
+				FAB6A2CE23744E7F00D3BA76 /* AppDelegate.swift */,
+				FAB6A2D223744E7F00D3BA76 /* ViewController.swift */,
+				FAB6A2E02374502600D3BA76 /* MainViewModel.swift */,
+				FAB6A2D723744E8000D3BA76 /* Assets.xcassets */,
+				FAB6A2D923744E8000D3BA76 /* LaunchScreen.storyboard */,
+				FAB6A2DC23744E8000D3BA76 /* Info.plist */,
+			);
+			path = NastyAsstea;
+			sourceTree = "<group>";
+		};
+		FAB6A2E7237450A200D3BA76 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				FAB6A2E8237450AD00D3BA76 /* Reactive.swift */,
+				FAB6A2EC2374544900D3BA76 /* TargetActionObservable.swift */,
+				FAB6A2EE237459F700D3BA76 /* UILabel+Reactive.swift */,
+				FAB6A2F023745A2400D3BA76 /* UIButton+Reactive.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
 		FABA2F852291746100F2788D /* HalfFiveTesting */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +881,7 @@
 				FAE6FB68236F0A3A0014807B /* ObservableType.swift */,
 				FAE6FB71236F10F10014807B /* Observable.swift */,
 				FAB6A2C423742BFE00D3BA76 /* ObserverType.swift */,
+				FAB6A2EA2374516E00D3BA76 /* Observer.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -812,6 +892,7 @@
 				FAE6FB6D236F0BA80014807B /* ObservableType+map.swift */,
 				FAE6FB7F236F17C40014807B /* Observable+observeOn.swift */,
 				FAB6A2C623742EDA00D3BA76 /* ObservableType+assignTo.swift */,
+				FAB6A2F223745AA200D3BA76 /* ObservableType+eraseType.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -1030,6 +1111,25 @@
 			productReference = D304ED5722608A9500639991 /* HalfFiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FAB6A2CB23744E7F00D3BA76 /* NastyAsstea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB6A2DF23744E8000D3BA76 /* Build configuration list for PBXNativeTarget "NastyAsstea" */;
+			buildPhases = (
+				FAB6A2C823744E7F00D3BA76 /* Sources */,
+				FAB6A2C923744E7F00D3BA76 /* Frameworks */,
+				FAB6A2CA23744E7F00D3BA76 /* Resources */,
+				FAB6A2E62374503B00D3BA76 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAB6A2E52374503B00D3BA76 /* PBXTargetDependency */,
+			);
+			name = NastyAsstea;
+			productName = NastyAsstea;
+			productReference = FAB6A2CC23744E7F00D3BA76 /* NastyAsstea.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FABA2F832291746100F2788D /* HalfFiveTesting */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FABA2F8B2291746100F2788D /* Build configuration list for PBXNativeTarget "HalfFiveTesting" */;
@@ -1108,7 +1208,7 @@
 		5C83B111222583CB00311D29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Isaac Weisberg";
 				TargetAttributes = {
@@ -1125,6 +1225,9 @@
 					};
 					D304ED5622608A9500639991 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					FAB6A2CB23744E7F00D3BA76 = {
+						CreatedOnToolsVersion = 11.0;
 					};
 					FABA2F832291746100F2788D = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1165,6 +1268,7 @@
 				FAFBC32C2351186500839B8D /* FullFive */,
 				FAF0344A236DC65900E2424E /* SingleWinkle */,
 				FAE6FB57236F09A60014807B /* PastFive */,
+				FAB6A2CB23744E7F00D3BA76 /* NastyAsstea */,
 			);
 		};
 /* End PBXProject section */
@@ -1205,6 +1309,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB6A2CA23744E7F00D3BA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB6A2DB23744E8000D3BA76 /* LaunchScreen.storyboard in Resources */,
+				FAB6A2D823744E8000D3BA76 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,6 +1479,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAB6A2C823744E7F00D3BA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB6A2E9237450AD00D3BA76 /* Reactive.swift in Sources */,
+				FAB6A2EF237459F700D3BA76 /* UILabel+Reactive.swift in Sources */,
+				FAB6A2D323744E7F00D3BA76 /* ViewController.swift in Sources */,
+				FAB6A2ED2374544900D3BA76 /* TargetActionObservable.swift in Sources */,
+				FAB6A2E12374502600D3BA76 /* MainViewModel.swift in Sources */,
+				FAB6A2CF23744E7F00D3BA76 /* AppDelegate.swift in Sources */,
+				FAB6A2F123745A2400D3BA76 /* UIButton+Reactive.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FABA2F802291746100F2788D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1382,9 +1509,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5383ED237010C300C0C89B /* Mutex.swift in Sources */,
+				FAB6A2EB2374516E00D3BA76 /* Observer.swift in Sources */,
 				FAEA552823720D1400ABC223 /* RandomScheduler.swift in Sources */,
 				FAE6FB7E236F16950014807B /* Scheduler.swift in Sources */,
 				FAE6FB72236F10F10014807B /* Observable.swift in Sources */,
+				FAB6A2F323745AA200D3BA76 /* ObservableType+eraseType.swift in Sources */,
 				FAE6FB69236F0A3A0014807B /* ObservableType.swift in Sources */,
 				FAE6FB8A236F1EBD0014807B /* DispatchQueueScheduler.swift in Sources */,
 				FAE6FB6E236F0BA80014807B /* ObservableType+map.swift in Sources */,
@@ -1444,6 +1573,11 @@
 			target = 5C83B119222583CB00311D29 /* HalfFive */;
 			targetProxy = D304ED5D22608A9500639991 /* PBXContainerItemProxy */;
 		};
+		FAB6A2E52374503B00D3BA76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE6FB57236F09A60014807B /* PastFive */;
+			targetProxy = FAB6A2E42374503B00D3BA76 /* PBXContainerItemProxy */;
+		};
 		FAE6FB5E236F09A60014807B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAE6FB57236F09A60014807B /* PastFive */;
@@ -1456,6 +1590,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				5C78D8BF222A72AB00ACC9A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FAB6A2D923744E8000D3BA76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAB6A2DA23744E8000D3BA76 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1777,6 +1919,44 @@
 			};
 			name = Release;
 		};
+		FAB6A2DD23744E8000D3BA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				INFOPLIST_FILE = NastyAsstea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.NastyAsstea";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAB6A2DE23744E8000D3BA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				INFOPLIST_FILE = NastyAsstea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.NastyAsstea";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FABA2F892291746100F2788D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1844,7 +2024,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PastFive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1871,7 +2051,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PastFive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2035,6 +2215,15 @@
 			buildConfigurations = (
 				D304ED5F22608A9500639991 /* Debug */,
 				D304ED6022608A9500639991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB6A2DF23744E8000D3BA76 /* Build configuration list for PBXNativeTarget "NastyAsstea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB6A2DD23744E8000D3BA76 /* Debug */,
+				FAB6A2DE23744E8000D3BA76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

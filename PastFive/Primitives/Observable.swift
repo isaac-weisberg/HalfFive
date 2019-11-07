@@ -1,5 +1,5 @@
 public struct Observable<Event, Scheduler: SchedulerType>: ObservableType {
-    static func unchecked(scheduler: Scheduler, _ factory: @escaping (@escaping (Event) -> Void) -> Disposable) -> Observable {
+    static public func unchecked(scheduler: Scheduler, _ factory: @escaping (@escaping (Event) -> Void) -> Disposable) -> Observable {
         return Observable(scheduler: scheduler, factory)
     }
 
