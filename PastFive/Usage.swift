@@ -77,17 +77,3 @@ func d() {
     // because of static and dynamic equality
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
-
-func e() {
-    let scheduler = SerialDispatchQScheduler()
-
-    let first = Observables.just(())
-        .observeOn(scheduler)
-    let second = Observables.just(())
-        .observeOn(scheduler)
-
-    // will use the super-prime implementation
-    // because the equality is proven statically
-    // and dynamically
-    _ = Observables.combineLatest(first, second) { _, _ in () }
-}
