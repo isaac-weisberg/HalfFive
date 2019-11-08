@@ -1,9 +1,5 @@
-public struct AllSyncScheduler: SchedulerType, SynchronizedScheduler {
-    public static func instantiate() -> AllSyncScheduler {
-        return AllSyncScheduler()
-    }
+public struct AllSyncScheduler: SchedulerType, SingleInstanceScheduler {
+    public static let instance = AllSyncScheduler()
 
-    public static func == (lhs: AllSyncScheduler, rhs: AllSyncScheduler) -> Bool {
-        return true
-    }
+    private init() { }
 }

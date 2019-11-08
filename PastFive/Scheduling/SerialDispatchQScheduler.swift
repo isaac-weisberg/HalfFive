@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct SerialDispatchQScheduler: KnownSchdulerType, SynchronizedScheduler {
+public struct SerialDispatchQScheduler: KnownSchdulerType, ReproduceableScheduler {
     public static func instantiate() -> SerialDispatchQScheduler {
         return SerialDispatchQScheduler()
     }

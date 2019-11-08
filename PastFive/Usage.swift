@@ -5,7 +5,7 @@ func usage() {
     let bar = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: .global()))
     let baz = Observables.just(())
-        .observeOn(MainScheduler())
+        .observeOn(MainScheduler.instance)
 
 
     print(foo, bar, baz)
@@ -24,9 +24,9 @@ func a() {
 
 func b() {
     let first = Observables.just(())
-        .observeOn(MainScheduler())
+        .observeOn(MainScheduler.instance)
     let second = Observables.just(())
-        .observeOn(MainScheduler())
+        .observeOn(MainScheduler.instance)
 
     // will use the super-prime implementation
     // because both schedulers are equal
@@ -49,7 +49,7 @@ func c() {
 }
 
 
-func c2() {
+func d() {
     let queue = DispatchQueue(label: "", attributes: .concurrent)
 
     let first = Observables.just(())
@@ -65,13 +65,26 @@ func c2() {
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
-func d() {
+func e() {
     let scheduler = SerialDispatchQScheduler()
 
     let first = Observables.just(())
         .observeOn(scheduler)
     let second = Observables.just(())
         .observeOn(scheduler)
+
+    // will use the super-prime implementation
+    // because of static and dynamic equality
+    _ = Observables.combineLatest(first, second) { _, _ in () }
+}
+
+func f() {
+    let first = Observables.create { (handler: Handler<Void>) -> Disposable in
+        return DisposableVoid()
+    }
+    let second = Observables.create { (handler: Handler<Void>) -> DisposableVoid in
+        return DisposableVoid()
+    }
 
     // will use the super-prime implementation
     // because of static and dynamic equality

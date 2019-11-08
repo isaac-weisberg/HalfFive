@@ -29,7 +29,6 @@ public extension Observables {
         return combineLatestUnsafe(first.unscheduled, second.unscheduled, Mutex.self, transform)
     }
 
-
     static func combineLatest
     <
         Event,
@@ -40,12 +39,9 @@ public extension Observables {
         _ first: First,
         _ second: Second,
         _ transform: @escaping (First.Event, Second.Event) -> Event
-    ) -> Observable<Event> where First.Scheduler: SynchronizedScheduler, First.Scheduler == Second.Scheduler {
+    ) -> Observable<Event> where First.Scheduler: SingleInstanceScheduler, First.Scheduler == Second.Scheduler {
 
-        if first.scheduler == second.scheduler {
-            return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
-        }
-        return combineLatestUnsafe(first.unscheduled, second.unscheduled, Mutex.self, transform)
+        return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
     }
 
     static func combineLatest
@@ -60,9 +56,9 @@ public extension Observables {
             _ transform: @escaping (First.Event, Second.Event) -> Event
         )
         -> ScheduledObservable<Event, First.Scheduler>
-        where First.Scheduler == Second.Scheduler, First.Scheduler: KnownSchdulerType & SynchronizedScheduler {
+        where First.Scheduler == Second.Scheduler, First.Scheduler: ReproduceableScheduler {
 
-            if first.scheduler == second.scheduler {
+            if first.scheduler.queue === second.scheduler.queue {
                 return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
                     .promoteToScheduled(first.scheduler)
             }

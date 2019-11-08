@@ -1,19 +1,17 @@
 import Dispatch
 
-public protocol SchedulerType: Equatable {
+public protocol SchedulerType {
 
+}
+
+public protocol SingleInstanceScheduler: SchedulerType {
+    static var instance: Self { get }
 }
 
 public protocol KnownSchdulerType: SchedulerType {
     var queue: DispatchQueue { get }
 }
 
-extension SchedulerType where Self: KnownSchdulerType {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.queue === rhs.queue
-    }
-}
-
-public protocol SynchronizedScheduler: SchedulerType {
+public protocol ReproduceableScheduler: KnownSchdulerType {
     static func instantiate() -> Self
 }
