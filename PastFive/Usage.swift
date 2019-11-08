@@ -99,4 +99,16 @@ func f() {
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
+func g() {
+    let first = Observables.just(())
+        .observeOn(MainScheduler.instance)
+    let second = Observables.just(())
+        .observeOn(DispatchQueueScheduler(queue: .global()))
+
+    // will use the sub-prime implementation
+    // The type will be demoted to an unscheduled one
+    // The mutex will be used
+    _ = Observables.combineLatest(first, second) { _, _ in () }
+}
+
 #endif
