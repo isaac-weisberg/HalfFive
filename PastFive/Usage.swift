@@ -1,3 +1,5 @@
+#if DEBUG
+
 import Dispatch
 
 func usage() {
@@ -18,7 +20,8 @@ func a() {
 
     // will use the super-prime implementation
     // because both are sync and all sync
-    // schedulers are always equal to each other
+    // schedulers and synchronized in relation
+    // to each other
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -29,8 +32,9 @@ func b() {
         .observeOn(MainScheduler.instance)
 
     // will use the super-prime implementation
-    // because both schedulers are equal
-    // because their dispatch queues are referrentially equal
+    // because two instances of MainScheduler
+    // and their underlying main queues
+    // are referrentially equal and thus synchronized
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -44,7 +48,9 @@ func c() {
     // because although schedulers are
     // type equivalent, on runtime their queues
     // are will be different and synchronization
-    // will be required
+    // will be required.
+    // the synchronization will be performed
+    // on a separate serial dispatch queue
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -57,11 +63,11 @@ func d() {
     let second = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: queue))
 
-    // won't use the super-prime implementation.
-    // Although they are type equivalent
-    // and they will be equal dynamically,
-    // the dispatch queue that they use
-    // doesn't synchronize the emissions
+    // Won't use the super-prime implementation.
+    // Concurrent dispatch queues aren't synchronized
+    // and all emissions will go through a mutex
+    // Furthermore, the signaure is demoted to
+    // an unscheduled observable
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
 
@@ -86,7 +92,11 @@ func f() {
         return DisposableVoid()
     }
 
-    // will use the super-prime implementation
-    // because of static and dynamic equality
+    // will use the sub-prime implementation
+    // with a proper mutex
+    // because that's what we do to regular
+    // observables
     _ = Observables.combineLatest(first, second) { _, _ in () }
 }
+
+#endif
