@@ -39,36 +39,37 @@ public extension Observables {
         _ first: First,
         _ second: Second,
         _ transform: @escaping (First.Event, Second.Event) -> Event
-    ) -> Observable<Event> where First.Scheduler: SingleInstanceScheduler, First.Scheduler == Second.Scheduler {
+    ) -> Observable<Event>
+    where First.Scheduler: SingleInstanceScheduler & SynchronizedScheduler, First.Scheduler == Second.Scheduler {
 
         return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
     }
 
     static func combineLatest
-        <
-            Event,
-            First: ScheduledObservableType,
-            Second: ScheduledObservableType
-        >
-        (
-            _ first: First,
-            _ second: Second,
-            _ transform: @escaping (First.Event, Second.Event) -> Event
-        )
-        -> ScheduledObservable<Event, First.Scheduler>
-        where First.Scheduler == Second.Scheduler, First.Scheduler: ReproduceableScheduler {
+    <
+        Event,
+        First: ScheduledObservableType,
+        Second: ScheduledObservableType
+    >
+    (
+        _ first: First,
+        _ second: Second,
+        _ transform: @escaping (First.Event, Second.Event) -> Event
+    )
+    -> ScheduledObservable<Event, First.Scheduler>
+    where First.Scheduler == Second.Scheduler, First.Scheduler: ReproduceableScheduler & SynchronizedScheduler {
 
-            if first.scheduler.queue === second.scheduler.queue {
-                return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
-                    .promoteToScheduled(first.scheduler)
-            }
-            let synchronizationScheduler = First.Scheduler.instantiate()
-            return combineLatestUnsafe(
-                first.observeOn(synchronizationScheduler).unscheduled,
-                second.observeOn(synchronizationScheduler).unscheduled,
-                MutexUnsafe.self,
-                transform)
-            .promoteToScheduled(synchronizationScheduler)
+        if first.scheduler.queue === second.scheduler.queue {
+            return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
+                .promoteToScheduled(first.scheduler)
+        }
+        let synchronizationScheduler = First.Scheduler.instantiate()
+        return combineLatestUnsafe(
+            first.observeOn(synchronizationScheduler).unscheduled,
+            second.observeOn(synchronizationScheduler).unscheduled,
+            MutexUnsafe.self,
+            transform)
+        .promoteToScheduled(synchronizationScheduler)
     }
 
     static private func combineLatestUnsafe

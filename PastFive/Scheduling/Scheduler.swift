@@ -15,3 +15,7 @@ public protocol KnownSchedulerType: SchedulerType {
 public protocol ReproduceableScheduler: KnownSchedulerType {
     static func instantiate() -> Self
 }
+
+public protocol SynchronizedScheduler: SchedulerType {
+
+}
