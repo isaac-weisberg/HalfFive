@@ -8,7 +8,7 @@ import UIKit
 
         let viewController = ViewController()
 
-        let viewModel = MainViewModel(inputs: viewController.input)
+        let viewModel = MainViewModel(buttonPressed: viewController.buttonPressed)
         viewController.apply(viewModel: viewModel)
 
         window?.rootViewController = viewController

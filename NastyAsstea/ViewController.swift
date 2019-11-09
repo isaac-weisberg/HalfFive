@@ -4,7 +4,7 @@ import UIKit
 class ViewController: UIViewController {
     var disposeBag = DisposeBag()
 
-    let label = UILabel.init(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+    let label = UILabel()
     let button = UIButton(type: .system)
 
     init() {
@@ -30,11 +30,8 @@ class ViewController: UIViewController {
         button.setTitle("Reroll", for: .normal)
     }
 
-    var input: ScheduledObservable<MainViewModelInput, MainScheduler> {
+    var buttonPressed: ScheduledObservable<Void, MainScheduler> {
         return button.rx.tap
-            .map { void in
-                .buttonTap
-            }
     }
 
     func apply(viewModel: MainViewModelProtocol) {
