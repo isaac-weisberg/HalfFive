@@ -8,10 +8,10 @@ public protocol SingleInstanceScheduler: SchedulerType {
     static var instance: Self { get }
 }
 
-public protocol KnownSchdulerType: SchedulerType {
+public protocol KnownSchedulerType: SchedulerType {
     var queue: DispatchQueue { get }
 }
 
-public protocol ReproduceableScheduler: KnownSchdulerType {
+public protocol ReproduceableScheduler: KnownSchedulerType {
     static func instantiate() -> Self
 }

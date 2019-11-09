@@ -1,5 +1,5 @@
 public extension ObservableType {
-    func observeOn<Scheduler: KnownSchdulerType>(_ scheduler: Scheduler)
+    func observeOn<Scheduler: KnownSchedulerType>(_ scheduler: Scheduler)
         -> ScheduledObservable<Event, Scheduler> {
 
         return ScheduledObservable.unchecked(scheduler: scheduler, observeOnFactory(subscribe, scheduler))
@@ -7,7 +7,7 @@ public extension ObservableType {
 }
 
 public extension ScheduledObservableType {
-    func observeOn<Scheduler: KnownSchdulerType>(_ scheduler: Scheduler)
+    func observeOn<Scheduler: KnownSchedulerType>(_ scheduler: Scheduler)
         -> ScheduledObservable<Event, Scheduler> {
 
         return ScheduledObservable.unchecked(scheduler: scheduler, observeOnFactory(subscribe, scheduler))
@@ -15,7 +15,7 @@ public extension ScheduledObservableType {
 }
 
 
-private func observeOnFactory<Event, Scheduler: KnownSchdulerType>(
+private func observeOnFactory<Event, Scheduler: KnownSchedulerType>(
     _ subscribe: @escaping Subscribe<Event>,
     _ scheduler: Scheduler
 ) -> (@escaping (Event) -> Void) -> Disposable {

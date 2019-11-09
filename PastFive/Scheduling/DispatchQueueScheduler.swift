@@ -1,6 +1,6 @@
 import Dispatch
 
-public struct DispatchQueueScheduler: KnownSchdulerType {
+public struct DispatchQueueScheduler: KnownSchedulerType {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return false
     }
