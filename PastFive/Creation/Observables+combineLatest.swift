@@ -60,15 +60,21 @@ public extension Observables {
     where First.Scheduler == Second.Scheduler, First.Scheduler: ReproduceableScheduler & SynchronizedScheduler {
 
         if first.scheduler.queue === second.scheduler.queue {
-            return combineLatestUnsafe(first.unscheduled, second.unscheduled, MutexUnsafe.self, transform)
-                .promoteToScheduled(first.scheduler)
+            return combineLatestUnsafe(
+                first.unscheduled,
+                second.unscheduled,
+                MutexUnsafe.self,
+                transform
+            )
+            .promoteToScheduled(first.scheduler)
         }
         let synchronizationScheduler = First.Scheduler.instantiate()
         return combineLatestUnsafe(
             first.observeOn(synchronizationScheduler).unscheduled,
             second.observeOn(synchronizationScheduler).unscheduled,
             MutexUnsafe.self,
-            transform)
+            transform
+        )
         .promoteToScheduled(synchronizationScheduler)
     }
 
