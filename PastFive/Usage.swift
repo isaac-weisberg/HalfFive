@@ -4,11 +4,15 @@ import Dispatch
 
 func usage() {
     let foo = Observables.just(())
+        // ScheduledObservable<(), AllSyncScheduler>
+
     let bar = Observables.just(())
         .observeOn(DispatchQueueScheduler(queue: .global()))
+        // ScheduledObservable<(), DispatchQueueScheduler>
+
     let baz = Observables.just(())
         .observeOn(MainScheduler.instance)
-
+        // ScheduledObservable<(), MainScheduler>
 
     print(foo, bar, baz)
 }
